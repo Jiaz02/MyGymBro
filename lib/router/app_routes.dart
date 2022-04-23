@@ -32,6 +32,51 @@ class AppRoutes {
         icon: Icons.smart_display_sharp,
         name: 'Splash Screen',
         screen: const SplashScreen()),
+    MenuOption(
+        route: 'reto',
+        image: AssetImage('assets/add_entreno.png'),
+        icon: Icons.smart_display_sharp,
+        name: 'Retos Screen',
+        screen: const AddEntrenosScreen()),
+    MenuOption(
+        route: 'entreno',
+        image: AssetImage('assets/retos.png'),
+        icon: Icons.smart_display_sharp,
+        name: 'Entrenos Screen',
+        screen: const RetosScreen()),
+  ];
+
+  static final bottomMenuOption = <MenuOption>[
+    MenuOption(
+        route: 'friends',
+        image: AssetImage('assets/graficos.png'),
+        icon: Icons.tab,
+        name: 'Amigos Screen',
+        screen: const AmigosScreen()),
+    MenuOption(
+        route: 'entrenos',
+        image: AssetImage('assets/graficos.png'),
+        icon: Icons.tab,
+        name: 'Entrenos Screen',
+        screen: const EntrenosScreen()),
+    MenuOption(
+        route: 'home',
+        image: AssetImage('assets/graficos.png'),
+        icon: Icons.tab,
+        name: 'Home Screen',
+        screen: const HomeScreen()),
+    MenuOption(
+        route: 'ejercicios',
+        image: AssetImage('assets/graficos.png'),
+        icon: Icons.tab,
+        name: 'Ejercicios Screen',
+        screen: const EjerciciosScreen()),
+    MenuOption(
+        route: 'user',
+        image: AssetImage('assets/graficos.png'),
+        icon: Icons.tab,
+        name: 'User Screen',
+        screen: const UserScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
