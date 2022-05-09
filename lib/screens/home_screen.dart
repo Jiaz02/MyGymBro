@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
         backgroundColor: AppTheme.primaryDarkBlue,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(35.0),
+          preferredSize: Size.fromHeight(40.0),
           child: AppBar(
             backgroundColor: AppTheme.primaryBlue,
             title: const Text('My Gym Bro'),
