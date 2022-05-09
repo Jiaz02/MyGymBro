@@ -8,11 +8,6 @@ class AmigosScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('My GymBro'),
-          centerTitle: true,
-        ),
-        body: Text('textito de amigos'));
+    return Scaffold(body: Text('textito de amigos'));
   }
 }

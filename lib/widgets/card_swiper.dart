@@ -35,8 +35,7 @@ class CardSwiper extends StatelessWidget {
                           AppRoutes.menuOption[index].screen)),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30),
-                child: FadeInImage(
-                  placeholder: AssetImage('assets/no-image.jpg'),
+                child: Image(
                   image: AppRoutes.menuOption[index].image,
                   fit: BoxFit.cover,
                 ),

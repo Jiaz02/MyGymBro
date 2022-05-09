@@ -8,11 +8,6 @@ class EntrenosScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('My GymBro'),
-          centerTitle: true,
-        ),
-        body: Text('textito de entrenos'));
+    return Scaffold(body: Text('textito de entrenos'));
   }
 }

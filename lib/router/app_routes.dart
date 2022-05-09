@@ -64,7 +64,7 @@ class AppRoutes {
         image: AssetImage('assets/graficos.png'),
         icon: Icons.tab,
         name: 'Home Screen',
-        screen: const HomeScreen()),
+        screen: const InicioScreen()),
     MenuOption(
         route: 'ejercicios',
         image: AssetImage('assets/graficos.png'),

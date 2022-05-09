@@ -10,3 +10,4 @@ export 'package:my_gym_bro/screens/amigos_screen.dart';
 export 'package:my_gym_bro/screens/ejercicios_screen.dart';
 export 'package:my_gym_bro/screens/entrenos_screen.dart';
 export 'package:my_gym_bro/screens/user_screen.dart';
+export 'package:my_gym_bro/screens/inicio_screen.dart';
