@@ -8,6 +8,6 @@ class AmigosScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Text('textito de amigos'));
+    return Text('textito de amigos');
   }
 }

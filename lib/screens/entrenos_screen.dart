@@ -8,6 +8,6 @@ class EntrenosScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Text('textito de entrenos'));
+    return Text('textito de entrenos');
   }
 }

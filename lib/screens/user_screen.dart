@@ -8,6 +8,6 @@ class UserScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Text('textito de user'));
+    return Text('textito de user');
   }
 }
