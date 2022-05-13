@@ -39,6 +39,8 @@ dependencies:
   flutter_launcher_icons: ^0.9.2
   flutter_login: ^3.2.0
   curved_navigation_bar: ^1.0.3
+  firebase_core: ^1.16.0
+  firebase_auth: ^3.3.17
 
 flutter_icons:
   android: true

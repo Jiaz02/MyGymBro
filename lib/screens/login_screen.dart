@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:my_gym_bro/screens/screens.dart';
+import 'package:my_gym_bro/theme/app_theme.dart';
 
 const users = const {
   'pruevitas@gmail.com': '12345',
@@ -50,6 +51,7 @@ class LoginScreen extends StatelessWidget {
       logo: AssetImage('assets/logo.png'),
       onLogin: _authUser,
       onSignup: _signupUser,
+      theme: LoginTheme(primaryColor: AppTheme.primaryBlue),
       onSubmitAnimationCompleted: () {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (context) => HomeScreen(),
