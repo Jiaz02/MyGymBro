@@ -8,6 +8,7 @@ class AmigosScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('textito de amigos');
+    return Text('textito de amigos',style: TextStyle(color: Colors.green));
+    
   }
 }

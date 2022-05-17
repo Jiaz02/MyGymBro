@@ -29,7 +29,7 @@ class _InicioScreenState extends State<InicioScreen> {
         context: context,
         builder: (context) {
           return SimpleDialog(
-            //título: Texto ("Solicitud"),
+            title: Text ("Introduce Un ejericio"),
             children: <Widget>[
               const Padding(
                 padding: EdgeInsets.all(8.0),
@@ -41,12 +41,12 @@ class _InicioScreenState extends State<InicioScreen> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
-                  //textInputAction: _showTextFields(),
-                  onChanged: (value) => numseries = int.parse(value),
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                      border: UnderlineInputBorder(), hintText: 'Num Series'),
-                ),
+                      //textInputAction: _showTextFields(),
+                      onChanged: (value) => numseries = int.parse(value),
+                      keyboardType: TextInputType.number,
+                      decoration: const InputDecoration(
+                          border: UnderlineInputBorder(), hintText: 'Num Series'),
+                    ),                  
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -57,10 +57,6 @@ class _InicioScreenState extends State<InicioScreen> {
                   decoration: const InputDecoration(
                       border: UnderlineInputBorder(), hintText: 'Kg'),
                 ),
-              ),
-              FlatButton(
-                child: Text("Añadir"),
-                onPressed: () => Navigator.pop(context, "Option3"),
               ),
             ],
           );
