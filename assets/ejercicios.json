@@ -1,0 +1,53 @@
+{
+    "ejercicio": [
+        {
+            "name": "Sentadilla",
+            "description": "Ejercicio con el cual vas a dejar de sentir las piernas. Con una barra sobre los hombros, debes agacharte y enderezarte sin doblar la espalda, como si quisieras empujar el suelo.",
+            "muscle": [
+                "Cuadriceps",
+                "Gluteos",
+                "Femoral"
+            ]
+        },
+        {
+            "name": "Peso Muerto",
+            "description": "El peso muerto es un ejercicio con pesas que consiste en levantar una barra desde el suelo hasta la cintura.",
+            "muscle": [
+                "Cuadriceps",
+                "Gluteos",
+                "Femoral",
+                "Dorsal"
+            ]
+        },
+        {
+            "name": "Hip Thrust",
+            "description": "A la hora de efectuar un Hip Thrust precisamos contar con un banco en el que apoyar la espalda, además de un peso que situaremos sobre la cadera para que actúe como resistencia.",
+            "muscle": [
+                "Gluteos",
+                "Cuadriceps",
+                "Isquiosurales",
+                "Abdomen"
+            ]
+        },        
+        {
+            "name": "Press Banca Plano con Barra",
+            "description": "Uno de los mejores ejercicios para hacer pecho, consiste en mientras se esta tumbado sobre un banco, con los brazos extendidos hacia arriba, subir y bajar una barra con distintos lastres.",
+            "muscle": [
+                "Pectoral",
+                "Triceps"
+            ]
+        },
+        {
+            "name": "Dominada Prona",
+            "description": "Uno de los mejores ejercicios de espalda, tambien involucra en menos medida el resto del tren superior. Colgado de una barra, debes flexionar los codos con la intencion de subir el cuerpo.",
+            "muscle": [
+                "Dorsal",
+                "Trapecio",
+                "Biceps",
+                "Oblicuos",
+                "Triceps",
+                "Pectoral"
+            ]
+        }
+    ]
+}
