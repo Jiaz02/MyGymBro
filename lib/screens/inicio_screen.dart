@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_gym_bro/screens/add_entrenos_screen.dart';
+import 'package:my_gym_bro/screens/retos_screen.dart';
 
 import '../router/app_routes.dart';
 import '../widgets/widgets.dart';
@@ -65,7 +66,7 @@ class _InicioScreenState extends State<InicioScreen> {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              AppRoutes.menuOption[4].screen))),
+                              RetosScreen()))),
             ),
           ],
         )

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
@@ -11,11 +13,11 @@ class AddEntrenosScreen extends StatefulWidget {
 }
 
 class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
-  var numseries = 0;
+  var numseries = 1;
 
   List<DropdownMenuItem<String>> get dropdownMusculosItems {
     List<DropdownMenuItem<String>> menuMusculosItems = [
-      DropdownMenuItem(child: Text(""), value: ""),
+      DropdownMenuItem(child: Text("Selecciona un grupo muscular"), value: ""),
       DropdownMenuItem(child: Text("Pecho"), value: "Pecho"),
       DropdownMenuItem(child: Text("Abdomen"), value: "Abdomen"),
       DropdownMenuItem(child: Text("Dorsal"), value: "Dorsal"),
@@ -24,9 +26,10 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
     ];
     return menuMusculosItems;
   }
+
   List<DropdownMenuItem<String>> get dropdownEjerciciosItems {
     List<DropdownMenuItem<String>> menuEjerciciosItems = [
-      DropdownMenuItem(child: Text(""), value: ""),
+      DropdownMenuItem(child: Text("Selecciona el Ejercicio"), value: ""),
       DropdownMenuItem(child: Text("Pecho"), value: "Pecho"),
       DropdownMenuItem(child: Text("Abdomen"), value: "Abdomen"),
       DropdownMenuItem(child: Text("Dorsal"), value: "Dorsal"),
@@ -34,6 +37,8 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
     ];
     return menuEjerciciosItems;
   }
+
+  
 
   var grupoMuscular = "";
   var grupoEjercicios = "";
@@ -52,7 +57,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: DropdownButtonFormField(                
+            child: DropdownButtonFormField(
                 style: TextStyle(color: Colors.white),
                 dropdownColor: AppTheme.primaryBlue,
                 value: grupoMuscular,
@@ -65,7 +70,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: DropdownButtonFormField(                
+            child: DropdownButtonFormField(
                 style: TextStyle(color: Colors.white),
                 dropdownColor: AppTheme.primaryBlue,
                 value: grupoEjercicios,
@@ -81,7 +86,10 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
             child: TextField(
               style: TextStyle(color: Colors.white),
               onChanged: (value) {
-                numseries = int.parse(value);
+                  numseries = value as int;
+                  setState(() {
+                    
+                  });
               },
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
@@ -90,12 +98,32 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                   hintStyle: TextStyle(color: Colors.white)),
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.all(8.0),
-            child: RowRepeKg(),
+            child: FutureBuilder(
+              builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+                for (var i = 1; i < numseries; i++) {
+                  return RowRepeKg();
+                }
+                return Text('fail');
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextButton(
+              onPressed: () {},
+              child: Text('Añadir ejercicio'),
+              // ignore: prefer_const_constructors
+              style: TextButton.styleFrom(
+                  backgroundColor: AppTheme.primaryBlue,
+                  primary: Colors.white,
+                  fixedSize: Size(MediaQuery.of(context).size.width, 16)),
+            ),
           )
         ],
       )),
     );
   }
 }
+

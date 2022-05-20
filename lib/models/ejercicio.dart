@@ -1,11 +1,21 @@
 class Ejercicio {
-    Ejercicio({
-        required this.name,
-        required this.description,
-        required this.muscle,
-    });
+  Ejercicio({
+    required this.name,
+    required this.tip,
+    required this.muscle,
+    required this.url,
+  });
 
-    String name;
-    String description;
-    List<String> muscle;
+  final String name;
+  final String tip;
+  final List<String> muscle;
+  final String url;
+  
+  get getName => name;
+
+  get getTip => tip;
+
+  get getMuscle => muscle;
+
+  get getUrl => url;
 }
