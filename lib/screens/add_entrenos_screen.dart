@@ -18,7 +18,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
   List<DropdownMenuItem<String>> get dropdownMusculosItems {
     List<DropdownMenuItem<String>> menuMusculosItems = [
       DropdownMenuItem(child: Text("Selecciona un grupo muscular"), value: ""),
-      DropdownMenuItem(child: Text("Pecho"), value: "Pecho"),
+      DropdownMenuItem(child: Text("Pectoral"), value: "Pectoral"),
       DropdownMenuItem(child: Text("Abdomen"), value: "Abdomen"),
       DropdownMenuItem(child: Text("Dorsal"), value: "Dorsal"),
       DropdownMenuItem(child: Text("Biceps"), value: "Biceps"),
@@ -30,7 +30,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
   List<DropdownMenuItem<String>> get dropdownEjerciciosItems {
     List<DropdownMenuItem<String>> menuEjerciciosItems = [
       DropdownMenuItem(child: Text("Selecciona el Ejercicio"), value: ""),
-      DropdownMenuItem(child: Text("Pecho"), value: "Pecho"),
+      DropdownMenuItem(child: Text("Pectoral"), value: "Pectoral"),
       DropdownMenuItem(child: Text("Abdomen"), value: "Abdomen"),
       DropdownMenuItem(child: Text("Dorsal"), value: "Dorsal"),
       DropdownMenuItem(child: Text("Biceps"), value: "Biceps"),
@@ -85,6 +85,8 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                 style: TextStyle(color: Colors.white),
                 onChanged: (value) {
                   if (value.isEmpty) {
+                    numseries = 0;
+                    setState(() {});
                   } else {
                     numseries = int.parse(value);
                     if (numseries > 15) {
@@ -108,6 +110,17 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
               itemBuilder: (_, int index) {
                 return RowRepeKg();
               },
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextField(
+                style: TextStyle(color: Colors.white),
+                onChanged: (value) {},
+                decoration: const InputDecoration(
+                    border: UnderlineInputBorder(),
+                    hintText: 'Observaciones',
+                    hintStyle: TextStyle(color: Colors.white)),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),

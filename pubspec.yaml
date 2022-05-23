@@ -41,6 +41,7 @@ dependencies:
   curved_navigation_bar: ^1.0.3
   firebase_core: ^1.16.0
   firebase_auth: ^3.3.17
+  http: ^0.13.4
 
 flutter_icons:
   android: true

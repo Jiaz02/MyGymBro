@@ -1,40 +1,48 @@
 import 'package:my_gym_bro/models/ejercicio.dart';
 
 class Listas {
-    Listas();
+  Listas();
 
-    //creamos una lista vacia
-    List<Ejercicio> ejerciciosList= List.empty();
+  //creamos una lista vacia
+  List<Ejercicio> ejerciciosList = List.empty();
 
-    List<Ejercicio> ejerciciosRutinaList= List.empty();
+  List<Ejercicio> ejerciciosRutinaList = List.empty();
 
+  List<String> musculoList = List.empty();
 
-    get getListEjercicio{
-      return ejerciciosList;
-    }
+  get getMusculoList => musculoList;
 
-    set setEjerciosList(List<Ejercicio> list){
-      ejerciciosList=list;
-    }
+  set setMusculoList(musculoList) => this.musculoList = musculoList;
 
-    void addEjercicioList(Ejercicio ejercicio){
-      ejerciciosList.add(ejercicio);
-    }
+  void addMusculoList(String musculo) {
+    musculoList.add(musculo);
+  }
 
+  get getListEjercicio {
+    return ejerciciosList;
+  }
 
-    get getListEjercicioRutina{
-      return ejerciciosRutinaList;
-    }
+  set setEjerciosList(List<Ejercicio> list) {
+    ejerciciosList = list;
+  }
 
-    set setEjerciosRutinaList(List<Ejercicio> list){
-      ejerciciosRutinaList=list;
-    }
+  void addEjercicioList(Ejercicio ejercicio) {
+    ejerciciosList.add(ejercicio);
+  }
 
-    void addEjercicioRutinaList(Ejercicio ejercicio){
-      ejerciciosRutinaList.add(ejercicio);
-    }
+  get getListEjercicioRutina {
+    return ejerciciosRutinaList;
+  }
 
-    void removeEjercicioRutinaList(Ejercicio ejercicio){
-      ejerciciosRutinaList.remove(ejercicio);
-    }
+  set setEjerciosRutinaList(List<Ejercicio> list) {
+    ejerciciosRutinaList = list;
+  }
+
+  void addEjercicioRutinaList(Ejercicio ejercicio) {
+    ejerciciosRutinaList.add(ejercicio);
+  }
+
+  void removeEjercicioRutinaList(Ejercicio ejercicio) {
+    ejerciciosRutinaList.remove(ejercicio);
+  }
 }
