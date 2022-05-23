@@ -38,8 +38,6 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
     return menuEjerciciosItems;
   }
 
-  
-
   var grupoMuscular = "";
   var grupoEjercicios = "";
 
@@ -52,78 +50,80 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
         centerTitle: true,
       ),
       backgroundColor: AppTheme.primaryDarkBlue,
-      body: Form(
-          child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: DropdownButtonFormField(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: DropdownButtonFormField(
+                  style: TextStyle(color: Colors.white),
+                  dropdownColor: AppTheme.primaryBlue,
+                  value: grupoMuscular,
+                  items: dropdownMusculosItems,
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      grupoMuscular = newValue!;
+                    });
+                  }),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: DropdownButtonFormField(
+                  style: TextStyle(color: Colors.white),
+                  dropdownColor: AppTheme.primaryBlue,
+                  value: grupoEjercicios,
+                  items: dropdownEjerciciosItems,
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      grupoEjercicios = newValue!;
+                    });
+                  }),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextField(
                 style: TextStyle(color: Colors.white),
-                dropdownColor: AppTheme.primaryBlue,
-                value: grupoMuscular,
-                items: dropdownMusculosItems,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    grupoMuscular = newValue!;
-                  });
-                }),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: DropdownButtonFormField(
-                style: TextStyle(color: Colors.white),
-                dropdownColor: AppTheme.primaryBlue,
-                value: grupoEjercicios,
-                items: dropdownEjerciciosItems,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    grupoEjercicios = newValue!;
-                  });
-                }),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextField(
-              style: TextStyle(color: Colors.white),
-              onChanged: (value) {
-                  numseries = value as int;
-                  setState(() {
-                    
-                  });
-              },
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                  border: UnderlineInputBorder(),
-                  hintText: 'Num Series',
-                  hintStyle: TextStyle(color: Colors.white)),
+                onChanged: (value) {
+                  if (value.isEmpty) {
+                  } else {
+                    numseries = int.parse(value);
+                    if (numseries > 15) {
+                    } else {
+                      setState(() {});
+                    }
+                  }
+                },
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                    border: UnderlineInputBorder(),
+                    hintText: 'Num Series',
+                    hintStyle: TextStyle(color: Colors.white)),
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: FutureBuilder(
-              builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-                for (var i = 1; i < numseries; i++) {
-                  return RowRepeKg();
-                }
-                return Text('fail');
+            ListView.builder(
+              itemCount: numseries,
+              shrinkWrap: true,
+              primary: false,
+              //physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (_, int index) {
+                return RowRepeKg();
               },
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextButton(
-              onPressed: () {},
-              child: Text('Añadir ejercicio'),
-              // ignore: prefer_const_constructors
-              style: TextButton.styleFrom(
-                  backgroundColor: AppTheme.primaryBlue,
-                  primary: Colors.white,
-                  fixedSize: Size(MediaQuery.of(context).size.width, 16)),
-            ),
-          )
-        ],
-      )),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextButton(
+                onPressed: () {},
+                child: Text('Añadir ejercicio'),
+                // ignore: prefer_const_constructors
+                style: TextButton.styleFrom(
+                    backgroundColor: AppTheme.primaryBlue,
+                    primary: Colors.white,
+                    fixedSize: Size(MediaQuery.of(context).size.width, 16)),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
-
