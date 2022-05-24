@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/service/service.dart';
 

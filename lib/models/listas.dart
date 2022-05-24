@@ -1,14 +1,39 @@
-import 'package:my_gym_bro/models/ejercicio.dart';
+import 'package:flutter/material.dart';
+import 'package:my_gym_bro/models/models.dart';
 
 class Listas {
+    
   Listas();
 
-  //creamos una lista vacia
+  //creamos unas listas vacias
   List<Ejercicio> ejerciciosList = List.empty();
 
   List<Ejercicio> ejerciciosRutinaList = List.empty();
 
+  List<Rutina> rutinasList = List.empty();
+
   List<String> musculoList = List.empty();
+
+  List<PR> prList = List.empty();
+
+  get getPrList => prList;
+
+  set setPrList(List<PR> prList) => this.prList = prList;
+
+  void addPrList(PR pr) {
+    prList.add(pr);
+  }
+
+  get getRutinasList => rutinasList;
+
+  set setRutinasList(List<Rutina> rutinasList) =>
+      this.rutinasList = rutinasList;
+
+  void addRutinaList(Rutina rutina) {
+    print('aqui llega');
+    print(rutina);
+    rutinasList.add(rutina);
+  }
 
   get getMusculoList => musculoList;
 
@@ -45,4 +70,8 @@ class Listas {
   void removeEjercicioRutinaList(Ejercicio ejercicio) {
     ejerciciosRutinaList.remove(ejercicio);
   }
+
+
 }
+
+
