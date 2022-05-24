@@ -19,4 +19,10 @@ class Rutina {
 
   set setListEjerciciosRutina(listEjerciciosRutina) =>
       this.listEjerciciosRutina = listEjerciciosRutina;
+
+      @override
+  String toString() {
+    // TODO: implement toString
+    return (this.name + ' ' + this.note);
+  }
 }

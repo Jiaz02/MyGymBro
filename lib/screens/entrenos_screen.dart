@@ -94,8 +94,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                         onPressed: () {
                           rutina= Rutina(nombreRutina,observacionesRutina,List.empty());
                           print(rutina);
-                          Listas().rutinasList.add(rutina);
-                          //Listas().addRutinaList(rutina);
+                          Listas().addRutinaList(rutina);
                           print(Listas().getRutinasList);
                           Navigator.of(context).pop();
                         },

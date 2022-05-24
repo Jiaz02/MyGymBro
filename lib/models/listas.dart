@@ -6,15 +6,15 @@ class Listas {
   Listas();
 
   //creamos unas listas vacias
-  List<Ejercicio> ejerciciosList = List.empty();
+  List<Ejercicio> ejerciciosList = [];
 
-  List<Ejercicio> ejerciciosRutinaList = List.empty();
+  List<Ejercicio> ejerciciosRutinaList  = [];
 
-  List<Rutina> rutinasList = List.empty();
+  List<Rutina> rutinasList  = [];
 
-  List<String> musculoList = List.empty();
+  List<String> musculoList  = [];
 
-  List<PR> prList = List.empty();
+  List<PR> prList  = [];
 
   get getPrList => prList;
 
