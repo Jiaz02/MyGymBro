@@ -24,7 +24,8 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
       backgroundColor: AppTheme.primaryDarkBlue,
       body: ListView.builder(
           itemCount: Listas().rutinasList.length,
-          itemBuilder: (BuildContext context, int index) => const EntrenoCard()),
+          itemBuilder: (BuildContext context, int index) =>
+              const EntrenoCard()),
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           backgroundColor: AppTheme.primaryBlue,
@@ -92,10 +93,11 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                       padding: const EdgeInsets.only(top: 16.0),
                       child: TextButton(
                         onPressed: () {
-                          rutina= Rutina(nombreRutina,observacionesRutina,List.empty());
+                          rutina = Rutina(
+                              nombreRutina, observacionesRutina, List.empty());
                           print(rutina);
                           Listas().addRutinaList(rutina);
-                          print(Listas().getRutinasList);
+                          print(Listas().rutinasList);
                           Navigator.of(context).pop();
                         },
                         child: const Text('Crear Rutina'),

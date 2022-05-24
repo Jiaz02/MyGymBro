@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:my_gym_bro/models/models.dart';
 
 class Listas {
-    
   Listas();
 
   //creamos unas listas vacias
   List<Ejercicio> ejerciciosList = [];
 
-  List<Ejercicio> ejerciciosRutinaList  = [];
+  List<Ejercicio> ejerciciosRutinaList = [];
 
-  List<Rutina> rutinasList  = [];
+  List<Rutina> rutinasList = [];
 
-  List<String> musculoList  = [];
+  List<String> musculoList = [];
 
-  List<PR> prList  = [];
+  List<PR> prList = [];
 
   get getPrList => prList;
 
@@ -31,8 +30,9 @@ class Listas {
 
   void addRutinaList(Rutina rutina) {
     print('aqui llega');
-    print(rutina);
     rutinasList.add(rutina);
+    print(rutinasList);
+    print('añadido');
   }
 
   get getMusculoList => musculoList;
@@ -70,8 +70,4 @@ class Listas {
   void removeEjercicioRutinaList(Ejercicio ejercicio) {
     ejerciciosRutinaList.remove(ejercicio);
   }
-
-
 }
-
-
