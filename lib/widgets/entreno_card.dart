@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:my_gym_bro/models/rutina.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
 
 class EntrenoCard extends StatelessWidget {
-  const EntrenoCard({Key? key}) : super(key: key);
-
+  const EntrenoCard(this.rut, {Key? key}) : super(key: key);
+  final Rutina rut;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,7 +18,13 @@ class EntrenoCard extends StatelessWidget {
           alignment: Alignment.bottomRight,
           children: [
             _backgroundImage(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(rut.name, style: TextStyle(color: Colors.white),),
             _editButton(),
+              ],
+            ),
           ],
         ),
       ),
@@ -38,7 +45,7 @@ class _editButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.only(bottom:20.0,right: 20.0,top:20.0,left: 5.0),
       child: IconButton(
         onPressed: () {},
         icon: const Icon(Icons.edit),

@@ -10,33 +10,40 @@ class EntrenosScreen extends StatefulWidget {
 
   @override
   State<EntrenosScreen> createState() => _EntrenosScreenState();
+
+  State<EntrenosScreen> dispose() => Listas().setRutinasList(_EntrenosScreenState().listas.rutinasList);
+
 }
 
 class _EntrenosScreenState extends State<EntrenosScreen> {
   var nombreRutina = 'Rutina';
   var observacionesRutina = '';
 
+  //PONER SIEMPRE VARIABLES DE ESTA CLASE Y MANDAR LA LISTA COMNPLETA AL SALIR DE AQUI XD
+  Listas listas = Listas();
+
   late Rutina rutina;
+
+  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.primaryDarkBlue,
       body: ListView.builder(
-          itemCount: Listas().rutinasList.length,
+          itemCount: listas.rutinasList.length,
           itemBuilder: (BuildContext context, int index) =>
-              const EntrenoCard()),
+              EntrenoCard(listas.rutinasList[index])),
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           backgroundColor: AppTheme.primaryBlue,
           onPressed: () {
-            showCustomDialog(context, '');
-            setState(() {});
+            showCustomDialog(context);
           }),
     );
   }
 
-  void showCustomDialog(BuildContext context, String message) {
+  void showCustomDialog(BuildContext context) {
     showDialog(
       barrierDismissible: false,
       context: context,
@@ -93,11 +100,13 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                       padding: const EdgeInsets.only(top: 16.0),
                       child: TextButton(
                         onPressed: () {
-                          rutina = Rutina(
-                              nombreRutina, observacionesRutina, List.empty());
-                          print(rutina);
-                          Listas().addRutinaList(rutina);
-                          print(Listas().rutinasList);
+                          rutina =
+                              Rutina(nombreRutina, observacionesRutina, []);
+                              nombreRutina = 'Rutina';
+                              observacionesRutina = '';
+                          listas.addRutinaList(rutina);
+                          print(listas.getRutinasList());
+                          setState(() {});
                           Navigator.of(context).pop();
                         },
                         child: const Text('Crear Rutina'),

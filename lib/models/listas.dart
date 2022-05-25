@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:my_gym_bro/models/models.dart';
 
 class Listas {
@@ -9,45 +8,46 @@ class Listas {
 
   List<Ejercicio> ejerciciosRutinaList = [];
 
-  List<Rutina> rutinasList = [];
-
   List<String> musculoList = [];
 
   List<PR> prList = [];
 
-  get getPrList => prList;
+  List<Rutina> rutinasList = [];
 
-  set setPrList(List<PR> prList) => this.prList = prList;
-
-  void addPrList(PR pr) {
-    prList.add(pr);
+  List<Rutina> getRutinasList() {
+    print('entra a get list $rutinasList');
+    return rutinasList;
   }
 
-  get getRutinasList => rutinasList;
-
-  set setRutinasList(List<Rutina> rutinasList) =>
+  setRutinasList(List<Rutina> rutinasList) =>
       this.rutinasList = rutinasList;
 
   void addRutinaList(Rutina rutina) {
-    print('aqui llega');
     rutinasList.add(rutina);
-    print(rutinasList);
-    print('añadido');
+    print('rutina añadida, total: $rutinasList');
   }
+
+  get getPrList => prList;
+
+  setPrList(List<PR> prList) => this.prList = prList;
+
+  void addPrList(PR pr) {
+    prList.add(pr);
+  }  
 
   get getMusculoList => musculoList;
 
-  set setMusculoList(musculoList) => this.musculoList = musculoList;
+  setMusculoList(musculoList) => this.musculoList = musculoList;
 
   void addMusculoList(String musculo) {
     musculoList.add(musculo);
   }
 
-  get getListEjercicio {
+  List<Ejercicio> getListEjercicio() {
     return ejerciciosList;
   }
 
-  set setEjerciosList(List<Ejercicio> list) {
+  setEjerciosList(List<Ejercicio> list) {
     ejerciciosList = list;
   }
 
@@ -59,7 +59,7 @@ class Listas {
     return ejerciciosRutinaList;
   }
 
-  set setEjerciosRutinaList(List<Ejercicio> list) {
+  setEjerciosRutinaList(List<Ejercicio> list) {
     ejerciciosRutinaList = list;
   }
 
@@ -70,4 +70,5 @@ class Listas {
   void removeEjercicioRutinaList(Ejercicio ejercicio) {
     ejerciciosRutinaList.remove(ejercicio);
   }
+
 }
