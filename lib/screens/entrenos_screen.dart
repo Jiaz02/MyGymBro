@@ -4,6 +4,7 @@ import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/screens/screens.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:my_gym_bro/widgets/widgets.dart';
+import 'package:provider/provider.dart';
 
 class EntrenosScreen extends StatefulWidget {
   const EntrenosScreen({Key? key}) : super(key: key);
@@ -11,8 +12,8 @@ class EntrenosScreen extends StatefulWidget {
   @override
   State<EntrenosScreen> createState() => _EntrenosScreenState();
 
-  State<EntrenosScreen> dispose() => Listas().setRutinasList(_EntrenosScreenState().listas.rutinasList);
-
+  State<EntrenosScreen> dispose() =>
+      Listas().setRutinasList(_EntrenosScreenState().listas.rutinasList);
 }
 
 class _EntrenosScreenState extends State<EntrenosScreen> {
@@ -24,16 +25,26 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
 
   late Rutina rutina;
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.primaryDarkBlue,
       body: ListView.builder(
           itemCount: listas.rutinasList.length,
-          itemBuilder: (BuildContext context, int index) =>
-              EntrenoCard(listas.rutinasList[index])),
+          itemBuilder: (BuildContext context, int index) {
+            return ListTile(
+              title: EntrenoCard(listas.rutinasList[index]),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        DetallesRutina(rutina: listas.rutinasList[index]),
+                  ),
+                );
+              },
+            );
+          }),
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           backgroundColor: AppTheme.primaryBlue,
@@ -100,21 +111,23 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                       padding: const EdgeInsets.only(top: 16.0),
                       child: TextButton(
                         onPressed: () {
+                          //Provider.of(context, listen: false);
                           rutina =
                               Rutina(nombreRutina, observacionesRutina, []);
-                              nombreRutina = 'Rutina';
-                              observacionesRutina = '';
+                          nombreRutina = 'Rutina';
+                          observacionesRutina = '';
                           listas.addRutinaList(rutina);
+                          if (mounted) {
+                            setState(() {});
+                          }
                           print(listas.getRutinasList());
-                          setState(() {});
-                          Navigator.of(context).pop();
+                          Navigator.pop(cxt);
                         },
                         child: const Text('Crear Rutina'),
                         style: TextButton.styleFrom(
                             backgroundColor: AppTheme.primaryBlue,
                             primary: Colors.white,
-                            fixedSize:
-                                Size(MediaQuery.of(context).size.width, 16)),
+                            fixedSize: Size(MediaQuery.of(cxt).size.width, 16)),
                       ),
                     ),
                   ],

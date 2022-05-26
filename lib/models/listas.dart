@@ -12,15 +12,38 @@ class Listas {
 
   List<PR> prList = [];
 
-  List<Rutina> rutinasList = [];
+  List<Rutina> rutinasList = [
+    Rutina('Rutina prueba', 'detallitos', [
+      EjercicioRutina(
+          name: 'name',
+          tip: 'tip',
+          muscle: ['muscle'],
+          url: 'url',
+          numRepes: 9,
+          volumenCarga: 8),
+      EjercicioRutina(
+          name: 'name',
+          tip: 'tip',
+          muscle: ['muscle'],
+          url: 'url',
+          numRepes: 9,
+          volumenCarga: 8),
+      EjercicioRutina(
+          name: 'name',
+          tip: 'tip',
+          muscle: ['muscle'],
+          url: 'url',
+          numRepes: 9,
+          volumenCarga: 8),
+    ])
+  ];
 
   List<Rutina> getRutinasList() {
     print('entra a get list $rutinasList');
     return rutinasList;
   }
 
-  setRutinasList(List<Rutina> rutinasList) =>
-      this.rutinasList = rutinasList;
+  setRutinasList(List<Rutina> rutinasList) => this.rutinasList = rutinasList;
 
   void addRutinaList(Rutina rutina) {
     rutinasList.add(rutina);
@@ -33,7 +56,7 @@ class Listas {
 
   void addPrList(PR pr) {
     prList.add(pr);
-  }  
+  }
 
   get getMusculoList => musculoList;
 
@@ -70,5 +93,4 @@ class Listas {
   void removeEjercicioRutinaList(Ejercicio ejercicio) {
     ejerciciosRutinaList.remove(ejercicio);
   }
-
 }
