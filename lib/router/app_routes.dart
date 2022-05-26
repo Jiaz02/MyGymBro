@@ -4,7 +4,7 @@ import 'package:my_gym_bro/models/models.dart';
 import 'package:my_gym_bro/screens/screens.dart';
 
 class AppRoutes {
-  static const initialRoute = 'home';
+  static const initialRoute = 'splash';
 
 //pantallas disponibles
   static final menuOption = <MenuOption>[

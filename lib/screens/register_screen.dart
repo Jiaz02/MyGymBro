@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:my_gym_bro/screens/screens.dart';
-import 'package:my_gym_bro/service/auth_service.dart';
-import 'package:my_gym_bro/service/service.dart';
-import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/login_form_provider.dart';
+import '../service/service.dart';
 import '../ui/input_decorations.dart';
 import '../widgets/widgets.dart';
 
-const users = const {
-  'pruevitas@gmail.com': '12345',
-  'hunter@gmail.com': 'hunter',
-};
 
-class LoginScreen extends StatelessWidget {
+class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +25,7 @@ class LoginScreen extends StatelessWidget {
                   children: [
 
                     SizedBox( height: 10 ),
-                    Text('Login', style: Theme.of(context).textTheme.headline4 ),
+                    Text('Crear cuenta', style: Theme.of(context).textTheme.headline4 ),
                     SizedBox( height: 30 ),
                     
                     ChangeNotifierProvider(
@@ -50,12 +44,12 @@ class LoginScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              RegisterScreen())), 
+                              LoginScreen())), 
                 style: ButtonStyle(
                   overlayColor: MaterialStateProperty.all( Colors.indigo.withOpacity(0.1)),
                   shape: MaterialStateProperty.all( StadiumBorder() )
                 ),
-                child: Text('Crear una nueva cuenta', style: TextStyle( fontSize: 18, color: Colors.black87 ),)
+                child: Text('¿Ya tienes una cuenta?', style: TextStyle( fontSize: 18, color: Colors.black87 ),)
               ),
               SizedBox( height: 50 ),
             ],
@@ -98,7 +92,7 @@ class _LoginForm extends StatelessWidget {
                   
                   return regExp.hasMatch(value ?? '')
                     ? null
-                    : 'Introduce un correo valido';
+                    : 'Eso no parece un correo...';
 
               },
             ),
@@ -151,18 +145,13 @@ class _LoginForm extends StatelessWidget {
 
 
                 // TODO: validar si el login es correcto
-                final String? errorMessage = await authService.login(loginForm.email, loginForm.password);
+                final String? errorMessage = await authService.createUser(loginForm.email, loginForm.password);
 
                 if ( errorMessage == null ) {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              HomeScreen()));
+                  Navigator.pushReplacementNamed(context, 'home');
                 } else {
                   // TODO: mostrar error en pantalla
-                  // print( errorMessage );
-                  NotificationsService.showSnackbar(errorMessage);
+                  print( errorMessage );
                   loginForm.isLoading = false;
                 }
               }

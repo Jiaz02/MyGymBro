@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget splash = SplashScreenView(
-      navigateRoute: const LoginScreen(),
+      navigateRoute: LoginScreen(),
       duration: 5000,
       speed: 150,
       imageSize: 150,
