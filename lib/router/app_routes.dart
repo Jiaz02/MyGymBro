@@ -4,7 +4,7 @@ import 'package:my_gym_bro/models/models.dart';
 import 'package:my_gym_bro/screens/screens.dart';
 
 class AppRoutes {
-  static const initialRoute = 'splash';
+  static const initialRoute = 'home';
 
 //pantallas disponibles
   static final menuOption = <MenuOption>[
@@ -70,7 +70,7 @@ class AppRoutes {
         image: AssetImage('assets/graficos.png'),
         icon: Icons.tab,
         name: 'Ejercicios Screen',
-        screen: const EjerciciosScreen()),
+        screen: EjerciciosScreen()),
     MenuOption(
         route: 'user',
         image: AssetImage('assets/graficos.png'),
