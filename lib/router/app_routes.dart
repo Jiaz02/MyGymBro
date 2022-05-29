@@ -25,7 +25,7 @@ class AppRoutes {
         image: AssetImage('assets/pesos.png'),
         icon: Icons.tab,
         name: 'Pesos Screen',
-        screen: const PesoScreen()),
+        screen: PesoScreen()),
     MenuOption(
         route: 'splash',
         image: AssetImage('assets/graficos.png'),
