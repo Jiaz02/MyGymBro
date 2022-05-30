@@ -79,7 +79,7 @@
             "tip": "Intenta 'romper la paralela' al bajar. Segun la verticalidad del movimiento y apertura del agarre puedes hacer que intervenga mas el pectoral. Pruebalo con peso ;) ",
             "muscle": [
                 "Triceps",
-                "pecotral",
+                "Pectoral",
                 "Deltoides anterior"
             ],
             "url":""
@@ -105,7 +105,7 @@
             "name": "Triceps en polea sobre la cabeza",
             "tip": "Evita mover los codos y baja todo lo que tu flexibilidad te permita.",
             "muscle": [
-                "triceps"
+                "Triceps"
             ],
             "url":""
         },
@@ -114,10 +114,10 @@
             "tip": "Segun la amplitud del agarre cambiaremos el porcentaje de intervencion de los diferentes musculos que participan. Evita mover la espalda hacia atras para reducir la intervencion del lumbar y asi no dañarte.",
             "muscle": [
                 "Dorsal",
-                "ticeps",
-                "biceps",
-                "trapecio",
-                "deltoides posterior"
+                "Triceps",
+                "Biceps",
+                "Trapecio",
+                "Deltoides posterior"
             ],
             "url":""
         },
@@ -126,10 +126,10 @@
             "tip": "Segun la amplitud del agarre cambiaremos el porcentaje de intervencion de los diferentes musculos que participan. Asegurate de ejercer la fuerza con el dorsal y no el biceps al llevar la polea al pecho. Evita mover la espalda hacia atras para reducir la intervencion del lumbar y asi no dañarte.",
             "muscle": [
                 "Dorsal",
-                "ticeps",
-                "biceps",
-                "trapecio",
-                "deltoides posterior"
+                "Triceps",
+                "Biceps",
+                "Trapecio",
+                "Deltoides posterior"
             ],
             "url":""
         },
@@ -138,8 +138,8 @@
             "tip": "Flexiona ligeramente las rodillas y evita balanceos. Tambien se puede hacer en un banco plano con mancuernas, pero el rango de movimiento efectivo es muy reducido, es peligroso por tener una mancuerna muy pesada sobre la cabeza sin un agarre seguro. NO TRABAJA A PENAS EL PECTORAL.",
             "muscle": [
                 "Dorsal",
-                "ticeps",
-                "trapecio"
+                "Triceps",
+                "Trapecio"
             ],
             "url":""
         },

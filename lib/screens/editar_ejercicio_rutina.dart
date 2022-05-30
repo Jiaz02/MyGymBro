@@ -1,22 +1,26 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:my_gym_bro/models/ejercicio_rutina.dart';
 import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:my_gym_bro/widgets/widgets.dart';
 
-class AddEntrenosScreen extends StatefulWidget {
-  const AddEntrenosScreen({Key? key}) : super(key: key);
+class EditarEjercicioRutinaScreen extends StatefulWidget {
+  EditarEjercicioRutinaScreen({Key? key, required this.ejercicio}) : super(key: key);
+
+ EjercicioRutina ejercicio;
 
   @override
-  State<AddEntrenosScreen> createState() => _AddEntrenosScreenState();
+  State<EditarEjercicioRutinaScreen> createState() => _EditarEjercicioRutinaScreen();
 }
 
-class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
-  var numseries = 1;
+class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
+  late var numseries = widget.ejercicio.getNumRepes;
+
 
   List<DropdownMenuItem<String>> get dropdownMusculosItems {
-    List<DropdownMenuItem<String>> menuMusculosItems = [
+    List<DropdownMenuItem<String>> menuMusculosItems = const [
       DropdownMenuItem(child: Text("Selecciona un grupo muscular"), value: ""),
       DropdownMenuItem(child: Text("Pectoral"), value: "Pectoral"),
       DropdownMenuItem(child: Text("Abdomen"), value: "Abdomen"),
@@ -92,6 +96,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextField(
+                
                 style: TextStyle(color: Colors.white),
                 onChanged: (value) {
                   if (value.isEmpty) {
@@ -106,9 +111,11 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                   }
                 },
                 keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                     border: UnderlineInputBorder(),
-                    hintText: 'Num Series',
+                    hintText: numseries.toString(),
+                    label: Text('Num Series'),
+                    labelStyle: TextStyle(color: Colors.white),
                     hintStyle: TextStyle(color: Colors.white)),
               ),
             ),

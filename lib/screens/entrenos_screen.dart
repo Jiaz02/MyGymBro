@@ -11,9 +11,7 @@ class EntrenosScreen extends StatefulWidget {
 
   @override
   State<EntrenosScreen> createState() => _EntrenosScreenState();
-
-  State<EntrenosScreen> dispose() =>
-      Listas().setRutinasList(_EntrenosScreenState().listas.rutinasList);
+  
 }
 
 class _EntrenosScreenState extends State<EntrenosScreen> {

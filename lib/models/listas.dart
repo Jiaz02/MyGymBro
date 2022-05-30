@@ -13,23 +13,23 @@ class Listas {
   List<PR> prList = [];
 
   List<Rutina> rutinasList = [
-    Rutina('Rutina prueba', 'detallitos', [
+    Rutina('Rutina prueba', 'Dormí mal', [
       EjercicioRutina(
-          name: 'name',
+          name: 'Press',
           tip: 'tip',
           muscle: ['muscle'],
           url: 'url',
           numRepes: 9,
           volumenCarga: 8),
       EjercicioRutina(
-          name: 'name',
+          name: 'Fondos',
           tip: 'tip',
           muscle: ['muscle'],
           url: 'url',
           numRepes: 9,
           volumenCarga: 8),
       EjercicioRutina(
-          name: 'name',
+          name: 'Press inclinado',
           tip: 'tip',
           muscle: ['muscle'],
           url: 'url',

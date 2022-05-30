@@ -48,7 +48,7 @@ class EjercicioDetailScreen extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Text(ejercicio.tip,style: TextStyle(color: Colors.white,fontSize: 14),),
+          child: Text('Consejito: '+ejercicio.tip,style: TextStyle(color: Colors.white,fontSize: 14),),
         ),
       ]),
     );
