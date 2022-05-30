@@ -19,7 +19,7 @@
                 "Femoral",
                 "Dorsal"
             ],
-            "url":""
+            "url":"assets/deadlift.gif"
         },
         {
             "name": "Hip Thrust",
@@ -30,7 +30,7 @@
                 "Isquiosurales",
                 "Abdomen"
             ],
-            "url":""
+            "url":"assets/hipthrust.gif"
         },        
         {
             "name": "Press Banca con Barra",
@@ -40,7 +40,7 @@
                 "Triceps",
                 "Deltoides anterior"
             ],
-            "url":""
+            "url":"assets/pressbanca.gif"
         },
         {
             "name": "Dominada",
@@ -63,7 +63,7 @@
                 "Triceps",
                 "Deltoides anterior"
             ],
-            "url":""
+            "url":"assets/press_horizontal_mancuerna.gif"
         },
         {
             "name": "Cruces en polea",
@@ -72,7 +72,7 @@
                 "Pectoral",
                 "Deltoides anterior"
             ],
-            "url":""
+            "url":"assets/crucespolea.gif"
         },
         {
             "name": "Fondos",
@@ -82,7 +82,7 @@
                 "Pectoral",
                 "Deltoides anterior"
             ],
-            "url":""
+            "url":"assets/fondos.gif"
         },
         {
             "name": "Triceps el polea alta",
@@ -90,7 +90,7 @@
             "muscle": [
                 "Triceps"
             ],
-            "url":""
+            "url":"assets/tricepspoleaalta.gif"
         },
         {
             "name": "Contractora",
@@ -99,7 +99,7 @@
                 "Pectoral",
                 "Deltoides anterior"
             ],
-            "url":""
+            "url":"assets/contractora.gif"
         },
         {
             "name": "Triceps en polea sobre la cabeza",
@@ -107,7 +107,7 @@
             "muscle": [
                 "Triceps"
             ],
-            "url":""
+            "url":"assets/tricepspoleasobrecabeza.gif"
         },
         {
             "name": "Jalon",
@@ -119,7 +119,7 @@
                 "Trapecio",
                 "Deltoides posterior"
             ],
-            "url":""
+            "url":"assets/jalon.gif"
         },
         {
             "name": "Remo",
@@ -131,7 +131,7 @@
                 "Trapecio",
                 "Deltoides posterior"
             ],
-            "url":""
+            "url":"assets/remo.gif"
         },
         {
             "name": "Pull over en polea",
@@ -150,7 +150,7 @@
                 "Biceps",
                 "Demás flexores del codo"
             ],
-            "url":""
+            "url":"assets/curl.gif"
         },
         {
             "name": "Curl de biceps con banco inclinado",
@@ -159,7 +159,7 @@
                 "Biceps",
                 "Demás flexores del codo"
             ],
-            "url":""
+            "url":"assets/curlbanco.gif"
         },
         {
             "name": "Curl de biceps martillo",
@@ -168,7 +168,7 @@
                 "Biceps",
                 "Demás flexores del codo"
             ],
-            "url":""
+            "url":"assets/martillo.gif"
         },
         {
             "name": "Curl de biceps prono",
@@ -177,7 +177,7 @@
                 "Biceps",
                 "Demás flexores del codo"
             ],
-            "url":""
+            "url":"assets/curl-prono.gif"
         },
         {
             "name": "Curl de biceps en banco Scott",
@@ -186,7 +186,7 @@
                 "Biceps",
                 "Demás flexores del codo"
             ],
-            "url":""
+            "url":"assets/scott.gif"
         },
         {
             "name": "Prensa",
@@ -195,7 +195,7 @@
                 "Cuadriceps",
                 "Isquiosurales"
             ],
-            "url":""
+            "url":"assets/prensa.gif"
         },
         {
             "name": "Sentadilla bulgara",
@@ -204,7 +204,7 @@
                 "Cuadriceps",
                 "Isquiosurales"
             ],
-            "url":""
+            "url":"assets/bulgara.gif"
         },
         {
             "name": "Zancadas",
@@ -213,7 +213,7 @@
                 "Cuadriceps",
                 "Isquiosurales"
             ],
-            "url":""
+            "url":"assets/zancadas.gif"
         },
         {
             "name": "Extension de rodillas",
@@ -239,7 +239,7 @@
                 "Gemelos",
                 "Soleo"
             ],
-            "url":""
+            "url":"assets/gemelos.gif"
         },
         {
             "name": "Flexion de tobillo en banco",
@@ -247,7 +247,7 @@
             "muscle": [
                 "Soleo"
             ],
-            "url":""
+            "url":"assets/sentado.gif"
         }
     ]
 }
