@@ -8,7 +8,7 @@
                 "Gluteos",
                 "Femoral"
             ],
-            "url":""
+            "url":"assets/sentadilla.gif"
         },
         {
             "name": "Peso Muerto",
@@ -144,7 +144,7 @@
             "url":""
         },
         {
-            "name": "Crul de biceps",
+            "name": "Curl de biceps",
             "tip": "Con barra, en polea o con mancuernas asegurate de tener un agarre supino en todo momento y evita balanceos. Al flexionar completamente el codo puedes flexionar tambien un poco el deltoides para contraer del todo el biceps puesto que tambien es flexor del hombro.",
             "muscle": [
                 "Biceps",
@@ -153,7 +153,7 @@
             "url":""
         },
         {
-            "name": "Crul de biceps con banco inclinado",
+            "name": "Curl de biceps con banco inclinado",
             "tip": "Al sentarnos en un banco nos será más facil evitar balanceos. Si incliamos 5 o 10 el banco el movimiento sera mas aislado en el biceps, el peso que puedas mover se va a ver reducido.",
             "muscle": [
                 "Biceps",
@@ -162,7 +162,7 @@
             "url":""
         },
         {
-            "name": "Crul de biceps martillo",
+            "name": "Curl de biceps martillo",
             "tip": "Al usar el agarre 'martillo' o neutro reducimos la intervencion del biceps lo que nos permite inferir mas en los demas flexores del codo.",
             "muscle": [
                 "Biceps",
@@ -171,7 +171,7 @@
             "url":""
         },
         {
-            "name": "Crul de biceps prono",
+            "name": "Curl de biceps prono",
             "tip": "Al usar el agarre prono reducimos la intervencion del biceps lo que nos permite inferir mas en los demas flexores del codo.",
             "muscle": [
                 "Biceps",
@@ -180,8 +180,8 @@
             "url":""
         },
         {
-            "name": "Crul de biceps en banco Scott",
-            "tip": "Al tener los codos adelantados y apoyados en el banco podemos aislar el biceps. Asegurate de bajar hasta tener el brazo extendido. Baja el peso respecto al crull habitual y ante la mas minima molestia para.",
+            "name": "Curl de biceps en banco Scott",
+            "tip": "Al tener los codos adelantados y apoyados en el banco podemos aislar el biceps. Asegurate de bajar hasta tener el brazo extendido. Baja el peso respecto al Curll habitual y ante la mas minima molestia para.",
             "muscle": [
                 "Biceps",
                 "Demás flexores del codo"
