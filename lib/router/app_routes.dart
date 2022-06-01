@@ -70,7 +70,7 @@ class AppRoutes {
         image: AssetImage('assets/graficos.png'),
         icon: Icons.tab,
         name: 'User Screen',
-        screen: const UserScreen()),
+        screen: UserScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

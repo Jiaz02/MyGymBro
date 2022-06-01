@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_gym_bro/screens/screens.dart';
+import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:provider/provider.dart';
 
 import '../service/service.dart';
@@ -34,7 +35,9 @@ class CheckAuthScreen extends StatelessWidget {
               });
             }
 
-            return Container();
+            return Container(
+              color: AppTheme.primaryBlue,
+            );
           },
         ),
       ),
