@@ -12,16 +12,15 @@ import 'theme/app_theme.dart';
 
 void main() => {runApp(AppState())};
 
-
-
 class AppState extends StatelessWidget {
   const AppState({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers:[
-        ChangeNotifierProvider(create: ( _ ) => AuthService() ),
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthService()),
+        ChangeNotifierProvider(create: (_) => LeerJsonService()),
         //ChangeNotifierProvider(create: ( _ )=> Listas())
       ],
       child: MyApp(),
@@ -29,10 +28,8 @@ class AppState extends StatelessWidget {
   }
 }
 
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@
 
 // import 'package:http/http.dart' as http;
 
-// class PeticionesService {
+// class PeticionesService extends ChangeNotifier{
 //   Future<http.Response> fetchPost() async {
 //     var response =
 //         await http.get(Uri.parse('/assets/ejercicios.json/ejercicio'));

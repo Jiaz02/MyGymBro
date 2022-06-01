@@ -4,26 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/screens/screens.dart';
+import 'package:my_gym_bro/service/leer_json_service.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:my_gym_bro/widgets/widgets.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 import '../models/models.dart';
-
-Future<Ejercicio> fetchEjercicio() async {
-  final String response = await rootBundle.loadString('assets/ejercicios.json');
-  return Ejercicio.fromJson(json.decode(response));
-}
+import '../service/service.dart';
 
 class EjerciciosScreen extends StatelessWidget {
   EjerciciosScreen({Key? key}) : super(key: key);
 
-  Future<Ejercicio> ejercicio = fetchEjercicio();
-
   @override
   Widget build(BuildContext context) {
+    final leerService = Provider.of<LeerJsonService>(context, listen: false);
+
     return FutureBuilder<Ejercicio>(
-      future: ejercicio,
+      future: leerService.fetchEjercicio(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return ListView.builder(

@@ -4,9 +4,9 @@ class Listas {
   Listas();
 
   //creamos unas listas vacias
-  List<Ejercicio> ejerciciosList = [];
+  List<EjercicioElement> ejerciciosList = [];
 
-  List<Ejercicio> ejerciciosRutinaList = [];
+  List<EjercicioElement> ejerciciosRutinaList = [];
 
   List<String> musculoList = [];
 
@@ -66,15 +66,15 @@ class Listas {
     musculoList.add(musculo);
   }
 
-  List<Ejercicio> getListEjercicio() {
+  List<EjercicioElement> getListEjercicio() {
     return ejerciciosList;
   }
 
-  setEjerciosList(List<Ejercicio> list) {
+  setEjerciosList(List<EjercicioElement> list) {
     ejerciciosList = list;
   }
 
-  void addEjercicioList(Ejercicio ejercicio) {
+  void addEjercicioList(EjercicioElement ejercicio) {
     ejerciciosList.add(ejercicio);
   }
 
@@ -82,15 +82,15 @@ class Listas {
     return ejerciciosRutinaList;
   }
 
-  setEjerciosRutinaList(List<Ejercicio> list) {
+  setEjerciosRutinaList(List<EjercicioElement> list) {
     ejerciciosRutinaList = list;
   }
 
-  void addEjercicioRutinaList(Ejercicio ejercicio) {
+  void addEjercicioRutinaList(EjercicioElement ejercicio) {
     ejerciciosRutinaList.add(ejercicio);
   }
 
-  void removeEjercicioRutinaList(Ejercicio ejercicio) {
+  void removeEjercicioRutinaList(EjercicioElement ejercicio) {
     ejerciciosRutinaList.remove(ejercicio);
   }
 
