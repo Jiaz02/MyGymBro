@@ -17,7 +17,7 @@ class CheckAuthScreen extends StatelessWidget {
 
     return Scaffold(
       body: Center(
-        child: Column(
+        child: Stack(
           children: [
             FutureBuilder(
               future: authService.readToken(),
@@ -54,10 +54,6 @@ class CheckAuthScreen extends StatelessWidget {
                     Future.microtask(() {
                       controller.ejerciciosList =
                           snapshot.data?.ejercicio ?? [];
-
-// TODO: preguntar a Alberto como hacer la mierda de las listas
-
-                      print(controller.ejerciciosList);
                     });
                   }
 
