@@ -8,20 +8,20 @@ import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:my_gym_bro/widgets/widgets.dart';
 
 class EditarEjercicioRutinaScreen extends StatefulWidget {
-  EditarEjercicioRutinaScreen({Key? key, required this.ejercicio}) : super(key: key);
+  EditarEjercicioRutinaScreen({Key? key, required this.ejercicio})
+      : super(key: key);
 
- EjercicioRutina ejercicio;
+  EjercicioRutina ejercicio;
 
   @override
-  State<EditarEjercicioRutinaScreen> createState() => _EditarEjercicioRutinaScreen();
+  State<EditarEjercicioRutinaScreen> createState() =>
+      _EditarEjercicioRutinaScreen();
 }
 
 class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
-
   late var numseries = widget.ejercicio.listSeries.length;
 
   late List<RowRepKg> list = [];
-
 
   List<DropdownMenuItem<String>> get dropdownMusculosItems {
     List<DropdownMenuItem<String>> menuMusculosItems = const [
@@ -35,10 +35,12 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
       DropdownMenuItem(child: Text("Femoral"), value: "Femoral"),
       DropdownMenuItem(child: Text("Isquiosurales"), value: "Isquiosurales"),
       DropdownMenuItem(child: Text("Triceps"), value: "Triceps"),
-      DropdownMenuItem(child: Text("Deltoides anterior"), value: "Deltoides anterior"),
+      DropdownMenuItem(
+          child: Text("Deltoides anterior"), value: "Deltoides anterior"),
       DropdownMenuItem(child: Text("Trapecio"), value: "Trapecio"),
       DropdownMenuItem(child: Text("Oblicuos"), value: "Oblicuos"),
-      DropdownMenuItem(child: Text("Deltoides posterior"), value: "Deltoides posterior"),
+      DropdownMenuItem(
+          child: Text("Deltoides posterior"), value: "Deltoides posterior"),
       DropdownMenuItem(child: Text("Gemelos"), value: "Gemelos"),
       DropdownMenuItem(child: Text("Soleo"), value: "Soleo"),
     ];
@@ -100,7 +102,6 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextField(
-                
                 style: TextStyle(color: Colors.white),
                 onChanged: (value) {
                   if (value.isEmpty) {
@@ -136,7 +137,15 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
               padding: const EdgeInsets.all(16.0),
               child: TextButton(
                 onPressed: () {
-                  widget.ejercicio=EjercicioRutina(name: grupoEjercicios, tip: '', muscle: [], url: 'url', listSeries: );
+                  widget.ejercicio.listSeries = list;
+                  print(widget.ejercicio);
+                  print(list);
+                  widget.ejercicio = EjercicioRutina(
+                      name: grupoEjercicios,
+                      tip: '',
+                      muscle: [],
+                      url: 'url',
+                      listSeries: widget.ejercicio.listSeries);
                   Navigator.pop(context);
                 },
                 child: Text('Guardar ejercicio'),
