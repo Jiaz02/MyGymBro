@@ -16,21 +16,21 @@ class Listas extends GetxController {
   List<Rutina> rutinasList = [
     Rutina('Rutina prueba', 'Dormí mal', [
       EjercicioRutina(
-        name: 'Press',
+        name: 'Press Banca con Barra',
         tip: 'tip',
         muscle: ['muscle'],
         url: 'url',
         listSeries: [RowRepKg(repes: 4, kg: 4)],
       ),
       EjercicioRutina(
-        name: 'Fondos',
+        name: 'Press Banca con Barra',
         tip: 'tip',
         muscle: ['muscle'],
         url: 'url',
         listSeries: [RowRepKg(repes: 4, kg: 4)],
       ),
       EjercicioRutina(
-        name: 'Press inclinado',
+        name: 'Press Banca con Barra',
         tip: 'tip',
         muscle: ['muscle'],
         url: 'url',

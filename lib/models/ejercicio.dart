@@ -16,9 +16,6 @@ class Ejercicio {
             json["ejercicio"].map((x) => EjercicioElement.fromJson(x))),
       );
 
-
-  
-
   Map<String, dynamic> toJson() => {
         "ejercicio": List<dynamic>.from(ejercicio.map((x) => x.toJson())),
       };
@@ -51,4 +48,9 @@ class EjercicioElement {
         "muscle": List<dynamic>.from(muscle.map((x) => x)),
         "url": url,
       };
+
+  @override
+  String toString() {
+    return name + ' ' + tip + ' ' + muscle.toString() + ' ' + url;
+  }
 }

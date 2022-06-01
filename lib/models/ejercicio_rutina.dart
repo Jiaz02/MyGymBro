@@ -29,6 +29,14 @@ class EjercicioRutina {
 
   @override
   String toString() {
-    return this.name + ' ' + listSeries.toString();
+    return name +
+        ' ' +
+        tip +
+        ' ' +
+        muscle.toString() +
+        ' ' +
+        url +
+        ' ' +
+        listSeries.toString();
   }
 }

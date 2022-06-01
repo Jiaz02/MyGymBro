@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_gym_bro/models/ejercicio_rutina.dart';
 import 'package:my_gym_bro/models/models.dart';
 import 'package:my_gym_bro/router/app_routes.dart';
@@ -51,16 +52,19 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
   List<DropdownMenuItem<String>> get dropdownEjerciciosItems {
     List<DropdownMenuItem<String>> menuEjerciciosItems = [
       DropdownMenuItem(child: Text("Selecciona el Ejercicio"), value: ""),
-      DropdownMenuItem(child: Text("Press"), value: "Press"),
-      DropdownMenuItem(child: Text("Abdomen"), value: "Abdomen"),
-      DropdownMenuItem(child: Text("Dorsal"), value: "Dorsal"),
-      DropdownMenuItem(child: Text("Biceps"), value: "Biceps"),
+      DropdownMenuItem(child: Text("Sentadilla"), value: "Sentadilla"),
+      DropdownMenuItem(child: Text("Peso Muerto"), value: "Peso Muerto"),
+      DropdownMenuItem(child: Text("Hip Thrust"), value: "Hip Thrust"),
+      DropdownMenuItem(
+          child: Text("Press Banca con Barra"), value: "Press Banca con Barra"),
     ];
     return menuEjerciciosItems;
   }
 
   var grupoMuscular = "";
   late var grupoEjercicios = widget.ejercicio.name;
+  final controller = Get.find<Listas>();
+  late EjercicioElement ejer;
 
   @override
   Widget build(BuildContext context) {
@@ -138,16 +142,23 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
               padding: const EdgeInsets.all(16.0),
               child: TextButton(
                 onPressed: () {
-// TODO: mirar de meter aqui la equivalencia de ejercicio y tener hardcoreada la lista xds
+                  for (var item in controller.ejerciciosList) {
+                    if (item.name == grupoEjercicios) {
+                      ejer = EjercicioElement(
+                          name: item.name,
+                          tip: item.tip,
+                          muscle: item.muscle,
+                          url: item.url);
+                    }
+                  }
 
                   widget.ejercicio.listSeries = list;
                   widget.ejercicio.name = grupoEjercicios;
-                  print(widget.ejercicio);
                   widget.ejercicio = EjercicioRutina(
                       name: grupoEjercicios,
-                      tip: '',
-                      muscle: [],
-                      url: 'url',
+                      tip: ejer.tip,
+                      muscle: ejer.muscle,
+                      url: ejer.url,
                       listSeries: widget.ejercicio.listSeries);
                   Navigator.pop(context);
                 },
