@@ -161,6 +161,7 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                       muscle: ejer.muscle,
                       url: ejer.url,
                       listSeries: widget.ejercicio.listSeries);
+                  //TODO: mirar esto
                   print(widget.ejercicio);
                   Navigator.pop(context);
                 },
