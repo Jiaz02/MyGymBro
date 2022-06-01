@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:my_gym_bro/models/ejercicio_rutina.dart';
+import 'package:my_gym_bro/models/models.dart';
 import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:my_gym_bro/widgets/widgets.dart';
@@ -16,7 +17,10 @@ class EditarEjercicioRutinaScreen extends StatefulWidget {
 }
 
 class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
-  late var numseries = widget.ejercicio.getNumRepes;
+
+  late var numseries = widget.ejercicio.listSeries.length;
+
+  late List<RowRepKg> list = [];
 
 
   List<DropdownMenuItem<String>> get dropdownMusculosItems {
@@ -114,7 +118,7 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                 decoration: InputDecoration(
                     border: UnderlineInputBorder(),
                     hintText: numseries.toString(),
-                    label: Text('Num Series'),
+                    // label: Text('Num Series'),
                     labelStyle: TextStyle(color: Colors.white),
                     hintStyle: TextStyle(color: Colors.white)),
               ),
@@ -125,25 +129,17 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
               primary: false,
               //physics: NeverScrollableScrollPhysics(),
               itemBuilder: (_, int index) {
-                return RowRepeKg();
+                return RowRepeKg(list);
               },
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: TextField(
-                style: TextStyle(color: Colors.white),
-                onChanged: (value) {},
-                decoration: const InputDecoration(
-                    border: UnderlineInputBorder(),
-                    hintText: 'Observaciones',
-                    hintStyle: TextStyle(color: Colors.white)),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
               child: TextButton(
-                onPressed: () {},
-                child: Text('Añadir ejercicio'),
+                onPressed: () {
+                  widget.ejercicio=EjercicioRutina(name: grupoEjercicios, tip: '', muscle: [], url: 'url', listSeries: );
+                  Navigator.pop(context);
+                },
+                child: Text('Guardar ejercicio'),
                 // ignore: prefer_const_constructors
                 style: TextButton.styleFrom(
                     backgroundColor: AppTheme.primaryBlue,

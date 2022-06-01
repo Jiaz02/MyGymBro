@@ -34,12 +34,6 @@ class AppRoutes {
         screen: const SplashScreen()),
     MenuOption(
         route: 'reto',
-        image: AssetImage('assets/add_entreno.png'),
-        icon: Icons.smart_display_sharp,
-        name: 'Retos Screen',
-        screen: const AddEntrenosScreen()),
-    MenuOption(
-        route: 'entreno',
         image: AssetImage('assets/retos.png'),
         icon: Icons.smart_display_sharp,
         name: 'Entrenos Screen',

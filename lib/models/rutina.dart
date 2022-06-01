@@ -23,6 +23,6 @@ class Rutina {
       @override
   String toString() {
     // TODO: implement toString
-    return (this.name + ' ' + this.note);
+    return (this.name + ' ' + this.note + this.listEjerciciosRutina.toString());
   }
 }

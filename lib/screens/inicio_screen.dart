@@ -25,30 +25,7 @@ class _InicioScreenState extends State<InicioScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 26, left: 9, bottom: 26),
-              child: GestureDetector(
-                  child: Container(
-                      width: 175,
-                      height: size.height / 5,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(30),
-                        child: const Image(
-                          image: AssetImage('assets/add_entreno.png'),
-                          fit: BoxFit.cover,
-                        ),
-                      )),
-                  onTap: () => 
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              AddEntrenosScreen()))
-                  ),
-
-              
-                              
-            ),
+            
             Padding(
               padding: const EdgeInsets.only(top: 26, left: 9, bottom: 26),
               child: GestureDetector(

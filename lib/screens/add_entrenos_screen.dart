@@ -1,19 +1,23 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:my_gym_bro/models/ejercicio_rutina.dart';
+import 'package:my_gym_bro/models/rutina.dart';
 import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:my_gym_bro/widgets/widgets.dart';
 
 class AddEntrenosScreen extends StatefulWidget {
-  const AddEntrenosScreen({Key? key}) : super(key: key);
+  AddEntrenosScreen({Key? key, required this.rutina}) : super(key: key);
+
+Rutina rutina;
 
   @override
   State<AddEntrenosScreen> createState() => _AddEntrenosScreenState();
 }
 
 class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
-  var numseries = 1;
+  
 
   List<DropdownMenuItem<String>> get dropdownMusculosItems {
     List<DropdownMenuItem<String>> menuMusculosItems = [
@@ -50,6 +54,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
 
   var grupoMuscular = "";
   var grupoEjercicios = "";
+  var numseries = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -112,30 +117,22 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                     hintStyle: TextStyle(color: Colors.white)),
               ),
             ),
-            ListView.builder(
-              itemCount: numseries,
-              shrinkWrap: true,
-              primary: false,
-              //physics: NeverScrollableScrollPhysics(),
-              itemBuilder: (_, int index) {
-                return RowRepeKg();
-              },
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: TextField(
-                style: TextStyle(color: Colors.white),
-                onChanged: (value) {},
-                decoration: const InputDecoration(
-                    border: UnderlineInputBorder(),
-                    hintText: 'Observaciones',
-                    hintStyle: TextStyle(color: Colors.white)),
-              ),
-            ),
+            // ListView.builder(
+            //   itemCount: numseries,
+            //   shrinkWrap: true,
+            //   primary: false,
+            //   itemBuilder: (_, int index) {
+            //     return RowRepeKg(EjercicioRutina eje = EjercicioRutina(name: name, tip: tip, muscle: muscle, url: url, listSeries: listSeries));
+            //   },
+            // ),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  widget.rutina.listEjerciciosRutina.add(EjercicioRutina(name: grupoEjercicios, tip: '', muscle: [], url: '', listSeries: [], ));
+                  print(widget.rutina);
+                  Navigator.pop(context);
+                },
                 child: Text('Añadir ejercicio'),
                 // ignore: prefer_const_constructors
                 style: TextButton.styleFrom(

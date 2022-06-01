@@ -9,7 +9,7 @@ class DetallesRutina extends StatelessWidget {
   DetallesRutina({Key? key, required this.rutina}) : super(key: key);
 
   Rutina rutina;
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +58,7 @@ class DetallesRutina extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
+              'Observaciones: '+
               rutina.note,
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
@@ -65,7 +66,13 @@ class DetallesRutina extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              AddEntrenosScreen(rutina: rutina),
+                        ),
+                      );},
               child: Text('Añadir Ejercicio'),
               style: TextButton.styleFrom(
                   backgroundColor: AppTheme.primaryBlue,

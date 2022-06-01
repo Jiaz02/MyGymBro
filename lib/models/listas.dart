@@ -15,26 +15,26 @@ class Listas {
   List<Rutina> rutinasList = [
     Rutina('Rutina prueba', 'Dormí mal', [
       EjercicioRutina(
-          name: 'Press',
-          tip: 'tip',
-          muscle: ['muscle'],
-          url: 'url',
-          numRepes: 9,
-          volumenCarga: 8),
+        name: 'Press',
+        tip: 'tip',
+        muscle: ['muscle'],
+        url: 'url',
+        listSeries: [RowRepKg(repes: 4, kg: 4)],
+      ),
       EjercicioRutina(
-          name: 'Fondos',
-          tip: 'tip',
-          muscle: ['muscle'],
-          url: 'url',
-          numRepes: 9,
-          volumenCarga: 8),
+        name: 'Fondos',
+        tip: 'tip',
+        muscle: ['muscle'],
+        url: 'url',
+        listSeries: [RowRepKg(repes: 4, kg: 4)],
+      ),
       EjercicioRutina(
-          name: 'Press inclinado',
-          tip: 'tip',
-          muscle: ['muscle'],
-          url: 'url',
-          numRepes: 9,
-          volumenCarga: 8),
+        name: 'Press inclinado',
+        tip: 'tip',
+        muscle: ['muscle'],
+        url: 'url',
+        listSeries: [RowRepKg(repes: 4, kg: 4)],
+      ),
     ])
   ];
 

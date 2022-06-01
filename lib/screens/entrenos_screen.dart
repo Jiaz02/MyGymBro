@@ -16,7 +16,7 @@ class EntrenosScreen extends StatefulWidget {
 
 class _EntrenosScreenState extends State<EntrenosScreen> {
   var nombreRutina = 'Rutina';
-  var observacionesRutina = '';
+  var observacionesRutina = 'Ninguna';
 
   //PONER SIEMPRE VARIABLES DE ESTA CLASE Y MANDAR LA LISTA COMNPLETA AL SALIR DE AQUI XD
   Listas listas = Listas();
@@ -33,6 +33,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
             return ListTile(
               title: EntrenoCard(listas.rutinasList[index]),
               onTap: () {
+                print(listas.rutinasList[index]);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -95,7 +96,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                       style: const TextStyle(color: Colors.white),
                       onChanged: (value) {
                         if (value.isEmpty) {
-                          observacionesRutina = '';
+                          observacionesRutina = 'Ninguna';
                         } else {
                           observacionesRutina = value;
                         }

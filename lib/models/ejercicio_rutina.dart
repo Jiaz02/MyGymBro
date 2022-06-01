@@ -1,19 +1,23 @@
+import 'package:my_gym_bro/models/models.dart';
+
 class EjercicioRutina {
   EjercicioRutina({
     required this.name,
     required this.tip,
     required this.muscle,
     required this.url,
-    required this.numRepes,
-    required this.volumenCarga,
+    required this.listSeries,
   });
 
   final String name;
   final String tip;
   final List<String> muscle;
   final String url;
-  int numRepes;
-  double volumenCarga;
+  List<RowRepKg> listSeries;
+
+  get getListSeries => this.listSeries;
+
+ set setListSeries( listSeries) => this.listSeries = listSeries;
   
   get getName => name;
 
@@ -23,11 +27,10 @@ class EjercicioRutina {
 
   get getUrl => url;
 
-  get getNumRepes => numRepes;
 
-  set setNumRepes(numRepes) => numRepes = numRepes;
+  @override
+  String toString() {
+    return this.name +' ' +listSeries.toString();
+  }
 
-  get getVolumenCarga => volumenCarga;
-
-  set setVolumenCarga(volumenCarga) => volumenCarga = volumenCarga;
 }
