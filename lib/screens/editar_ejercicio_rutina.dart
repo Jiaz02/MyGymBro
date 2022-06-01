@@ -144,6 +144,7 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                 onPressed: () {
                   for (var item in controller.ejerciciosList) {
                     if (item.name == grupoEjercicios) {
+                      print(item);
                       ejer = EjercicioElement(
                           name: item.name,
                           tip: item.tip,
@@ -160,6 +161,7 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                       muscle: ejer.muscle,
                       url: ejer.url,
                       listSeries: widget.ejercicio.listSeries);
+                  print(widget.ejercicio);
                   Navigator.pop(context);
                 },
                 child: Text('Guardar ejercicio'),
