@@ -9,7 +9,7 @@ class EjercicioRutina {
     required this.listSeries,
   });
 
-  final String name;
+  String name;
   final String tip;
   final List<String> muscle;
   final String url;
@@ -17,8 +17,8 @@ class EjercicioRutina {
 
   get getListSeries => this.listSeries;
 
- set setListSeries( listSeries) => this.listSeries = listSeries;
-  
+  set setListSeries(listSeries) => this.listSeries = listSeries;
+
   get getName => name;
 
   get getTip => tip;
@@ -27,10 +27,8 @@ class EjercicioRutina {
 
   get getUrl => url;
 
-
   @override
   String toString() {
-    return this.name +' ' +listSeries.toString();
+    return this.name + ' ' + listSeries.toString();
   }
-
 }

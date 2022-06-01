@@ -50,7 +50,7 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
   List<DropdownMenuItem<String>> get dropdownEjerciciosItems {
     List<DropdownMenuItem<String>> menuEjerciciosItems = [
       DropdownMenuItem(child: Text("Selecciona el Ejercicio"), value: ""),
-      DropdownMenuItem(child: Text("Pectoral"), value: "Pectoral"),
+      DropdownMenuItem(child: Text("Press"), value: "Press"),
       DropdownMenuItem(child: Text("Abdomen"), value: "Abdomen"),
       DropdownMenuItem(child: Text("Dorsal"), value: "Dorsal"),
       DropdownMenuItem(child: Text("Biceps"), value: "Biceps"),
@@ -59,7 +59,7 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
   }
 
   var grupoMuscular = "";
-  var grupoEjercicios = "";
+  late var grupoEjercicios = widget.ejercicio.name;
 
   @override
   Widget build(BuildContext context) {
@@ -137,9 +137,11 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
               padding: const EdgeInsets.all(16.0),
               child: TextButton(
                 onPressed: () {
+// TODO: mirar de meter aqui la equivalencia de ejercicio y tener hardcoreada la lista xds
+
                   widget.ejercicio.listSeries = list;
+                  widget.ejercicio.name = grupoEjercicios;
                   print(widget.ejercicio);
-                  print(list);
                   widget.ejercicio = EjercicioRutina(
                       name: grupoEjercicios,
                       tip: '',
