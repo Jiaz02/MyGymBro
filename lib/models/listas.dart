@@ -93,4 +93,7 @@ class Listas {
   void removeEjercicioRutinaList(Ejercicio ejercicio) {
     ejerciciosRutinaList.remove(ejercicio);
   }
+
+  // TODO: poner un future que lea la lista llamandolo en el main o en splash
+
 }

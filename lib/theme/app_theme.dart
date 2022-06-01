@@ -13,8 +13,12 @@ class AppTheme {
   static final ThemeData lightTheme = ThemeData.light().copyWith(
       //color primario
       primaryColor: primaryBlue,
+
       //appbar theme
-      appBarTheme: const AppBarTheme(color: primaryBlue, elevation: 0),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: AppTheme.primaryBlue,
+        centerTitle: true,
+      ),
       //textbutton
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(primary: primaryOrange),

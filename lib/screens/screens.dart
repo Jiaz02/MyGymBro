@@ -17,3 +17,5 @@ export 'package:my_gym_bro/screens/user_screen.dart';
 export 'package:my_gym_bro/screens/inicio_screen.dart';
 export 'package:my_gym_bro/screens/register_screen.dart';
 export 'package:my_gym_bro/screens/detalles_rutina.dart';
+
+export 'package:my_gym_bro/screens/check_auth_screen.dart';

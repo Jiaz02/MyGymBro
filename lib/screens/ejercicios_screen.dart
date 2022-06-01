@@ -11,17 +11,6 @@ import 'package:http/http.dart' as http;
 import '../models/models.dart';
 
 Future<Ejercicio> fetchEjercicio() async {
-  // final response = await http.get(Uri.parse('/assets/ejercicios.json'));
-
-  // if (response.statusCode == 200) {
-  //   print(" contenido " + response.body);
-  //   // Si la llamada al servidor fue exitosa, analiza el JSON
-  //   return Ejercicio.fromJson(json.decode(response.body));
-  // } else {
-  //   // Si la llamada no fue exitosa, lanza un error.
-  //   throw Exception('Failed to load post');
-  // }
-
   final String response = await rootBundle.loadString('assets/ejercicios.json');
   return Ejercicio.fromJson(json.decode(response));
 }

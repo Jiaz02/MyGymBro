@@ -4,7 +4,7 @@ import 'package:my_gym_bro/models/models.dart';
 import 'package:my_gym_bro/screens/screens.dart';
 
 class AppRoutes {
-  static const initialRoute = 'home';
+  static const initialRoute = 'splash';
 
 //pantallas disponibles
   static final menuOption = <MenuOption>[
@@ -31,7 +31,7 @@ class AppRoutes {
         image: AssetImage('assets/graficos.png'),
         icon: Icons.smart_display_sharp,
         name: 'Splash Screen',
-        screen: const SplashScreen()),
+        screen: SplashScreen()),
     MenuOption(
         route: 'reto',
         image: AssetImage('assets/retos.png'),
