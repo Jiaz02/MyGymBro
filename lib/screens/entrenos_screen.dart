@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_gym_bro/models/models.dart';
 import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/screens/screens.dart';
@@ -11,7 +12,6 @@ class EntrenosScreen extends StatefulWidget {
 
   @override
   State<EntrenosScreen> createState() => _EntrenosScreenState();
-  
 }
 
 class _EntrenosScreenState extends State<EntrenosScreen> {
@@ -19,7 +19,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
   var observacionesRutina = 'Ninguna';
 
   //PONER SIEMPRE VARIABLES DE ESTA CLASE Y MANDAR LA LISTA COMNPLETA AL SALIR DE AQUI XD
-  Listas listas = Listas();
+  final controller = Get.find<Listas>();
 
   late Rutina rutina;
 
@@ -28,17 +28,17 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
     return Scaffold(
       backgroundColor: AppTheme.primaryDarkBlue,
       body: ListView.builder(
-          itemCount: listas.rutinasList.length,
+          itemCount: controller.rutinasList.length,
           itemBuilder: (BuildContext context, int index) {
             return ListTile(
-              title: EntrenoCard(listas.rutinasList[index]),
+              title: EntrenoCard(controller.rutinasList[index]),
               onTap: () {
-                print(listas.rutinasList[index]);
+                print(controller.rutinasList[index]);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        DetallesRutina(rutina: listas.rutinasList[index]),
+                        DetallesRutina(rutina: controller.rutinasList[index]),
                   ),
                 );
               },
@@ -115,11 +115,11 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                               Rutina(nombreRutina, observacionesRutina, []);
                           nombreRutina = 'Rutina';
                           observacionesRutina = '';
-                          listas.addRutinaList(rutina);
+                          controller.addRutinaList(rutina);
                           if (mounted) {
                             setState(() {});
                           }
-                          print(listas.getRutinasList());
+                          print(controller.getRutinasList());
                           Navigator.pop(cxt);
                         },
                         child: const Text('Crear Rutina'),

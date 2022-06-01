@@ -1,6 +1,7 @@
+import 'package:get/get.dart';
 import 'package:my_gym_bro/models/models.dart';
 
-class Listas {
+class Listas extends GetxController {
   Listas();
 
   //creamos unas listas vacias

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_gym_bro/models/models.dart';
 import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/service/service.dart';
@@ -10,7 +11,10 @@ import 'package:provider/provider.dart';
 
 import 'theme/app_theme.dart';
 
-void main() => {runApp(AppState())};
+void main() {
+  Get.put(Listas());
+  runApp(AppState());
+}
 
 class AppState extends StatelessWidget {
   const AppState({Key? key}) : super(key: key);

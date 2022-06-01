@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_gym_bro/screens/screens.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:provider/provider.dart';
@@ -11,6 +12,8 @@ class CheckAuthScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context, listen: false);
     final leerService = Provider.of<LeerJsonService>(context, listen: false);
+
+    final controller = Get.find<Listas>();
 
     return Scaffold(
       body: Center(
@@ -30,7 +33,6 @@ class CheckAuthScreen extends StatelessWidget {
                             transitionDuration: Duration(seconds: 0)));
                   });
                 } else {
-                  print('no lee del json');
                   Future.microtask(() {
                     Navigator.pushReplacement(
                         context,
@@ -50,9 +52,12 @@ class CheckAuthScreen extends StatelessWidget {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     Future.microtask(() {
-                      Listas().ejerciciosList =
-                          snapshot.data?.ejercicio as List<EjercicioElement>;
-                      print(Listas().ejerciciosList);
+                      controller.ejerciciosList =
+                          snapshot.data?.ejercicio ?? [];
+
+// TODO: preguntar a Alberto como hacer la mierda de las listas
+
+                      print(controller.ejerciciosList);
                     });
                   }
 
