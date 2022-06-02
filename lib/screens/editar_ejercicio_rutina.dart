@@ -7,11 +7,19 @@ import 'package:my_gym_bro/screens/screens.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:my_gym_bro/widgets/widgets.dart';
 
+import '../service/service.dart';
+
 class EditarEjercicioRutinaScreen extends StatefulWidget {
-  EditarEjercicioRutinaScreen({Key? key, required this.ejercicio})
+  EditarEjercicioRutinaScreen(
+      {Key? key,
+      required this.ejercicio,
+      required this.rutinaService,
+      required this.rutina})
       : super(key: key);
 
+  Rutina rutina;
   EjercicioRutina ejercicio;
+  final RutinaService rutinaService;
 
   @override
   State<EditarEjercicioRutinaScreen> createState() =>
@@ -66,7 +74,8 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
       muscle: widget.ejercicio.muscle,
       url: widget.ejercicio.url);
   final controller = Get.find<Listas>();
-  late EjercicioElement ejer=EjercicioElement(name: 'name', tip: 'tip', muscle: ['muscle'], url: 'url');
+  late EjercicioElement ejer = EjercicioElement(
+      name: 'name', tip: 'tip', muscle: ['muscle'], url: 'url');
   late EjercicioElement ejercicioElegido;
 
   @override
@@ -97,13 +106,22 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: DropdownButtonFormField(
-                hint: Text('Selecciona Ejercicios',style: TextStyle(color: Colors.white),),
-                  style: TextStyle(color: Colors.white,),
+                  hint: Text(
+                    'Selecciona Ejercicios',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                   dropdownColor: AppTheme.primaryBlue,
                   items: dropdownEjerciciosItems,
                   onChanged: (EjercicioElement? newValue) {
                     setState(() {
-                      ejercicioElegido=EjercicioElement(name: newValue?.name ?? '', tip: newValue?.tip ?? '', muscle: newValue?.muscle ?? [], url: newValue?.url ?? '');
+                      ejercicioElegido = EjercicioElement(
+                          name: newValue?.name ?? '',
+                          tip: newValue?.tip ?? '',
+                          muscle: newValue?.muscle ?? [],
+                          url: newValue?.url ?? '');
                     });
                   }),
             ),
@@ -145,7 +163,7 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
               padding: const EdgeInsets.all(16.0),
               child: TextButton(
                 onPressed: () {
-                  if(list.isEmpty){
+                  if (list.isEmpty) {
                     print('sale');
                     return;
                   }
@@ -165,6 +183,8 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                   widget.ejercicio.muscle = ejer.muscle;
                   widget.ejercicio.url = ejer.url;
                   //TODO: mirar esto
+                  //Se actualiza en la base de datos pero no se insta actualiza la lista
+                  widget.rutinaService.saveOrCreateRutina(widget.rutina);
                   Navigator.pop(context);
                 },
                 child: Text('Guardar ejercicio'),

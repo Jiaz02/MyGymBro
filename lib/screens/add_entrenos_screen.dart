@@ -9,11 +9,15 @@ import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:my_gym_bro/widgets/widgets.dart';
 
 import '../models/models.dart';
+import '../service/service.dart';
 
 class AddEntrenosScreen extends StatefulWidget {
-  AddEntrenosScreen({Key? key, required this.rutina}) : super(key: key);
+  AddEntrenosScreen(
+      {Key? key, required this.rutina, required this.rutinaService})
+      : super(key: key);
 
   Rutina rutina;
+  final RutinaService rutinaService;
 
   @override
   State<AddEntrenosScreen> createState() => _AddEntrenosScreenState();
@@ -100,7 +104,11 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                   items: dropdownEjerciciosItems,
                   onChanged: (EjercicioElement? newValue) {
                     setState(() {
-                      ejercicioElegido=EjercicioElement(name: newValue?.name ?? '', tip: newValue?.tip ?? '', muscle: newValue?.muscle ?? [], url: newValue?.url ?? '');
+                      ejercicioElegido = EjercicioElement(
+                          name: newValue?.name ?? '',
+                          tip: newValue?.tip ?? '',
+                          muscle: newValue?.muscle ?? [],
+                          url: newValue?.url ?? '');
                     });
                   }),
             ),
@@ -139,7 +147,6 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
               padding: const EdgeInsets.all(16.0),
               child: TextButton(
                 onPressed: () {
-
                   widget.rutina.listEjerciciosRutina.add(EjercicioRutina(
                     name: ejercicioElegido.name,
                     tip: ejercicioElegido.name,
@@ -147,6 +154,8 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                     url: ejercicioElegido.name,
                     listSeries: list,
                   ));
+
+                  widget.rutinaService.saveOrCreateRutina(widget.rutina);
                   Navigator.pop(context);
                 },
                 child: Text('Añadir ejercicio'),

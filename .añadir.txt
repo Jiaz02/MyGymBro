@@ -1,4 +1,6 @@
 
+Mirar video 229 para rellenar los campos del form
+
 Probar a llamar a un cuadrto de dialogo en vez de a una pantalla y ver si no hace pum
 
 CASI NEGRO PARA LAS TARJETAS:  #303030

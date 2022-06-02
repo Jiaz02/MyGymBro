@@ -14,6 +14,8 @@ class RutinaService extends ChangeNotifier {
 
   bool isLoading = true;
 
+  bool isSaving = false;
+
   RutinaService() {
     this.loadRutinas();
     this.loadPr();
@@ -45,5 +47,32 @@ class RutinaService extends ChangeNotifier {
       tempPr.id = key;
       controller.prList.add(tempPr);
     });
+  }
+
+  Future saveOrCreateRutina(Rutina rutina) async {
+    isSaving = true;
+    notifyListeners();
+
+    //si tenemos id estamos actualizando, sino estamos creando :D
+    if (rutina.id == null) {
+      //creamos producto
+    } else {
+      //actualizamos producto
+      await updateRutina(rutina);
+    }
+
+    isSaving = false;
+    notifyListeners();
+  }
+
+  Future<String> updateRutina(Rutina rutina) async {
+//HACEMOS LA PETICION
+
+    final url = Uri.https(_baseUrl, 'rutinas/${rutina.id}.json');
+    final resp = await http.put(url, body: rutina.toJson());
+    final decodedData = resp.body;
+    print(decodedData);
+
+    return rutina.id!;
   }
 }
