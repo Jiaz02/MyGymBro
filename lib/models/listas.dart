@@ -11,7 +11,7 @@ class Listas extends GetxController {
 
   List<String> musculoList = [];
 
-  List<PR> prList = [];
+  List<Pr> prList = [];
 
   List<Rutina> rutinasList = [];
 
@@ -28,9 +28,9 @@ class Listas extends GetxController {
 
   get getPrList => prList;
 
-  setPrList(List<PR> prList) => this.prList = prList;
+  setPrList(List<Pr> prList) => this.prList = prList;
 
-  void addPrList(PR pr) {
+  void addPrList(Pr pr) {
     prList.add(pr);
   }
 

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:my_gym_bro/models/models.dart';
 
 class EjercicioRutina {
@@ -26,6 +28,28 @@ class EjercicioRutina {
   get getMuscle => muscle;
 
   get getUrl => url;
+
+  factory EjercicioRutina.fromJson(String str) =>
+      EjercicioRutina.fromMap(json.decode(str));
+
+  String toJson() => json.encode(toMap());
+
+  factory EjercicioRutina.fromMap(Map<String, dynamic> json) => EjercicioRutina(
+        muscle: List<String>.from(json["muscle"].map((x) => x)),
+        name: json["name"],
+        tip: json["tip"],
+        url: json["url"],
+        listSeries: List<RowRepKg>.from(
+            json["listSeries"].map((x) => RowRepKg.fromMap(x))),
+      );
+
+  Map<String, dynamic> toMap() => {
+        "muscle": List<dynamic>.from(muscle.map((x) => x)),
+        "name": name,
+        "tip": tip,
+        "url": url,
+        "listSeries": List<dynamic>.from(listSeries.map((x) => x.toMap())),
+      };
 
   @override
   String toString() {
