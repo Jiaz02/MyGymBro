@@ -104,7 +104,6 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                   onChanged: (EjercicioElement? newValue) {
                     setState(() {
                       ejercicioElegido=EjercicioElement(name: newValue?.name ?? '', tip: newValue?.tip ?? '', muscle: newValue?.muscle ?? [], url: newValue?.url ?? '');
-                      print(ejercicioElegido);
                     });
                   }),
             ),
@@ -152,7 +151,6 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                   }
                   for (var item in controller.ejerciciosList) {
                     if (item.name == ejercicioElegido.name) {
-                      print('jaja '+item.toString());
                       ejer = EjercicioElement(
                           name: item.name,
                           tip: item.tip,
@@ -161,14 +159,12 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                     }
                   }
 
-                  print('Ejercicio seleccionado '+ejer.toString());
                   widget.ejercicio.listSeries = list;
                   widget.ejercicio.name = ejer.name;
                   widget.ejercicio.tip = ejer.tip;
                   widget.ejercicio.muscle = ejer.muscle;
                   widget.ejercicio.url = ejer.url;
                   //TODO: mirar esto
-                  print(widget.ejercicio);
                   Navigator.pop(context);
                 },
                 child: Text('Guardar ejercicio'),
