@@ -31,7 +31,7 @@ class SplashScreen extends StatelessWidget {
     );
 
     return MaterialApp(
-      title: 'Splash screen Demo',
+      title: 'My Gym Bro',
       home: splash,
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
