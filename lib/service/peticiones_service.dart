@@ -89,4 +89,9 @@ class RutinaService extends ChangeNotifier {
 
     return rutina.id!;
   }
+
+  Future deleteRutina(Rutina rutina) async {
+    final url = Uri.https(_baseUrl, 'rutinas/${rutina.id}.json');
+    http.delete(url, body: rutina.toJson());
+  }
 }

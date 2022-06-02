@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_gym_bro/models/rutina.dart';
 import 'package:my_gym_bro/screens/add_entrenos_screen.dart';
 import 'package:my_gym_bro/screens/screens.dart';
 import 'package:provider/provider.dart';
 
+import '../models/models.dart';
 import '../service/service.dart';
 import '../theme/app_theme.dart';
 
@@ -11,6 +13,8 @@ class DetallesRutina extends StatelessWidget {
   DetallesRutina({Key? key, required this.rutina}) : super(key: key);
 
   Rutina rutina;
+
+  final controller = Get.find<Listas>();
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +97,10 @@ class DetallesRutina extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: TextButton(
               onPressed: () {
-                //TODO: eliminar la rutina aqui xd
+                controller.rutinasList.remove(rutina);
+                //TODO: elimina la rutina pero no reprintea la lista
+                rutinaService.deleteRutina(rutina);
+                Navigator.pop(context);
               },
               child: Text('Eliminar Rutina'),
               style: TextButton.styleFrom(
