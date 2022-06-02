@@ -13,43 +13,7 @@ class Listas extends GetxController {
 
   List<PR> prList = [];
 
-  List<Rutina> rutinasList = [
-    Rutina('Rutina prueba', 'Dormí mal', [
-      EjercicioRutina(
-        name: 'Press Banca con Barra',
-        tip: 'Baja hasta rozar el pectoral. Abre más el agarre para que el triceps intervenga menos. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.',
-        muscle: [
-                "Pectoral",
-                "Triceps",
-                "Deltoides anterior"
-            ],
-        url: 'assets/pressbanca.gif',
-        listSeries: [RowRepKg(repes: 4, kg: 4)],
-      ),      
-      EjercicioRutina(
-        name: 'Press Banca con Barra',
-        tip: 'Baja hasta rozar el pectoral. Abre más el agarre para que el triceps intervenga menos. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.',
-        muscle: [
-                "Pectoral",
-                "Triceps",
-                "Deltoides anterior"
-            ],
-        url: 'assets/pressbanca.gif',
-        listSeries: [RowRepKg(repes: 4, kg: 4)],
-      ),      
-      EjercicioRutina(
-        name: 'Press Banca con Barra',
-        tip: 'Baja hasta rozar el pectoral. Abre más el agarre para que el triceps intervenga menos. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.',
-        muscle: [
-                "Pectoral",
-                "Triceps",
-                "Deltoides anterior"
-            ],
-        url: 'assets/pressbanca.gif',
-        listSeries: [RowRepKg(repes: 4, kg: 4)],
-      ),      
-    ])
-  ];
+  List<Rutina> rutinasList = [];
 
   List<Rutina> getRutinasList() {
     print('entra a get list $rutinasList');

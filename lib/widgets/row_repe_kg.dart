@@ -17,6 +17,7 @@ class RowRepeKg extends StatelessWidget {
     var reps;
     var kg;
 //creamos un containes para introducir las tarjetas de opciones
+//TODO: hacer que al editar un row se vealos pesos levantado y no salgan las repes vacias xd
     return Row(
       children: [
         const Expanded(
