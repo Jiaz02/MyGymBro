@@ -7,16 +7,19 @@ class Pr {
   });
 
   String nameEjercicio;
-  int peso;
+  double peso;
+  String? id;
 
   factory Pr.fromJson(String str) => Pr.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
-  factory Pr.fromMap(Map<String, dynamic> json) => Pr(
-        nameEjercicio: json["nameEjercicio"],
-        peso: json["peso"],
-      );
+  factory Pr.fromMap(Map<String, dynamic> json) {
+    return Pr(
+      nameEjercicio: json["nameEjercicio"],
+      peso: json["peso"].toDouble(),
+    );
+  }
 
   Map<String, dynamic> toMap() => {
         "nameEjercicio": nameEjercicio,

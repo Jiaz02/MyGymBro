@@ -16,6 +16,7 @@ class RutinaService extends ChangeNotifier {
 
   RutinaService() {
     this.loadRutinas();
+    this.loadPr();
   }
 
   Future loadRutinas() async {
@@ -28,6 +29,21 @@ class RutinaService extends ChangeNotifier {
       final tempRutina = Rutina.fromMap(value);
       tempRutina.id = key;
       controller.rutinasList.add(tempRutina);
+    });
+  }
+
+  Future loadPr() async {
+    final url = Uri.https(_baseUrl, 'pr.json');
+    final resp = await http.get(url);
+
+    final Map<String, dynamic> prMap = json.decode(resp.body);
+
+    print(prMap);
+
+    prMap.forEach((key, value) {
+      final tempPr = Pr.fromMap(value);
+      tempPr.id = key;
+      controller.prList.add(tempPr);
     });
   }
 }
