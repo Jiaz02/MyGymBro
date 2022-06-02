@@ -34,14 +34,17 @@ class EjercicioRutina {
 
   String toJson() => json.encode(toMap());
 
-  factory EjercicioRutina.fromMap(Map<String, dynamic> json) => EjercicioRutina(
-        muscle: List<String>.from(json["muscle"].map((x) => x)),
-        name: json["name"],
-        tip: json["tip"],
-        url: json["url"],
-        listSeries: List<RowRepKg>.from(
-            json["listSeries"].map((x) => RowRepKg.fromMap(x))),
-      );
+  factory EjercicioRutina.fromMap(Map<String, dynamic> json) {
+    print(json["listSeries"]);
+    return EjercicioRutina(
+      muscle: List<String>.from(json["muscle"].map((x) => x)),
+      name: json["name"],
+      tip: json["tip"],
+      url: json["url"],
+      listSeries: List<RowRepKg>.from(
+          json["listSeries"].map((x) => RowRepKg.fromMap(x))),
+    );
+  }
 
   Map<String, dynamic> toMap() => {
         "muscle": List<dynamic>.from(muscle.map((x) => x)),
