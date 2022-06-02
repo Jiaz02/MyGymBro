@@ -39,11 +39,11 @@ class DetallesRutina extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: rutina.listEjerciciosRutina.length,
+                itemCount: rutina.listEjerciciosRutina?.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
                     title: Text(
-                      rutina.listEjerciciosRutina[index].name,
+                      rutina.listEjerciciosRutina![index].name,
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                     onTap: () {
@@ -51,7 +51,7 @@ class DetallesRutina extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => EditarEjercicioRutinaScreen(
-                            ejercicio: rutina.listEjerciciosRutina[index],
+                            ejercicio: rutina.listEjerciciosRutina![index],
                             rutina: rutina,
                             rutinaService: rutinaService,
                           ),
@@ -85,6 +85,19 @@ class DetallesRutina extends StatelessWidget {
               child: Text('Añadir Ejercicio'),
               style: TextButton.styleFrom(
                   backgroundColor: AppTheme.primaryBlue,
+                  primary: Colors.white,
+                  fixedSize: Size(MediaQuery.of(context).size.width, 16)),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextButton(
+              onPressed: () {
+                //TODO: eliminar la rutina aqui xd
+              },
+              child: Text('Eliminar Rutina'),
+              style: TextButton.styleFrom(
+                  backgroundColor: Colors.red,
                   primary: Colors.white,
                   fixedSize: Size(MediaQuery.of(context).size.width, 16)),
             ),

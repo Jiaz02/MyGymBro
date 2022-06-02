@@ -7,7 +7,7 @@ class Rutina {
 
   String name;
   String note;
-  List<EjercicioRutina> listEjerciciosRutina = [];
+  List<EjercicioRutina>? listEjerciciosRutina = [];
   String? id;
 
   set setName(String name) => this.name = name;
@@ -30,14 +30,15 @@ class Rutina {
         json["name"],
         json["note"],
         List<EjercicioRutina>.from(json["listEjerciciosRutina"]
-            .map((x) => EjercicioRutina.fromMap(x))),
+                ?.map((x) => EjercicioRutina.fromMap(x)) ??
+            []),
       );
 
   Map<String, dynamic> toMap() => {
         "name": name,
         "note": note,
-        "listEjerciciosRutina":
-            List<dynamic>.from(listEjerciciosRutina.map((x) => x.toMap())),
+        "listEjerciciosRutina": List<dynamic>.from(
+            listEjerciciosRutina?.map((x) => x.toMap()) ?? []),
       };
   @override
   String toString() {

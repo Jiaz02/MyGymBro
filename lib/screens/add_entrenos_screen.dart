@@ -147,7 +147,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
               padding: const EdgeInsets.all(16.0),
               child: TextButton(
                 onPressed: () {
-                  widget.rutina.listEjerciciosRutina.add(EjercicioRutina(
+                  widget.rutina.listEjerciciosRutina?.add(EjercicioRutina(
                     name: ejercicioElegido.name,
                     tip: ejercicioElegido.name,
                     muscle: ejercicioElegido.muscle,

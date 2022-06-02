@@ -7,6 +7,8 @@ import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:my_gym_bro/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
+import '../service/service.dart';
+
 class EntrenosScreen extends StatefulWidget {
   const EntrenosScreen({Key? key}) : super(key: key);
 
@@ -62,6 +64,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
   }
 
   void showCustomDialog(BuildContext context) {
+    final rutinaService = Provider.of<RutinaService>(context, listen: false);
     showDialog(
       barrierDismissible: false,
       context: context,
@@ -127,6 +130,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                           if (mounted) {
                             setState(() {});
                           }
+                          rutinaService.saveOrCreateRutina(rutina);
                           Navigator.pop(cxt);
                         },
                         child: const Text('Crear Rutina'),

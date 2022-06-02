@@ -55,6 +55,7 @@ class RutinaService extends ChangeNotifier {
 
     //si tenemos id estamos actualizando, sino estamos creando :D
     if (rutina.id == null) {
+      await createRutina(rutina);
       //creamos producto
     } else {
       //actualizamos producto
@@ -72,6 +73,19 @@ class RutinaService extends ChangeNotifier {
     final resp = await http.put(url, body: rutina.toJson());
     final decodedData = resp.body;
     print(decodedData);
+
+    return rutina.id!;
+  }
+
+  Future<String> createRutina(Rutina rutina) async {
+//HACEMOS LA PETICION
+
+    final url = Uri.https(_baseUrl, 'rutinas.json');
+    final resp = await http.post(url, body: rutina.toJson());
+    final decodedData = json.decode(resp.body);
+    print(decodedData);
+
+    rutina.id = decodedData['name'];
 
     return rutina.id!;
   }
