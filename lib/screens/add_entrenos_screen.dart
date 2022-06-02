@@ -101,7 +101,6 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                   onChanged: (EjercicioElement? newValue) {
                     setState(() {
                       ejercicioElegido=EjercicioElement(name: newValue?.name ?? '', tip: newValue?.tip ?? '', muscle: newValue?.muscle ?? [], url: newValue?.url ?? '');
-                      print(ejercicioElegido);
                     });
                   }),
             ),
@@ -148,7 +147,6 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                     url: ejercicioElegido.name,
                     listSeries: list,
                   ));
-                  print('nuevo ejercicio!!!!!! '+widget.rutina.toString());
                   Navigator.pop(context);
                 },
                 child: Text('Añadir ejercicio'),

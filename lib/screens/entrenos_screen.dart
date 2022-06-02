@@ -33,7 +33,6 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
             return ListTile(
               title: EntrenoCard(controller.rutinasList[index]),
               onTap: () {
-                print(controller.rutinasList[index]);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
