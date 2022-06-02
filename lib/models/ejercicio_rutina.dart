@@ -10,9 +10,9 @@ class EjercicioRutina {
   });
 
   String name;
-  final String tip;
-  final List<String> muscle;
-  final String url;
+  String tip;
+  List<String> muscle;
+  String url;
   List<RowRepKg> listSeries;
 
   get getListSeries => this.listSeries;

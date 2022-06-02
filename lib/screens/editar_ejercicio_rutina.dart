@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_gym_bro/models/ejercicio_rutina.dart';
@@ -22,7 +20,6 @@ class EditarEjercicioRutinaScreen extends StatefulWidget {
 
 class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
   late var numseries = widget.ejercicio.listSeries.length;
-
   late List<RowRepKg> list = [];
 
   List<DropdownMenuItem<String>> get dropdownMusculosItems {
@@ -49,22 +46,28 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
     return menuMusculosItems;
   }
 
-  List<DropdownMenuItem<String>> get dropdownEjerciciosItems {
-    List<DropdownMenuItem<String>> menuEjerciciosItems = [
-      DropdownMenuItem(child: Text("Selecciona el Ejercicio"), value: ""),
-      DropdownMenuItem(child: Text("Sentadilla"), value: "Sentadilla"),
-      DropdownMenuItem(child: Text("Peso Muerto"), value: "Peso Muerto"),
-      DropdownMenuItem(child: Text("Hip Thrust"), value: "Hip Thrust"),
-      DropdownMenuItem(
-          child: Text("Press Banca con Barra"), value: "Press Banca con Barra"),
-    ];
+  List<DropdownMenuItem<EjercicioElement>> get dropdownEjerciciosItems {
+    //var currentEjercicio = EjercicioElement(name: widget.ejercicio.name, tip: widget.ejercicio.tip, muscle: widget.ejercicio.muscle, url: widget.ejercicio.url);
+    // DropdownMenuItem(child: Text(widget.ejercicio.name), value: currentEjercicio),
+    List<DropdownMenuItem<EjercicioElement>> menuEjerciciosItems = [];
+    for (var item in controller.ejerciciosList) {
+      if (item.muscle.contains(grupoMuscular)) {
+        menuEjerciciosItems
+            .add(DropdownMenuItem(child: Text(item.name), value: item));
+      }
+    }
     return menuEjerciciosItems;
   }
 
-  var grupoMuscular = "";
-  late var grupoEjercicios = widget.ejercicio.name;
+  late var grupoMuscular = widget.ejercicio.muscle[0];
+  late var grupoEjercicios = EjercicioElement(
+      name: widget.ejercicio.name,
+      tip: widget.ejercicio.tip,
+      muscle: widget.ejercicio.muscle,
+      url: widget.ejercicio.url);
   final controller = Get.find<Listas>();
-  late EjercicioElement ejer;
+  late EjercicioElement ejer=EjercicioElement(name: 'name', tip: 'tip', muscle: ['muscle'], url: 'url');
+  late EjercicioElement ejercicioElegido;
 
   @override
   Widget build(BuildContext context) {
@@ -87,20 +90,21 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                   items: dropdownMusculosItems,
                   onChanged: (String? newValue) {
                     setState(() {
-                      grupoMuscular = newValue!;
+                      grupoMuscular = newValue ?? '';
                     });
                   }),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: DropdownButtonFormField(
-                  style: TextStyle(color: Colors.white),
+                hint: Text('Selecciona Ejercicios',style: TextStyle(color: Colors.white),),
+                  style: TextStyle(color: Colors.white,),
                   dropdownColor: AppTheme.primaryBlue,
-                  value: grupoEjercicios,
                   items: dropdownEjerciciosItems,
-                  onChanged: (String? newValue) {
+                  onChanged: (EjercicioElement? newValue) {
                     setState(() {
-                      grupoEjercicios = newValue!;
+                      ejercicioElegido=EjercicioElement(name: newValue?.name ?? '', tip: newValue?.tip ?? '', muscle: newValue?.muscle ?? [], url: newValue?.url ?? '');
+                      print(ejercicioElegido);
                     });
                   }),
             ),
@@ -142,9 +146,13 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
               padding: const EdgeInsets.all(16.0),
               child: TextButton(
                 onPressed: () {
+                  if(list.isEmpty){
+                    print('sale');
+                    return;
+                  }
                   for (var item in controller.ejerciciosList) {
-                    if (item.name == grupoEjercicios) {
-                      print(item);
+                    if (item.name == ejercicioElegido.name) {
+                      print('jaja '+item.toString());
                       ejer = EjercicioElement(
                           name: item.name,
                           tip: item.tip,
@@ -153,14 +161,12 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                     }
                   }
 
+                  print('Ejercicio seleccionado '+ejer.toString());
                   widget.ejercicio.listSeries = list;
-                  widget.ejercicio.name = grupoEjercicios;
-                  widget.ejercicio = EjercicioRutina(
-                      name: grupoEjercicios,
-                      tip: ejer.tip,
-                      muscle: ejer.muscle,
-                      url: ejer.url,
-                      listSeries: widget.ejercicio.listSeries);
+                  widget.ejercicio.name = ejer.name;
+                  widget.ejercicio.tip = ejer.tip;
+                  widget.ejercicio.muscle = ejer.muscle;
+                  widget.ejercicio.url = ejer.url;
                   //TODO: mirar esto
                   print(widget.ejercicio);
                   Navigator.pop(context);

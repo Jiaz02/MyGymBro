@@ -119,7 +119,6 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                           if (mounted) {
                             setState(() {});
                           }
-                          print(controller.getRutinasList());
                           Navigator.pop(cxt);
                         },
                         child: const Text('Crear Rutina'),
