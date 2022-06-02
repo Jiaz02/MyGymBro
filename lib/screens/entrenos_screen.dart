@@ -27,22 +27,28 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.primaryDarkBlue,
-      body: ListView.builder(
-          itemCount: controller.rutinasList.length,
-          itemBuilder: (BuildContext context, int index) {
-            return ListTile(
-              title: EntrenoCard(controller.rutinasList[index]),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        DetallesRutina(rutina: controller.rutinasList[index]),
-                  ),
-                );
-              },
-            );
-          }),
+      body: FutureBuilder(
+          builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+            if(controller.rutinasList.isEmpty){
+              return Center(child: Text('Crea una rutina con el boton de abajo',style: TextStyle(color: Colors.white, fontSize: 20)));
+            } 
+        return ListView.builder(
+            itemCount: controller.rutinasList.length,
+            itemBuilder: (BuildContext context, int index) {              
+              return ListTile(
+                title: EntrenoCard(controller.rutinasList[index]),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          DetallesRutina(rutina: controller.rutinasList[index]),
+                    ),
+                  );
+                },
+              );
+            });
+      }),
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           backgroundColor: AppTheme.primaryBlue,
