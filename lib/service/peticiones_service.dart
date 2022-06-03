@@ -98,15 +98,22 @@ class RutinaService extends ChangeNotifier {
   Future saveOrCreatePr(Pr pr) async {
     isSaving = true;
     notifyListeners();
+    List<String> lst = [];
 
-    //si tenemos id estamos actualizando, sino estamos creando :D
-    if (pr.id == null) {
-      print('entra crear');
-      await createPr(pr);
-      //creamos producto
+    for (var item in controller.prList) {
+      lst.add(item.nameEjercicio);
+    }
+
+    if (lst.contains(pr.nameEjercicio)) {
+      for (var item in controller.prList) {
+        if (pr.nameEjercicio == item.nameEjercicio) {
+          item.peso = pr.peso;
+          await updatePr(item);
+          return;
+        }
+      }
     } else {
-      //actualizamos producto
-      await updatePr(pr);
+      await createPr(pr);
     }
 
     isSaving = false;
@@ -129,6 +136,7 @@ class RutinaService extends ChangeNotifier {
   Future<String> updatePr(Pr pr) async {
 //HACEMOS LA PETICION
 
+    print(pr.id);
     final url = Uri.https(_baseUrl, 'pr/${pr.id}.json');
     final resp = await http.put(url, body: pr.toJson());
     final decodedData = resp.body;
