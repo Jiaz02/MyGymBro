@@ -113,6 +113,7 @@ class RutinaService extends ChangeNotifier {
         }
       }
     } else {
+      controller.prList.add(pr);
       await createPr(pr);
     }
 
