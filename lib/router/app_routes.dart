@@ -22,7 +22,7 @@ class AppRoutes {
         screen: const MeasureScreen()),
     MenuOption(
         route: 'peso',
-        image: AssetImage('assets/pesos.png'),
+        image: AssetImage('assets/crearpr.png'),
         icon: Icons.tab,
         name: 'Pesos Screen',
         screen: AddPrScreen()),
