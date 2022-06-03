@@ -2,7 +2,7 @@
     package="com.example.my_gym_bro">
    <application
         android:label="My Gym Bro"
-        android:name="My Gym Bro"
+        android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

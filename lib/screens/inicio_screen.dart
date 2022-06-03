@@ -13,19 +13,16 @@ class InicioScreen extends StatefulWidget {
 }
 
 class _InicioScreenState extends State<InicioScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         CardSwiper(),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
             Padding(
               padding: const EdgeInsets.only(top: 26, left: 9, bottom: 26),
               child: GestureDetector(
@@ -39,11 +36,8 @@ class _InicioScreenState extends State<InicioScreen> {
                           fit: BoxFit.cover,
                         ),
                       )),
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              RetosScreen()))),
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => RetosScreen()))),
             ),
           ],
         )
@@ -51,5 +45,3 @@ class _InicioScreenState extends State<InicioScreen> {
     );
   }
 }
-
-

@@ -36,7 +36,6 @@ class _AddPrScreenState extends State<AddPrScreen> {
 
   @override
   Widget build(BuildContext context) {
-    
     final rutinaService = Provider.of<RutinaService>(context, listen: false);
 
     return Scaffold(
@@ -53,6 +52,10 @@ class _AddPrScreenState extends State<AddPrScreen> {
                 child: DropdownButtonFormField(
                     style: TextStyle(color: Colors.white),
                     dropdownColor: AppTheme.primaryBlue,
+                    hint: Text(
+                      'Selecciona un ejercicio',
+                      style: TextStyle(color: Colors.white),
+                    ),
                     items: dropdownEjerciciosItems,
                     onChanged: (EjercicioElement? newValue) {
                       setState(() {
@@ -67,7 +70,6 @@ class _AddPrScreenState extends State<AddPrScreen> {
                   keyboardType: TextInputType.number,
                   onChanged: (value) {
                     kg = double.parse(value);
-                    
                   },
                   decoration: const InputDecoration(
                       border: UnderlineInputBorder(),
@@ -85,12 +87,13 @@ class _AddPrScreenState extends State<AddPrScreen> {
                       primary: Colors.white,
                       fixedSize: Size(MediaQuery.of(context).size.width, 16)),
                   onPressed: () {
-                    Pr serie = Pr(nameEjercicio: ejercicio, peso: kg);
+                    pr = Pr(nameEjercicio: ejercicio, peso: kg);
 
-                    rutinaService.saveOrCreatePr(pr);
+                    if (!pr.isNull) {
+                      rutinaService.saveOrCreatePr(pr);
 
-                    Navigator.pop(context);
-
+                      Navigator.pop(context);
+                    }
                   },
                 ),
               )
