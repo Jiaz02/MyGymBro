@@ -94,4 +94,45 @@ class RutinaService extends ChangeNotifier {
     final url = Uri.https(_baseUrl, 'rutinas/${rutina.id}.json');
     http.delete(url, body: rutina.toJson());
   }
+
+  Future saveOrCreatePr(Pr pr) async {
+    isSaving = true;
+    notifyListeners();
+
+    //si tenemos id estamos actualizando, sino estamos creando :D
+    if (pr.id == null) {
+      await createPr(pr);
+      //creamos producto
+    } else {
+      //actualizamos producto
+      await updatePr(pr);
+    }
+
+    isSaving = false;
+    notifyListeners();
+  }
+
+  Future<String> createPr(Pr pr) async {
+//HACEMOS LA PETICION
+
+    final url = Uri.https(_baseUrl, 'rutinas.json');
+    final resp = await http.post(url, body: pr.toJson());
+    final decodedData = json.decode(resp.body);
+    print(decodedData);
+
+    pr.id = decodedData['name'];
+
+    return pr.id!;
+  }
+
+  Future<String> updatePr(Pr pr) async {
+//HACEMOS LA PETICION
+
+    final url = Uri.https(_baseUrl, 'rutinas/${pr.id}.json');
+    final resp = await http.put(url, body: pr.toJson());
+    final decodedData = resp.body;
+    print(decodedData);
+
+    return pr.id!;
+  }
 }
