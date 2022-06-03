@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.my_gym_bro">
    <application
-        android:label="my_gym_bro"
-        android:name="${applicationName}"
+        android:label="My Gym Bro"
+        android:name="My Gym Bro"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

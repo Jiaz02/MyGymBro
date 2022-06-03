@@ -1,6 +1,6 @@
 {
-    "name": "my_gym_bro",
-    "short_name": "my_gym_bro",
+    "name": "My Gym Bro",
+    "short_name": "My Gym Bro",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
