@@ -9,10 +9,15 @@ class RetosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('My GymBro'),
-          centerTitle: true,
+        backgroundColor: AppTheme.primaryDarkBlue,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(40.0),
+          child: AppBar(
+            backgroundColor: AppTheme.primaryBlue,
+            title: const Text('My Gym Bro'),
+            centerTitle: true,
+          ),
         ),
-        body: Text('textito'));
+        body: Text('textito de retos'));
   }
 }
