@@ -1,6 +1,8 @@
 import 'dart:convert';
 
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:my_gym_bro/models/models.dart';
 
@@ -12,6 +14,8 @@ class RutinaService extends ChangeNotifier {
 
   final controller = Get.find<Listas>();
 
+  final storage = FlutterSecureStorage();
+
   bool isLoading = true;
 
   bool isSaving = false;
@@ -22,9 +26,10 @@ class RutinaService extends ChangeNotifier {
   }
 
   Future loadRutinas() async {
-    final url = Uri.https(_baseUrl, 'rutinas.json');
+    final url = Uri.https(_baseUrl, 'rutinas.json', {'user': 'asd'});
     final resp = await http.get(url);
 
+    print(url);
     final Map<String, dynamic> rutinasMap = json.decode(resp.body);
 
     rutinasMap.forEach((key, value) {

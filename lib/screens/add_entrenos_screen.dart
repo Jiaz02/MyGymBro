@@ -149,9 +149,9 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                 onPressed: () {
                   widget.rutina.listEjerciciosRutina?.add(EjercicioRutina(
                     name: ejercicioElegido.name,
-                    tip: ejercicioElegido.name,
+                    tip: ejercicioElegido.tip,
                     muscle: ejercicioElegido.muscle,
-                    url: ejercicioElegido.name,
+                    url: ejercicioElegido.url,
                     listSeries: list,
                   ));
 

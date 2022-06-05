@@ -194,6 +194,24 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                     primary: Colors.white,
                     fixedSize: Size(MediaQuery.of(context).size.width, 16)),
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextButton(
+                onPressed: () {
+                  widget.rutina.listEjerciciosRutina?.remove(widget.ejercicio);
+                  //TODO: mirar esto
+                  //Se actualiza en la base de datos pero no se insta actualiza la lista
+                  widget.rutinaService.saveOrCreateRutina(widget.rutina);
+                  Navigator.pop(context);
+                },
+                child: Text('Eliminar ejercicio'),
+                // ignore: prefer_const_constructors
+                style: TextButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    primary: Colors.white,
+                    fixedSize: Size(MediaQuery.of(context).size.width, 16)),
+              ),
             )
           ],
         ),
