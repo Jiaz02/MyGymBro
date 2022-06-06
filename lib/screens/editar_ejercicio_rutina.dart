@@ -57,11 +57,12 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
   List<DropdownMenuItem<EjercicioElement>> get dropdownEjerciciosItems {
     //var currentEjercicio = EjercicioElement(name: widget.ejercicio.name, tip: widget.ejercicio.tip, muscle: widget.ejercicio.muscle, url: widget.ejercicio.url);
     // DropdownMenuItem(child: Text(widget.ejercicio.name), value: currentEjercicio),
-    List<DropdownMenuItem<EjercicioElement>> menuEjerciciosItems = [];
+    List<DropdownMenuItem<EjercicioElement>> menuEjerciciosItems = [
+      DropdownMenuItem(
+          child: Text(grupoEjercicios.name), value: grupoEjercicios)
+    ];
     for (var item in controller.ejerciciosList) {
-      if (item.name == grupoEjercicios.name) {
-        continue;
-      } else {
+      if (item.name != grupoEjercicios.name) {
         if (item.muscle.contains(grupoMuscular)) {
           menuEjerciciosItems
               .add(DropdownMenuItem(child: Text(item.name), value: item));
@@ -79,7 +80,7 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
       url: widget.ejercicio.url);
   final controller = Get.find<Listas>();
   late EjercicioElement ejer;
-  late EjercicioElement ejercicioElegido;
+  late EjercicioElement ejercicioElegido = grupoEjercicios;
 
   @override
   Widget build(BuildContext context) {
