@@ -9,11 +9,16 @@ import '../models/models.dart';
 import '../service/service.dart';
 import '../theme/app_theme.dart';
 
-class DetallesRutina extends StatelessWidget {
+class DetallesRutina extends StatefulWidget {
   DetallesRutina({Key? key, required this.rutina}) : super(key: key);
 
   Rutina rutina;
 
+  @override
+  State<DetallesRutina> createState() => _DetallesRutinaState();
+}
+
+class _DetallesRutinaState extends State<DetallesRutina> {
   final controller = Get.find<Listas>();
 
   @override
@@ -35,7 +40,7 @@ class DetallesRutina extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              rutina.name,
+              widget.rutina.name,
               style: TextStyle(color: Colors.white, fontSize: 24),
             ),
           ),
@@ -43,24 +48,26 @@ class DetallesRutina extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: rutina.listEjerciciosRutina?.length,
+                itemCount: widget.rutina.listEjerciciosRutina?.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
                     title: Text(
-                      rutina.listEjerciciosRutina![index].name,
+                      widget.rutina.listEjerciciosRutina![index].name,
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
-                    onTap: () {
-                      Navigator.push(
+                    onTap: () async {
+                      await Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => EditarEjercicioRutinaScreen(
-                            ejercicio: rutina.listEjerciciosRutina![index],
-                            rutina: rutina,
+                            ejercicio:
+                                widget.rutina.listEjerciciosRutina![index],
+                            rutina: widget.rutina,
                             rutinaService: rutinaService,
                           ),
                         ),
                       );
+                      setState(() {});
                     },
                   );
                 }),
@@ -68,7 +75,7 @@ class DetallesRutina extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'Observaciones: ' + rutina.note,
+              'Observaciones: ' + widget.rutina.note,
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
           ),
@@ -80,7 +87,7 @@ class DetallesRutina extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => AddEntrenosScreen(
-                      rutina: rutina,
+                      rutina: widget.rutina,
                       rutinaService: rutinaService,
                     ),
                   ),
@@ -97,9 +104,9 @@ class DetallesRutina extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: TextButton(
               onPressed: () {
-                controller.rutinasList.remove(rutina);
+                controller.rutinasList.remove(widget.rutina);
                 //TODO: elimina la rutina pero no reprintea la lista
-                rutinaService.deleteRutina(rutina);
+                rutinaService.deleteRutina(widget.rutina);
                 Navigator.pop(context);
               },
               child: Text('Eliminar Rutina'),

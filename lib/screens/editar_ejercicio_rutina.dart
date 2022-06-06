@@ -59,9 +59,13 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
     // DropdownMenuItem(child: Text(widget.ejercicio.name), value: currentEjercicio),
     List<DropdownMenuItem<EjercicioElement>> menuEjerciciosItems = [];
     for (var item in controller.ejerciciosList) {
-      if (item.muscle.contains(grupoMuscular)) {
-        menuEjerciciosItems
-            .add(DropdownMenuItem(child: Text(item.name), value: item));
+      if (item.name == grupoEjercicios.name) {
+        continue;
+      } else {
+        if (item.muscle.contains(grupoMuscular)) {
+          menuEjerciciosItems
+              .add(DropdownMenuItem(child: Text(item.name), value: item));
+        }
       }
     }
     return menuEjerciciosItems;
@@ -74,8 +78,7 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
       muscle: widget.ejercicio.muscle,
       url: widget.ejercicio.url);
   final controller = Get.find<Listas>();
-  late EjercicioElement ejer = EjercicioElement(
-      name: 'name', tip: 'tip', muscle: ['muscle'], url: 'url');
+  late EjercicioElement ejer;
   late EjercicioElement ejercicioElegido;
 
   @override
@@ -106,13 +109,15 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: DropdownButtonFormField(
-                  hint: Text(
+                  value: grupoEjercicios,
+                  hint: const Text(
                     'Selecciona Ejercicios',
                     style: TextStyle(color: Colors.white),
                   ),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                   ),
+                  //value: grupoEjercicios,
                   dropdownColor: AppTheme.primaryBlue,
                   items: dropdownEjerciciosItems,
                   onChanged: (EjercicioElement? newValue) {
@@ -156,7 +161,7 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
               primary: false,
               //physics: NeverScrollableScrollPhysics(),
               itemBuilder: (_, int index) {
-                return RowRepeKg(list);
+                return EditRowRepeKg(widget.ejercicio.listSeries[index], list);
               },
             ),
             Padding(
@@ -164,8 +169,7 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
               child: TextButton(
                 onPressed: () {
                   if (list.isEmpty) {
-                    print('sale');
-                    return;
+                    list = widget.ejercicio.listSeries;
                   }
                   for (var item in controller.ejerciciosList) {
                     if (item.name == ejercicioElegido.name) {

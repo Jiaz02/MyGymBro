@@ -41,15 +41,15 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
             itemBuilder: (BuildContext context, int index) {
               return ListTile(
                 title: EntrenoCard(controller.rutinasList[index]),
-                onTap: () {
+                onTap: () async {
                   print(controller.rutinasList[index]);
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          DetallesRutina(rutina: controller.rutinasList[index]),
-                    ),
-                  );
+                  await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetallesRutina(
+                            rutina: controller.rutinasList[index]),
+                      ));
+                  setState(() {});
                 },
               );
             });
