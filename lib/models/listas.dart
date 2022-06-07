@@ -20,6 +20,14 @@ class Listas extends GetxController {
     return rutinasList;
   }
 
+  void clear() {
+    ejerciciosList.clear();
+    ejerciciosRutinaList.clear();
+    musculoList.clear();
+    prList.clear();
+    rutinasList.clear();
+  }
+
   setRutinasList(List<Rutina> rutinasList) => this.rutinasList = rutinasList;
 
   void addRutinaList(Rutina rutina) {

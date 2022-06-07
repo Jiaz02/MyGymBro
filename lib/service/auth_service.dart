@@ -35,6 +35,8 @@ class AuthService extends ChangeNotifier {
     if (decodedResp.containsKey('idToken')) {
       // Token hay que guardarlo en un lugar seguro
       await storage.write(key: 'token', value: decodedResp['idToken']);
+
+      await storage.write(key: 'uid', value: decodedResp['localId']);
       // decodedResp['idToken'];
       return null;
     } else {
@@ -59,6 +61,8 @@ class AuthService extends ChangeNotifier {
       // Token hay que guardarlo en un lugar seguro
       // decodedResp['idToken'];
       await storage.write(key: 'token', value: decodedResp['idToken']);
+
+      await storage.write(key: 'uid', value: decodedResp['localId']);
       return null;
     } else {
       print('cagaste');
@@ -67,8 +71,8 @@ class AuthService extends ChangeNotifier {
   }
 
   Future logout() async {
-    await storage.delete(key: 'token');
-    await storage.delete(key: 'uid');
+    print('Borrando');
+    await storage.deleteAll();
     return;
   }
 

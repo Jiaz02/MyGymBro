@@ -56,6 +56,7 @@ class _LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loginForm = Provider.of<LoginFormProvider>(context);
+    final rutForm = Provider.of<RutinaService>(context);
 
     return Container(
       child: Form(
@@ -126,6 +127,9 @@ class _LoginForm extends StatelessWidget {
                             loginForm.email, loginForm.password);
 
                         if (errorMessage == null) {
+                          rutForm.loadRutinas();
+                          rutForm.loadPr();
+
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(

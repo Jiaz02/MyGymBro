@@ -35,7 +35,6 @@ class EjercicioRutina {
   String toJson() => json.encode(toMap());
 
   factory EjercicioRutina.fromMap(Map<String, dynamic> json) {
-    print(json["listSeries"]);
     return EjercicioRutina(
       muscle: List<String>.from(json["muscle"].map((x) => x)),
       name: json["name"],

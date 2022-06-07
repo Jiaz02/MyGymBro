@@ -30,7 +30,7 @@ class RutinaService extends ChangeNotifier {
 
     final String user = await storage.read(key: 'uid') ?? '';
 
-    print(url);
+    print('+' + user);
     final Map<String, dynamic> rutinasMap = json.decode(resp.body);
 
     rutinasMap.forEach((key, value) {
@@ -49,7 +49,7 @@ class RutinaService extends ChangeNotifier {
 
     final Map<String, dynamic> prMap = json.decode(resp.body);
 
-    print(prMap);
+    print('-' + user);
 
     prMap.forEach((key, value) {
       final tempPr = Pr.fromMap(value);
