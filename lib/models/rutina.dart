@@ -3,12 +3,13 @@ import 'dart:convert';
 import 'package:my_gym_bro/models/models.dart';
 
 class Rutina {
-  Rutina(this.name, this.note, this.listEjerciciosRutina);
+  Rutina(this.name, this.note, this.listEjerciciosRutina,this.idUser);
 
   String name;
   String note;
   List<EjercicioRutina>? listEjerciciosRutina = [];
   String? id;
+  String? idUser;
 
   set setName(String name) => this.name = name;
 
@@ -32,6 +33,7 @@ class Rutina {
         List<EjercicioRutina>.from(json["listEjerciciosRutina"]
                 ?.map((x) => EjercicioRutina.fromMap(x)) ??
             []),
+        json["user"],
       );
 
   Map<String, dynamic> toMap() => {
@@ -39,6 +41,7 @@ class Rutina {
         "note": note,
         "listEjerciciosRutina": List<dynamic>.from(
             listEjerciciosRutina?.map((x) => x.toMap()) ?? []),
+        "user": idUser,
       };
   @override
   String toString() {

@@ -123,7 +123,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                         onPressed: () {
                           //Provider.of(context, listen: false);
                           rutina =
-                              Rutina(nombreRutina, observacionesRutina, []);
+                              Rutina(nombreRutina, observacionesRutina, [],'');
                           nombreRutina = 'Rutina';
                           observacionesRutina = '';
                           controller.addRutinaList(rutina);

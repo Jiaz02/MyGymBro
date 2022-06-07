@@ -25,8 +25,10 @@ class RutinaService extends ChangeNotifier {
   }
 
   Future loadRutinas() async {
-    final url = Uri.https(_baseUrl, 'rutinas.json', {'user': 'asd'});
+    final url = Uri.https(_baseUrl, 'rutinas.json');
     final resp = await http.get(url);
+
+    final String user = await storage.read(key: 'token') ?? '';
 
     print(url);
     final Map<String, dynamic> rutinasMap = json.decode(resp.body);
@@ -34,6 +36,7 @@ class RutinaService extends ChangeNotifier {
     rutinasMap.forEach((key, value) {
       final tempRutina = Rutina.fromMap(value);
       tempRutina.id = key;
+
       controller.rutinasList.add(tempRutina);
     });
   }
@@ -41,6 +44,7 @@ class RutinaService extends ChangeNotifier {
   Future loadPr() async {
     final url = Uri.https(_baseUrl, 'pr.json');
     final resp = await http.get(url);
+    final String user = await storage.read(key: 'token') ?? '';
 
     final Map<String, dynamic> prMap = json.decode(resp.body);
 
@@ -56,6 +60,9 @@ class RutinaService extends ChangeNotifier {
   Future saveOrCreateRutina(Rutina rutina) async {
     isSaving = true;
     notifyListeners();
+
+    final String user = await storage.read(key: 'token') ?? '';
+    rutina.idUser = user;
 
     //si tenemos id estamos actualizando, sino estamos creando :D
     if (rutina.id == null) {
@@ -102,6 +109,10 @@ class RutinaService extends ChangeNotifier {
   Future saveOrCreatePr(Pr pr) async {
     isSaving = true;
     notifyListeners();
+    
+    final String user = await storage.read(key: 'token') ?? '';
+    pr.idUser = user;
+
     List<String> lst = [];
 
     for (var item in controller.prList) {
