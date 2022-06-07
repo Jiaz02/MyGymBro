@@ -21,7 +21,6 @@ class Listas extends GetxController {
   }
 
   void clear() {
-    ejerciciosList.clear();
     ejerciciosRutinaList.clear();
     musculoList.clear();
     prList.clear();
