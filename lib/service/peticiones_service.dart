@@ -36,8 +36,9 @@ class RutinaService extends ChangeNotifier {
     rutinasMap.forEach((key, value) {
       final tempRutina = Rutina.fromMap(value);
       tempRutina.id = key;
-
-      controller.rutinasList.add(tempRutina);
+      if (tempRutina.idUser == user) {
+        controller.rutinasList.add(tempRutina);
+      }
     });
   }
 
@@ -53,7 +54,9 @@ class RutinaService extends ChangeNotifier {
     prMap.forEach((key, value) {
       final tempPr = Pr.fromMap(value);
       tempPr.id = key;
-      controller.prList.add(tempPr);
+      if (tempPr.idUser == user) {
+        controller.prList.add(tempPr);
+      }
     });
   }
 
@@ -109,7 +112,7 @@ class RutinaService extends ChangeNotifier {
   Future saveOrCreatePr(Pr pr) async {
     isSaving = true;
     notifyListeners();
-    
+
     final String user = await storage.read(key: 'token') ?? '';
     pr.idUser = user;
 
