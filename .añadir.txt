@@ -8,6 +8,7 @@ PARA LOS RETOS: CREARLOS EN EL JSON Y QUE EL USUARIO SOBREESCRIBA EL JSON CAMBIA
 
 probar rcear una tabla por usuario y leer asi xd
 
+¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Leer todas las rutinas y guardar solo las del usuario que toca xd !!!!!!!!!!!!!!!!
 
 CASI NEGRO PARA LAS TARJETAS:  #303030
 
