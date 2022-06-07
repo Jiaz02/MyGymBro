@@ -28,7 +28,7 @@ class RutinaService extends ChangeNotifier {
     final url = Uri.https(_baseUrl, 'rutinas.json');
     final resp = await http.get(url);
 
-    final String user = await storage.read(key: 'token') ?? '';
+    final String user = await storage.read(key: 'uid') ?? '';
 
     print(url);
     final Map<String, dynamic> rutinasMap = json.decode(resp.body);
@@ -45,7 +45,7 @@ class RutinaService extends ChangeNotifier {
   Future loadPr() async {
     final url = Uri.https(_baseUrl, 'pr.json');
     final resp = await http.get(url);
-    final String user = await storage.read(key: 'token') ?? '';
+    final String user = await storage.read(key: 'uid') ?? '';
 
     final Map<String, dynamic> prMap = json.decode(resp.body);
 
@@ -64,7 +64,7 @@ class RutinaService extends ChangeNotifier {
     isSaving = true;
     notifyListeners();
 
-    final String user = await storage.read(key: 'token') ?? '';
+    final String user = await storage.read(key: 'uid') ?? '';
     rutina.idUser = user;
 
     //si tenemos id estamos actualizando, sino estamos creando :D
@@ -113,7 +113,7 @@ class RutinaService extends ChangeNotifier {
     isSaving = true;
     notifyListeners();
 
-    final String user = await storage.read(key: 'token') ?? '';
+    final String user = await storage.read(key: 'uid') ?? '';
     pr.idUser = user;
 
     List<String> lst = [];

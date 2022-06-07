@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -10,6 +11,13 @@ class AuthService extends ChangeNotifier {
 
   final storage = FlutterSecureStorage();
 
+  // void inputData() {
+  //   final User? user = auth.currentUser;
+  //   final uid = user?.uid;
+  //   storage.write(key: 'uid', value: uid);
+  // }
+
+  // final FirebaseAuth auth = FirebaseAuth.instance;
   // Si retornamos algo, es un error, si no, todo bien!
   Future<String?> createUser(String email, String password) async {
     final Map<String, dynamic> authData = {
@@ -60,6 +68,7 @@ class AuthService extends ChangeNotifier {
 
   Future logout() async {
     await storage.delete(key: 'token');
+    await storage.delete(key: 'uid');
     return;
   }
 
