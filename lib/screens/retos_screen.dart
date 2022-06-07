@@ -18,6 +18,8 @@ class RetosScreen extends StatelessWidget {
             centerTitle: true,
           ),
         ),
-        body: Text('textito de retos'));
+        body: Center(
+            child: Text('Proximamente',
+                style: TextStyle(color: Colors.white, fontSize: 20))));
   }
 }

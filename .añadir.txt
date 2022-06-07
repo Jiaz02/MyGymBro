@@ -1,14 +1,8 @@
 
-Mirar video 229 para rellenar los campos del form
-
-Probar a llamar a un cuadrto de dialogo en vez de a una pantalla y ver si no hace pum
 
 PARA LOS RETOS: CREARLOS EN EL JSON Y QUE EL USUARIO SOBREESCRIBA EL JSON CAMBIANDO EL BOOL DE COMPLETADO.
     Leerlos del json, y si lo completas lo elimina del json y lo sube a la base de datos, si no hay mas retos poner un mensaje tipo estas demasiado mamado, pronto habra mas retos ;)
 
-probar rcear una tabla por usuario y leer asi xd
-
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Leer todas las rutinas y guardar solo las del usuario que toca xd !!!!!!!!!!!!!!!!
 
 CASI NEGRO PARA LAS TARJETAS:  #303030
 

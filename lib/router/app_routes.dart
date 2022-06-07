@@ -9,6 +9,12 @@ class AppRoutes {
 //pantallas disponibles
   static final menuOption = <MenuOption>[
     MenuOption(
+        route: 'peso',
+        image: AssetImage('assets/crearpr.png'),
+        icon: Icons.tab,
+        name: 'Pesos Screen',
+        screen: AddPrScreen()),
+    MenuOption(
         route: 'graffic',
         image: AssetImage('assets/graficos.png'),
         icon: Icons.tab,
@@ -20,12 +26,6 @@ class AppRoutes {
         icon: Icons.tab,
         name: 'Medidas Screen',
         screen: const MeasureScreen()),
-    MenuOption(
-        route: 'peso',
-        image: AssetImage('assets/crearpr.png'),
-        icon: Icons.tab,
-        name: 'Pesos Screen',
-        screen: AddPrScreen()),
     MenuOption(
         route: 'splash',
         image: AssetImage('assets/graficos.png'),
