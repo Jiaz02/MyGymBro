@@ -9,3 +9,8 @@ CASI NEGRO PARA LAS TARJETAS:  #303030
 TOKEN PARA FIREBASE: 
 https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC7oi6d2C3_dDuAXLImUpBMxvOS2_Ympu0
 
+Yo pondría, músculos principales y secuandarios
+Los principales actuarían como actuan ahora
+Y los secundarios aparecerían como dato al mirar el ejercicio. Pero no en el desplegable
+
+Mensajes si no rellenas algun campo, ta feo

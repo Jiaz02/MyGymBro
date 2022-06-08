@@ -97,7 +97,7 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: DropdownButtonFormField(
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   dropdownColor: AppTheme.primaryBlue,
                   value: grupoMuscular,
                   items: dropdownMusculosItems,
@@ -134,30 +134,46 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextField(
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 onChanged: (value) {
                   if (value.isEmpty) {
                     numseries = 0;
                     setState(() {});
                   } else {
                     numseries = int.parse(value);
-                    if (numseries > 15) {
-                    } else {
-                      setState(() {});
+
+                    if (numseries > widget.ejercicio.listSeries.length) {
+                      var num = widget.ejercicio.listSeries.length;
+
+                      if (numseries > 15) {
+                        print(numseries);
+                        numseries = 15;
+                        for (var i = num; i < numseries; i++) {
+                          widget.ejercicio.listSeries
+                              .add(RowRepKg(repes: 0, kg: 0));
+                          setState(() {});
+                        }
+                      } else {
+                        for (var i = num; i < numseries; i++) {
+                          widget.ejercicio.listSeries
+                              .add(RowRepKg(repes: 0, kg: 0));
+                          setState(() {});
+                        }
+                      }
                     }
                   }
                 },
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                    border: UnderlineInputBorder(),
+                    border: const UnderlineInputBorder(),
                     hintText: numseries.toString(),
                     // label: Text('Num Series'),
-                    labelStyle: TextStyle(color: Colors.white),
-                    hintStyle: TextStyle(color: Colors.white)),
+                    labelStyle: const TextStyle(color: Colors.white),
+                    hintStyle: const TextStyle(color: Colors.white)),
               ),
             ),
             ListView.builder(
-              itemCount: numseries,
+              itemCount: widget.ejercicio.listSeries.length,
               shrinkWrap: true,
               primary: false,
               //physics: NeverScrollableScrollPhysics(),
@@ -181,18 +197,15 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                           url: item.url);
                     }
                   }
-
                   widget.ejercicio.listSeries = list;
                   widget.ejercicio.name = ejer.name;
                   widget.ejercicio.tip = ejer.tip;
                   widget.ejercicio.muscle = ejer.muscle;
                   widget.ejercicio.url = ejer.url;
-                  //TODO: mirar esto
-                  //Se actualiza en la base de datos pero no se insta actualiza la lista
                   widget.rutinaService.saveOrCreateRutina(widget.rutina);
                   Navigator.pop(context);
                 },
-                child: Text('Guardar ejercicio'),
+                child: const Text('Guardar ejercicio'),
                 // ignore: prefer_const_constructors
                 style: TextButton.styleFrom(
                     backgroundColor: AppTheme.primaryBlue,
@@ -205,12 +218,10 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
               child: TextButton(
                 onPressed: () {
                   widget.rutina.listEjerciciosRutina?.remove(widget.ejercicio);
-                  //TODO: mirar esto
-                  //Se actualiza en la base de datos pero no se insta actualiza la lista
                   widget.rutinaService.saveOrCreateRutina(widget.rutina);
                   Navigator.pop(context);
                 },
-                child: Text('Eliminar ejercicio'),
+                child: const Text('Eliminar ejercicio'),
                 // ignore: prefer_const_constructors
                 style: TextButton.styleFrom(
                     backgroundColor: Colors.red,

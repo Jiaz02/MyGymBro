@@ -16,12 +16,13 @@ class EditRowRepeKg extends StatelessWidget {
   RowRepKg rowRepKg;
   List<RowRepKg> list;
 
+// TODO: MIRAR CUANDO LIMPIAR LA LISTA PARA QUE FUNCIONE SIN AÑADIR SIN MAS
+
   @override
   Widget build(BuildContext context) {
-    var reps;
-    var kg;
-//creamos un containes para introducir las tarjetas de opciones
-//TODO: hacer que al editar un row se vealos pesos levantado y no salgan las repes vacias xd
+    var reps = rowRepKg.repes;
+    var kg = rowRepKg.kg;
+//creamos un row que muestra y guarda los datos
     return Row(
       children: [
         const Expanded(
@@ -35,14 +36,14 @@ class EditRowRepeKg extends StatelessWidget {
           child: TextField(
             //textInputAction: _showTextFields(),
             keyboardType: TextInputType.number,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
             onChanged: (value) {
               reps = int.parse(value);
             },
             decoration: InputDecoration(
-                border: UnderlineInputBorder(),
+                border: const UnderlineInputBorder(),
                 hintText: rowRepKg.repes.toString(),
-                hintStyle: TextStyle(color: Colors.white)),
+                hintStyle: const TextStyle(color: Colors.white)),
           ),
         )),
         const Expanded(
@@ -52,9 +53,9 @@ class EditRowRepeKg extends StatelessWidget {
                     style: TextStyle(color: Colors.white)))),
         Expanded(
             child: Padding(
-          padding: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
+          padding: const EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
           child: TextField(
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
             keyboardType: TextInputType.number,
             onChanged: (value) {
               kg = int.parse(value);
@@ -63,9 +64,9 @@ class EditRowRepeKg extends StatelessWidget {
               list.add(serie);
             },
             decoration: InputDecoration(
-                border: UnderlineInputBorder(),
+                border: const UnderlineInputBorder(),
                 hintText: rowRepKg.kg.toString(),
-                hintStyle: TextStyle(color: Colors.white)),
+                hintStyle: const TextStyle(color: Colors.white)),
           ),
         )),
         const Expanded(

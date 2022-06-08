@@ -31,7 +31,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
       body: FutureBuilder(
           builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
         if (controller.rutinasList.isEmpty) {
-          return Center(
+          return const Center(
               child: Text('Crea una rutina con el boton de abajo',
                   style: TextStyle(color: Colors.white, fontSize: 20)));
         }
@@ -122,7 +122,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                         onPressed: () {
                           //Provider.of(context, listen: false);
                           rutina =
-                              Rutina(nombreRutina, observacionesRutina, [],'');
+                              Rutina(nombreRutina, observacionesRutina, [], '');
                           nombreRutina = 'Rutina';
                           observacionesRutina = '';
                           controller.addRutinaList(rutina);

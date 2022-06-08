@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_gym_bro/models/rutina.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
 
+import '../screens/screens.dart';
+
 class EntrenoCard extends StatelessWidget {
   const EntrenoCard(this.rut, {Key? key}) : super(key: key);
   final Rutina rut;
@@ -21,8 +23,11 @@ class EntrenoCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(rut.name, style: TextStyle(color: Colors.white),),
-            _editButton(),
+                Text(
+                  rut.name,
+                  style: TextStyle(color: Colors.white),
+                ),
+                _editButton(rut),
               ],
             ),
           ],
@@ -41,13 +46,28 @@ class EntrenoCard extends StatelessWidget {
 }
 
 // ignore: camel_case_types
-class _editButton extends StatelessWidget {
+class _editButton extends StatefulWidget {
+  _editButton(this.rut);
+  Rutina rut;
+  @override
+  State<_editButton> createState() => _editButtonState();
+}
+
+class _editButtonState extends State<_editButton> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom:20.0,right: 20.0,top:20.0,left: 5.0),
+      padding: const EdgeInsets.only(
+          bottom: 20.0, right: 20.0, top: 20.0, left: 5.0),
       child: IconButton(
-        onPressed: () {},
+        onPressed: () async {
+          await Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetallesRutina(rutina: widget.rut),
+              ));
+          setState(() {});
+        },
         icon: const Icon(Icons.edit),
         color: Colors.white,
       ),

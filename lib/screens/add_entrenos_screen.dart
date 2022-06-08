@@ -82,7 +82,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: DropdownButtonFormField(
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   dropdownColor: AppTheme.primaryBlue,
                   value: grupoMuscular,
                   items: dropdownMusculosItems,
@@ -95,11 +95,11 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: DropdownButtonFormField(
-                  hint: Text(
+                  hint: const Text(
                     'Selecciona Ejercicios',
                     style: TextStyle(color: Colors.white),
                   ),
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   dropdownColor: AppTheme.primaryBlue,
                   items: dropdownEjerciciosItems,
                   onChanged: (EjercicioElement? newValue) {
@@ -115,7 +115,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextField(
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 onChanged: (value) {
                   if (value.isEmpty) {
                     numseries = 0;
@@ -123,6 +123,8 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                   } else {
                     numseries = int.parse(value);
                     if (numseries > 15) {
+                      numseries = 15;
+                      setState(() {});
                     } else {
                       setState(() {});
                     }
@@ -135,6 +137,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                     hintStyle: TextStyle(color: Colors.white)),
               ),
             ),
+            //listview para mostrar
             ListView.builder(
               itemCount: numseries,
               shrinkWrap: true,
@@ -158,8 +161,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                   widget.rutinaService.saveOrCreateRutina(widget.rutina);
                   Navigator.pop(context);
                 },
-                child: Text('Añadir ejercicio'),
-                // ignore: prefer_const_constructors
+                child: const Text('Añadir ejercicio'),
                 style: TextButton.styleFrom(
                     backgroundColor: AppTheme.primaryBlue,
                     primary: Colors.white,

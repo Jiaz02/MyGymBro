@@ -45,15 +45,26 @@ class _DetallesRutinaState extends State<DetallesRutina> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(2.0),
             child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: widget.rutina.listEjerciciosRutina?.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
-                    title: Text(
-                      widget.rutina.listEjerciciosRutina![index].name,
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    title: Container(
+                      padding: const EdgeInsets.all(10.0),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 56, 135, 255),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                          border: Border.all(color: Colors.white)),
+                      child:
+                          Text(widget.rutina.listEjerciciosRutina![index].name,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              )),
                     ),
                     onTap: () async {
                       await Navigator.push(

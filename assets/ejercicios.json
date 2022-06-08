@@ -141,7 +141,7 @@
                 "Triceps",
                 "Trapecio"
             ],
-            "url":""
+            "url":"assets/pullover.gif"
         },
         {
             "name": "Curl de biceps",
@@ -181,7 +181,7 @@
         },
         {
             "name": "Curl de biceps en banco Scott",
-            "tip": "Al tener los codos adelantados y apoyados en el banco podemos aislar el biceps. Asegurate de bajar hasta tener el brazo extendido. Baja el peso respecto al Curll habitual y ante la mas minima molestia para.",
+            "tip": "Al tener los codos adelantados y apoyados en el banco podemos aislar el biceps. Asegurate de bajar hasta tener el brazo extendido. Baja el peso respecto al curl habitual y ante la mas minima molestia para.",
             "muscle": [
                 "Biceps",
                 "Demás flexores del codo"
@@ -222,7 +222,7 @@
                 "Cuadriceps",
                 "Isquiosurales"
             ],
-            "url":""
+            "url":"assets/extension.gif"
         },
         {
             "name": "Flexion de rodillas",
@@ -230,7 +230,7 @@
             "muscle": [
                 "Isquiosurales"
             ],
-            "url":""
+            "url":"assets/flexion.gif"
         },
         {
             "name": "Flexion de tobillo",

@@ -16,10 +16,10 @@ class RowRepeKg extends StatelessWidget {
   Widget build(BuildContext context) {
     var reps;
     var kg;
-//creamos un containes para introducir las tarjetas de opciones
-//TODO: hacer que al editar un row se vealos pesos levantado y no salgan las repes vacias xd
+//creamos un row que muestra y guarda los datos
     return Row(
       children: [
+        //con un expanded hacemos que quepan todos en el row sin petar
         const Expanded(
             child: Padding(
                 padding: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
@@ -31,7 +31,7 @@ class RowRepeKg extends StatelessWidget {
           child: TextField(
             //textInputAction: _showTextFields(),
             keyboardType: TextInputType.number,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
             onChanged: (value) {
               reps = int.parse(value);
             },
@@ -48,9 +48,9 @@ class RowRepeKg extends StatelessWidget {
                     style: TextStyle(color: Colors.white)))),
         Expanded(
             child: Padding(
-          padding: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
+          padding: const EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
           child: TextField(
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
             keyboardType: TextInputType.number,
             onChanged: (value) {
               kg = int.parse(value);
