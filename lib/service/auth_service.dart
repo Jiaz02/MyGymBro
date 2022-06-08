@@ -11,13 +11,7 @@ class AuthService extends ChangeNotifier {
 
   final storage = FlutterSecureStorage();
 
-  // void inputData() {
-  //   final User? user = auth.currentUser;
-  //   final uid = user?.uid;
-  //   storage.write(key: 'uid', value: uid);
-  // }
 
-  // final FirebaseAuth auth = FirebaseAuth.instance;
   // Si retornamos algo, es un error, si no, todo bien!
   Future<String?> createUser(String email, String password) async {
     final Map<String, dynamic> authData = {
@@ -26,12 +20,14 @@ class AuthService extends ChangeNotifier {
       'returnSecureToken': true
     };
 
+//creamos la url con uri.https
     final url =
         Uri.https(_baseUrl, '/v1/accounts:signUp', {'key': _firebaseToken});
 
     final resp = await http.post(url, body: json.encode(authData));
     final Map<String, dynamic> decodedResp = json.decode(resp.body);
 
+//guardamos el token que nos devuelve
     if (decodedResp.containsKey('idToken')) {
       // Token hay que guardarlo en un lugar seguro
       await storage.write(key: 'token', value: decodedResp['idToken']);
@@ -50,13 +46,13 @@ class AuthService extends ChangeNotifier {
       'password': password,
       'returnSecureToken': true
     };
-
+//creamos la url
     final url = Uri.https(
         _baseUrl, '/v1/accounts:signInWithPassword', {'key': _firebaseToken});
 
     final resp = await http.post(url, body: json.encode(authData));
     final Map<String, dynamic> decodedResp = json.decode(resp.body);
-
+//guardamos el token
     if (decodedResp.containsKey('idToken')) {
       // Token hay que guardarlo en un lugar seguro
       // decodedResp['idToken'];
@@ -71,7 +67,7 @@ class AuthService extends ChangeNotifier {
   }
 
   Future logout() async {
-    print('Borrando');
+    //limpiamos el storage al salir
     await storage.deleteAll();
     return;
   }

@@ -9,11 +9,6 @@ import '../providers/login_form_provider.dart';
 import '../ui/input_decorations.dart';
 import '../widgets/widgets.dart';
 
-const users = const {
-  'pruevitas@gmail.com': '12345',
-  'hunter@gmail.com': 'hunter',
-};
-
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

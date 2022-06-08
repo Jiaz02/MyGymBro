@@ -20,7 +20,6 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
   var nombreRutina = 'Rutina';
   var observacionesRutina = 'Ninguna';
 
-  //PONER SIEMPRE VARIABLES DE ESTA CLASE Y MANDAR LA LISTA COMNPLETA AL SALIR DE AQUI XD
   final controller = Get.find<Listas>();
 
   late Rutina rutina;

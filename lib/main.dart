@@ -13,6 +13,7 @@ import 'package:provider/provider.dart';
 import 'theme/app_theme.dart';
 
 void main() {
+  //creamos la clase listas para que este disponible de forma global
   Get.put(Listas());
   runApp(AppState());
 }
@@ -22,6 +23,7 @@ class AppState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //hacemos que los servicios esten disponibles de forma global con el multiprovider
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthService()),
