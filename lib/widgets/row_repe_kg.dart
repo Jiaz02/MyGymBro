@@ -14,8 +14,8 @@ class RowRepeKg extends StatelessWidget {
   List<RowRepKg> list;
   @override
   Widget build(BuildContext context) {
-    var reps;
-    var kg;
+    var reps = 0;
+    var kg = 0;
 //creamos un row que muestra y guarda los datos
     return Row(
       children: [
