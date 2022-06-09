@@ -53,10 +53,19 @@ class RowRepeKg extends StatelessWidget {
             style: const TextStyle(color: Colors.white),
             keyboardType: TextInputType.number,
             onChanged: (value) {
-              kg = int.parse(value);
-              RowRepKg serie = RowRepKg(repes: reps, kg: kg);
-              //TODO: problemas con poner varias unidades en Kg
-              list.add(serie);
+              if (value.characters.length != 1) {
+                kg = int.parse(value);
+
+                RowRepKg serie = RowRepKg(repes: reps, kg: kg);
+                print(list);
+                list.removeLast();
+                list.add(serie);
+              } else {
+                kg = int.parse(value);
+
+                RowRepKg serie = RowRepKg(repes: reps, kg: kg);
+                list.add(serie);
+              }
             },
             decoration: const InputDecoration(
                 border: UnderlineInputBorder(),
