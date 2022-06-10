@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:my_gym_bro/models/models.dart';
 
+///Clase que contiene los ejercicios de cada rutina
 class EjercicioRutina {
   EjercicioRutina({
     required this.name,

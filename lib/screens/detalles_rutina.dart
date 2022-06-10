@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_gym_bro/models/rutina.dart';
-import 'package:my_gym_bro/screens/add_entrenos_screen.dart';
 import 'package:my_gym_bro/screens/screens.dart';
 import 'package:provider/provider.dart';
 
@@ -27,7 +25,7 @@ class _DetallesRutinaState extends State<DetallesRutina> {
     return Scaffold(
       backgroundColor: AppTheme.primaryDarkBlue,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(40.0),
+        preferredSize: const Size.fromHeight(40.0),
         child: AppBar(
           backgroundColor: AppTheme.primaryBlue,
           title: const Text('My Gym Bro'),
@@ -41,11 +39,12 @@ class _DetallesRutinaState extends State<DetallesRutina> {
             padding: const EdgeInsets.all(16.0),
             child: Text(
               widget.rutina.name,
-              style: TextStyle(color: Colors.white, fontSize: 24),
+              style: const TextStyle(color: Colors.white, fontSize: 24),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(2.0),
+            //mostramos los ejercicios de la rutina
             child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: widget.rutina.listEjerciciosRutina?.length,
@@ -54,7 +53,7 @@ class _DetallesRutinaState extends State<DetallesRutina> {
                     title: Container(
                       padding: const EdgeInsets.all(10.0),
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 56, 135, 255),
+                          color: const Color.fromARGB(255, 56, 135, 255),
                           borderRadius: const BorderRadius.all(
                             Radius.circular(10),
                           ),

@@ -24,6 +24,7 @@ class RutinaService extends ChangeNotifier {
     this.loadPr();
   }
 
+//cargamos las rutinas de la base de datos
   Future loadRutinas() async {
     final url = Uri.https(_baseUrl, 'rutinas.json');
     final resp = await http.get(url);
@@ -42,6 +43,7 @@ class RutinaService extends ChangeNotifier {
     });
   }
 
+//cargamos los pr
   Future loadPr() async {
     final url = Uri.https(_baseUrl, 'pr.json');
     final resp = await http.get(url);
@@ -60,6 +62,7 @@ class RutinaService extends ChangeNotifier {
     });
   }
 
+//guardamo a creamos una rutina
   Future saveOrCreateRutina(Rutina rutina) async {
     isSaving = true;
     notifyListeners();
@@ -80,6 +83,7 @@ class RutinaService extends ChangeNotifier {
     notifyListeners();
   }
 
+//update rutina
   Future<String> updateRutina(Rutina rutina) async {
 //HACEMOS LA PETICION
 
@@ -91,6 +95,7 @@ class RutinaService extends ChangeNotifier {
     return rutina.id!;
   }
 
+//create rutina
   Future<String> createRutina(Rutina rutina) async {
 //HACEMOS LA PETICION
 
@@ -104,11 +109,13 @@ class RutinaService extends ChangeNotifier {
     return rutina.id!;
   }
 
+//eliminamos rutina
   Future deleteRutina(Rutina rutina) async {
     final url = Uri.https(_baseUrl, 'rutinas/${rutina.id}.json');
     http.delete(url, body: rutina.toJson());
   }
 
+//creamos o modificamos pr
   Future saveOrCreatePr(Pr pr) async {
     isSaving = true;
     notifyListeners();
@@ -139,6 +146,7 @@ class RutinaService extends ChangeNotifier {
     notifyListeners();
   }
 
+//creamos pr
   Future<String> createPr(Pr pr) async {
 //HACEMOS LA PETICION
 
@@ -152,6 +160,7 @@ class RutinaService extends ChangeNotifier {
     return pr.id!;
   }
 
+//modificamos pr
   Future<String> updatePr(Pr pr) async {
 //HACEMOS LA PETICION
 

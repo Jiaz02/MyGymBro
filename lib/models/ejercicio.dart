@@ -4,6 +4,7 @@ Ejercicio ejercicioFromJson(String str) => Ejercicio.fromJson(json.decode(str));
 
 String ejercicioToJson(Ejercicio data) => json.encode(data.toJson());
 
+//Clase que obtiene la lista del json
 class Ejercicio {
   Ejercicio({
     required this.ejercicio,
@@ -21,6 +22,7 @@ class Ejercicio {
       };
 }
 
+///Clase que lee los distintos ejercios del array que se optiene del json
 class EjercicioElement {
   EjercicioElement({
     required this.name,

@@ -8,6 +8,8 @@ import '../models/models.dart';
 import '../service/service.dart';
 
 class CheckAuthScreen extends StatelessWidget {
+  const CheckAuthScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context, listen: false);
@@ -22,23 +24,23 @@ class CheckAuthScreen extends StatelessWidget {
             FutureBuilder(
               future: authService.readToken(),
               builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-                if (!snapshot.hasData) return Text('');
-
+                if (!snapshot.hasData) return const Text('');
+                //cargamos el login o el home segun si hay datos de estar loggeado o no
                 if (snapshot.data == '') {
                   Future.microtask(() {
                     Navigator.pushReplacement(
                         context,
                         PageRouteBuilder(
                             pageBuilder: (_, __, ___) => LoginScreen(),
-                            transitionDuration: Duration(seconds: 0)));
+                            transitionDuration: const Duration(seconds: 0)));
                   });
                 } else {
                   Future.microtask(() {
                     Navigator.pushReplacement(
                         context,
                         PageRouteBuilder(
-                            pageBuilder: (_, __, ___) => HomeScreen(),
-                            transitionDuration: Duration(seconds: 0)));
+                            pageBuilder: (_, __, ___) => const HomeScreen(),
+                            transitionDuration: const Duration(seconds: 0)));
                   });
                 }
 

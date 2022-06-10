@@ -8,6 +8,7 @@ Map<String, Reto> retoFromJson(String str) => Map.from(json.decode(str)).map((k,
 
 String retoToJson(Map<String, Reto> data) => json.encode(Map.from(data).map((k, v) => MapEntry<String, dynamic>(k, v.toJson())));
 
+//Clase que lee los retos completaods de la base de datos y el json segun corresponda
 class Reto {
     Reto({
         required this.completado,

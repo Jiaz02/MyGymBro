@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
-import 'package:my_gym_bro/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../models/models.dart';
 import '../service/service.dart';
 
 class AddPrScreen extends StatefulWidget {
-  AddPrScreen({Key? key}) : super(key: key);
+  const AddPrScreen({Key? key}) : super(key: key);
 
   @override
   State<AddPrScreen> createState() => _AddPrScreenState();
 }
 
 class _AddPrScreenState extends State<AddPrScreen> {
+  //rellenamos la lista de ejercicios disponibles con todos los añadidos
   List<DropdownMenuItem<EjercicioElement>> get dropdownEjerciciosItems {
-    //var currentEjercicio = EjercicioElement(name: widget.ejercicio.name, tip: widget.ejercicio.tip, muscle: widget.ejercicio.muscle, url: widget.ejercicio.url);
-    // DropdownMenuItem(child: Text(widget.ejercicio.name), value: currentEjercicio),
     List<DropdownMenuItem<EjercicioElement>> menuEjerciciosItems = [];
     for (var item in controller.ejerciciosList) {
       menuEjerciciosItems
@@ -50,9 +47,9 @@ class _AddPrScreenState extends State<AddPrScreen> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: DropdownButtonFormField(
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                     dropdownColor: AppTheme.primaryBlue,
-                    hint: Text(
+                    hint: const Text(
                       'Selecciona un ejercicio',
                       style: TextStyle(color: Colors.white),
                     ),
@@ -66,7 +63,7 @@ class _AddPrScreenState extends State<AddPrScreen> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: TextField(
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   keyboardType: TextInputType.number,
                   onChanged: (value) {
                     kg = double.parse(value);
@@ -80,7 +77,7 @@ class _AddPrScreenState extends State<AddPrScreen> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: TextButton(
-                  child: Text('Guardar PR'),
+                  child: const Text('Guardar PR'),
                   // ignore: prefer_const_constructors
                   style: TextButton.styleFrom(
                       backgroundColor: AppTheme.primaryBlue,

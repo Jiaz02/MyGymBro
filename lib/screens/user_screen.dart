@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
-import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/screens/screens.dart';
-import 'package:my_gym_bro/theme/app_theme.dart';
-import 'package:my_gym_bro/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../models/models.dart';
 import '../service/service.dart';
 
 class UserScreen extends StatelessWidget {
-  UserScreen({Key? key}) : super(key: key);
+  const UserScreen({Key? key}) : super(key: key);
 
-  final storage = FlutterSecureStorage();
+  final storage = const FlutterSecureStorage();
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -28,7 +25,7 @@ class UserScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 26, left: 9, bottom: 26),
             child: GestureDetector(
-                child: Container(
+                child: SizedBox(
                     width: size.width / 1.5,
                     height: size.height / 5,
                     child: ClipRRect(
@@ -48,7 +45,7 @@ class UserScreen extends StatelessWidget {
               Navigator.pushReplacement(context,
                   PageRouteBuilder(pageBuilder: (_, __, ___) => LoginScreen()));
             },
-            child: Text('Cerrar Sesion'),
+            child: const Text('Cerrar Sesion'),
             style: TextButton.styleFrom(
                 backgroundColor: Colors.red,
                 primary: Colors.white,

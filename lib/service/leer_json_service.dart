@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 
 import '../models/models.dart';
 
+//leemos del json
 class LeerJsonService extends ChangeNotifier {
   Future<Ejercicio> fetchEjercicio() async {
     final String response =

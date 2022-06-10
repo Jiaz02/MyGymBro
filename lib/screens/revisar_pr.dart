@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_gym_bro/screens/screens.dart';
 
 import '../models/models.dart';
 import '../theme/app_theme.dart';
@@ -8,13 +7,14 @@ import '../theme/app_theme.dart';
 class RevisarPr extends StatelessWidget {
   RevisarPr({Key? key}) : super(key: key);
 
+//pantalla par revisar todos los pr que haya en un determinado usuario
   final controller = Get.find<Listas>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.primaryDarkBlue,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(40.0),
+        preferredSize: const Size.fromHeight(40.0),
         child: AppBar(
           backgroundColor: AppTheme.primaryBlue,
           title: const Text('My Gym Bro'),
@@ -24,6 +24,7 @@ class RevisarPr extends StatelessWidget {
       body: FutureBuilder(
           builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
         if (controller.prList.isEmpty) {
+          //Mostramos un mensaje en caso de que no haya ningun pr guardado
           return const Center(
               child: Padding(
             padding: EdgeInsets.all(16.0),
@@ -31,6 +32,7 @@ class RevisarPr extends StatelessWidget {
                 style: TextStyle(color: Colors.white, fontSize: 20)),
           ));
         }
+        //listamos los pr
         return ListView.builder(
           itemCount: controller.prList.length,
           shrinkWrap: true,
@@ -43,12 +45,12 @@ class RevisarPr extends StatelessWidget {
                 children: [
                   Text(
                     controller.prList[index].nameEjercicio,
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    style: const TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   Expanded(child: Container()),
                   Text(
                     controller.prList[index].peso.toString() + 'Kg',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    style: const TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ],
               ),

@@ -1,4 +1,4 @@
-
+Permitir editar el nombre y observaciones de una rutina
 
 PARA LOS RETOS: CREARLOS EN EL JSON Y QUE EL USUARIO SOBREESCRIBA EL JSON CAMBIANDO EL BOOL DE COMPLETADO.
     Leerlos del json, y si lo completas lo elimina del json y lo sube a la base de datos, si no hay mas retos poner un mensaje tipo estas demasiado mamado, pronto habra mas retos ;)

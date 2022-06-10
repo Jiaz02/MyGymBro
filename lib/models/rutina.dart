@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:my_gym_bro/models/models.dart';
 
+///Clase que contiene las rutinas y sus distintas sub clases
 class Rutina {
   Rutina(this.name, this.note, this.listEjerciciosRutina,this.idUser);
 

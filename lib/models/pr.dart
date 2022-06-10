@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+///Clase que lee los pr de la base de datos
 class Pr {
   Pr({
     required this.nameEjercicio,

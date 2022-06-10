@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_gym_bro/models/models.dart';
-import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/screens/screens.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:my_gym_bro/widgets/widgets.dart';
@@ -30,11 +29,13 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
       backgroundColor: AppTheme.primaryDarkBlue,
       body: FutureBuilder(
           builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+            //si no hay rutinas mostramos un mensaje
         if (controller.rutinasList.isEmpty) {
           return const Center(
               child: Text('Crea una rutina con el boton de abajo',
                   style: TextStyle(color: Colors.white, fontSize: 20)));
         }
+        //mostramos las rutinas disponibles con las tarjetas
         return ListView.builder(
             itemCount: controller.rutinasList.length,
             itemBuilder: (BuildContext context, int index) {
@@ -53,6 +54,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
               );
             });
       }),
+      //boton añadir rutinas
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           backgroundColor: AppTheme.primaryBlue,
@@ -62,6 +64,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
     );
   }
 
+//cuadro de dialogo para crear nuevas rutinas
   void showCustomDialog(BuildContext context) {
     final rutinaService = Provider.of<RutinaService>(context, listen: false);
     showDialog(

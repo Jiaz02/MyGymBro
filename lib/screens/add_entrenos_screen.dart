@@ -1,10 +1,6 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_gym_bro/models/ejercicio_rutina.dart';
-import 'package:my_gym_bro/models/rutina.dart';
-import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:my_gym_bro/widgets/widgets.dart';
 
@@ -48,11 +44,12 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
     return menuMusculosItems;
   }
 
+//creamos una lista donde guardaremos las listas
   late List<RowRepKg> list = [];
+  //llamamos a la clase listas
   final controller = Get.find<Listas>();
+  //rellenamos el combo box de los ejercicios
   List<DropdownMenuItem<EjercicioElement>> get dropdownEjerciciosItems {
-    //var currentEjercicio = EjercicioElement(name: widget.ejercicio.name, tip: widget.ejercicio.tip, muscle: widget.ejercicio.muscle, url: widget.ejercicio.url);
-    // DropdownMenuItem(child: Text(widget.ejercicio.name), value: currentEjercicio),
     List<DropdownMenuItem<EjercicioElement>> menuEjerciciosItems = [];
     for (var item in controller.ejerciciosList) {
       if (item.muscle.contains(grupoMuscular)) {
@@ -87,6 +84,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                   value: grupoMuscular,
                   items: dropdownMusculosItems,
                   onChanged: (String? newValue) {
+                    //cuando cambie, cambiamos los ejercicios
                     setState(() {
                       grupoMuscular = newValue!;
                     });
@@ -104,6 +102,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                   items: dropdownEjerciciosItems,
                   onChanged: (EjercicioElement? newValue) {
                     setState(() {
+                      //cuando cambia, actualizamos el ejercicio elegido
                       ejercicioElegido = EjercicioElement(
                           name: newValue?.name ?? '',
                           tip: newValue?.tip ?? '',
@@ -117,6 +116,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
               child: TextField(
                 style: const TextStyle(color: Colors.white),
                 onChanged: (value) {
+                  //en funcion del numero de series mostramos mas o menos rows
                   if (value.isEmpty) {
                     numseries = 0;
                     setState(() {});
@@ -150,6 +150,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
               padding: const EdgeInsets.all(16.0),
               child: TextButton(
                 onPressed: () {
+                  //guardamos la rutina
                   widget.rutina.listEjerciciosRutina?.add(EjercicioRutina(
                     name: ejercicioElegido.name,
                     tip: ejercicioElegido.tip,

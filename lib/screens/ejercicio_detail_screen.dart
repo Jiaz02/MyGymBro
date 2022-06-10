@@ -7,7 +7,7 @@ class EjercicioDetailScreen extends StatelessWidget {
   EjercicioDetailScreen({Key? key, required this.ejercicio}) : super(key: key);
 
   EjercicioElement ejercicio;
-
+//mostramos los detalles de los ejercicios
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class EjercicioDetailScreen extends StatelessWidget {
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Text(ejercicio.name,style: TextStyle(color: Colors.white,fontSize: 24),),
+          child: Text(ejercicio.name,style: const TextStyle(color: Colors.white,fontSize: 24),),
         ),
         const Padding(
           padding: EdgeInsets.only(top:16.0,right: 16,left: 16, bottom: 8),
@@ -35,7 +35,7 @@ class EjercicioDetailScreen extends StatelessWidget {
               itemCount: ejercicio.muscle.length,
               shrinkWrap: true,
               itemBuilder: (context, index) {
-                return Text(ejercicio.muscle[index],style: TextStyle(color: Colors.white,fontSize: 18),);
+                return Text(ejercicio.muscle[index],style: const TextStyle(color: Colors.white,fontSize: 18),);
               }),
         ),
         Padding(
@@ -48,7 +48,7 @@ class EjercicioDetailScreen extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Text('Consejito: '+ejercicio.tip,style: TextStyle(color: Colors.white,fontSize: 14),),
+          child: Text('Consejito: '+ejercicio.tip,style: const TextStyle(color: Colors.white,fontSize: 14),),
         ),
       ]),
     );

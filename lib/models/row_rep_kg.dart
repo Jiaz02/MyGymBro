@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+///Clase que contiene las series, numero de repeticiones y kilos levantados en cada serie para guardarlo en una lista
 class RowRepKg {
   RowRepKg({this.repes, this.kg});
 

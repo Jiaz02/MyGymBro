@@ -4,7 +4,7 @@ import 'package:my_gym_bro/models/models.dart';
 class Listas extends GetxController {
   Listas();
 
-  //creamos unas listas vacias
+  //creamos unas listas vacias y los metodos para tratar con ellas
   List<EjercicioElement> ejerciciosList = [];
 
   List<EjercicioElement> ejerciciosRutinaList = [];
