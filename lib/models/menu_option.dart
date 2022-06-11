@@ -1,6 +1,7 @@
 //mostramos solo el icon data usando el show
 import 'package:flutter/material.dart' show IconData, Widget, AssetImage;
 
+///Clase con las opciones del menu de rutas
 class MenuOption {
   final String route;
   final IconData icon;

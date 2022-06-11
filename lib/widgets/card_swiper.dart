@@ -14,7 +14,7 @@ class CardSwiper extends StatelessWidget {
 
 //creamos un containes para introducir las tarjetas de opciones
     return Padding(
-      padding: const EdgeInsets.only(top: 10.0, bottom: 10),
+      padding: const EdgeInsets.only(top: 30.0, bottom: 10),
       child: Container(
         width: double.infinity,
         height: size.height / 4,
@@ -27,7 +27,6 @@ class CardSwiper extends StatelessWidget {
           itemHeight: size.height * 0.9,
           itemBuilder: (_, int index) {
             return GestureDetector(
-              // TODO :: IMPLEMENTAR EL CAMBIO DE PATNALLAS AL PRETAR UNA PANTALLA NUEVA
               onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(

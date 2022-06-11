@@ -1,60 +1,43 @@
+import 'package:get/get.dart';
 import 'package:my_gym_bro/models/models.dart';
 
-class Listas {
+class Listas extends GetxController {
   Listas();
 
-  //creamos unas listas vacias
-  List<Ejercicio> ejerciciosList = [];
+  //creamos unas listas vacias y los metodos para tratar con ellas
+  List<EjercicioElement> ejerciciosList = [];
 
-  List<Ejercicio> ejerciciosRutinaList = [];
+  List<EjercicioElement> ejerciciosRutinaList = [];
 
   List<String> musculoList = [];
 
-  List<PR> prList = [];
+  List<Pr> prList = [];
 
-  List<Rutina> rutinasList = [
-    Rutina('Rutina prueba', 'detallitos', [
-      EjercicioRutina(
-          name: 'name',
-          tip: 'tip',
-          muscle: ['muscle'],
-          url: 'url',
-          numRepes: 9,
-          volumenCarga: 8),
-      EjercicioRutina(
-          name: 'name',
-          tip: 'tip',
-          muscle: ['muscle'],
-          url: 'url',
-          numRepes: 9,
-          volumenCarga: 8),
-      EjercicioRutina(
-          name: 'name',
-          tip: 'tip',
-          muscle: ['muscle'],
-          url: 'url',
-          numRepes: 9,
-          volumenCarga: 8),
-    ])
-  ];
+  List<Rutina> rutinasList = [];
 
   List<Rutina> getRutinasList() {
     print('entra a get list $rutinasList');
     return rutinasList;
   }
 
+  void clear() {
+    ejerciciosRutinaList.clear();
+    musculoList.clear();
+    prList.clear();
+    rutinasList.clear();
+  }
+
   setRutinasList(List<Rutina> rutinasList) => this.rutinasList = rutinasList;
 
   void addRutinaList(Rutina rutina) {
     rutinasList.add(rutina);
-    print('rutina añadida, total: $rutinasList');
   }
 
   get getPrList => prList;
 
-  setPrList(List<PR> prList) => this.prList = prList;
+  setPrList(List<Pr> prList) => this.prList = prList;
 
-  void addPrList(PR pr) {
+  void addPrList(Pr pr) {
     prList.add(pr);
   }
 
@@ -66,15 +49,15 @@ class Listas {
     musculoList.add(musculo);
   }
 
-  List<Ejercicio> getListEjercicio() {
+  List<EjercicioElement> getListEjercicio() {
     return ejerciciosList;
   }
 
-  setEjerciosList(List<Ejercicio> list) {
+  setEjerciosList(List<EjercicioElement> list) {
     ejerciciosList = list;
   }
 
-  void addEjercicioList(Ejercicio ejercicio) {
+  void addEjercicioList(EjercicioElement ejercicio) {
     ejerciciosList.add(ejercicio);
   }
 
@@ -82,15 +65,18 @@ class Listas {
     return ejerciciosRutinaList;
   }
 
-  setEjerciosRutinaList(List<Ejercicio> list) {
+  setEjerciosRutinaList(List<EjercicioElement> list) {
     ejerciciosRutinaList = list;
   }
 
-  void addEjercicioRutinaList(Ejercicio ejercicio) {
+  void addEjercicioRutinaList(EjercicioElement ejercicio) {
     ejerciciosRutinaList.add(ejercicio);
   }
 
-  void removeEjercicioRutinaList(Ejercicio ejercicio) {
+  void removeEjercicioRutinaList(EjercicioElement ejercicio) {
     ejerciciosRutinaList.remove(ejercicio);
   }
+
+  // TODO: poner un future que lea la lista llamandolo en el main o en splash
+
 }

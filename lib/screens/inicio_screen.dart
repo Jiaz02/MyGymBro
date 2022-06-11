@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_gym_bro/screens/add_entrenos_screen.dart';
 import 'package:my_gym_bro/screens/retos_screen.dart';
 
-import '../router/app_routes.dart';
 import '../widgets/widgets.dart';
 
 class InicioScreen extends StatefulWidget {
@@ -12,47 +10,24 @@ class InicioScreen extends StatefulWidget {
   State<InicioScreen> createState() => _InicioScreenState();
 }
 
+//primera pantalla que se muestra en el home
 class _InicioScreenState extends State<InicioScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        CardSwiper(),
+        //widget deslizante superior
+        const CardSwiper(),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            //duplicar esto para añadir mas tarjetas donde los retos
             Padding(
               padding: const EdgeInsets.only(top: 26, left: 9, bottom: 26),
               child: GestureDetector(
-                  child: Container(
-                      width: 175,
-                      height: size.height / 5,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(30),
-                        child: const Image(
-                          image: AssetImage('assets/add_entreno.png'),
-                          fit: BoxFit.cover,
-                        ),
-                      )),
-                  onTap: () => 
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              AddEntrenosScreen()))
-                  ),
-
-              
-                              
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 26, left: 9, bottom: 26),
-              child: GestureDetector(
-                  child: Container(
+                  child: SizedBox(
                       width: 175,
                       height: size.height / 5,
                       child: ClipRRect(
@@ -62,11 +37,8 @@ class _InicioScreenState extends State<InicioScreen> {
                           fit: BoxFit.cover,
                         ),
                       )),
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              RetosScreen()))),
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => RetosScreen()))),
             ),
           ],
         )
@@ -74,5 +46,3 @@ class _InicioScreenState extends State<InicioScreen> {
     );
   }
 }
-
-

@@ -4,10 +4,16 @@ import 'package:my_gym_bro/models/models.dart';
 import 'package:my_gym_bro/screens/screens.dart';
 
 class AppRoutes {
-  static const initialRoute = 'home';
+  static const initialRoute = 'splash';
 
 //pantallas disponibles
   static final menuOption = <MenuOption>[
+    MenuOption(
+        route: 'peso',
+        image: AssetImage('assets/crearpr.png'),
+        icon: Icons.tab,
+        name: 'Pesos Screen',
+        screen: AddPrScreen()),
     MenuOption(
         route: 'graffic',
         image: AssetImage('assets/graficos.png'),
@@ -21,25 +27,13 @@ class AppRoutes {
         name: 'Medidas Screen',
         screen: const MeasureScreen()),
     MenuOption(
-        route: 'peso',
-        image: AssetImage('assets/pesos.png'),
-        icon: Icons.tab,
-        name: 'Pesos Screen',
-        screen: const PesoScreen()),
-    MenuOption(
         route: 'splash',
         image: AssetImage('assets/graficos.png'),
         icon: Icons.smart_display_sharp,
         name: 'Splash Screen',
-        screen: const SplashScreen()),
+        screen: SplashScreen()),
     MenuOption(
         route: 'reto',
-        image: AssetImage('assets/add_entreno.png'),
-        icon: Icons.smart_display_sharp,
-        name: 'Retos Screen',
-        screen: const AddEntrenosScreen()),
-    MenuOption(
-        route: 'entreno',
         image: AssetImage('assets/retos.png'),
         icon: Icons.smart_display_sharp,
         name: 'Entrenos Screen',
@@ -76,7 +70,7 @@ class AppRoutes {
         image: AssetImage('assets/graficos.png'),
         icon: Icons.tab,
         name: 'User Screen',
-        screen: const UserScreen()),
+        screen: UserScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

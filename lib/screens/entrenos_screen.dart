@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_gym_bro/models/models.dart';
-import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/screens/screens.dart';
 import 'package:my_gym_bro/theme/app_theme.dart';
 import 'package:my_gym_bro/widgets/widgets.dart';
 import 'package:provider/provider.dart';
+
+import '../service/service.dart';
 
 class EntrenosScreen extends StatefulWidget {
   const EntrenosScreen({Key? key}) : super(key: key);
 
   @override
   State<EntrenosScreen> createState() => _EntrenosScreenState();
-
-  State<EntrenosScreen> dispose() =>
-      Listas().setRutinasList(_EntrenosScreenState().listas.rutinasList);
 }
 
 class _EntrenosScreenState extends State<EntrenosScreen> {
   var nombreRutina = 'Rutina';
-  var observacionesRutina = '';
+  var observacionesRutina = 'Ninguna';
 
-  //PONER SIEMPRE VARIABLES DE ESTA CLASE Y MANDAR LA LISTA COMNPLETA AL SALIR DE AQUI XD
-  Listas listas = Listas();
+  final controller = Get.find<Listas>();
 
   late Rutina rutina;
 
@@ -29,22 +27,34 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.primaryDarkBlue,
-      body: ListView.builder(
-          itemCount: listas.rutinasList.length,
-          itemBuilder: (BuildContext context, int index) {
-            return ListTile(
-              title: EntrenoCard(listas.rutinasList[index]),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        DetallesRutina(rutina: listas.rutinasList[index]),
-                  ),
-                );
-              },
-            );
-          }),
+      body: FutureBuilder(
+          builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+            //si no hay rutinas mostramos un mensaje
+        if (controller.rutinasList.isEmpty) {
+          return const Center(
+              child: Text('Crea una rutina con el boton de abajo',
+                  style: TextStyle(color: Colors.white, fontSize: 20)));
+        }
+        //mostramos las rutinas disponibles con las tarjetas
+        return ListView.builder(
+            itemCount: controller.rutinasList.length,
+            itemBuilder: (BuildContext context, int index) {
+              return ListTile(
+                title: EntrenoCard(controller.rutinasList[index]),
+                onTap: () async {
+                  print(controller.rutinasList[index]);
+                  await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetallesRutina(
+                            rutina: controller.rutinasList[index]),
+                      ));
+                  setState(() {});
+                },
+              );
+            });
+      }),
+      //boton añadir rutinas
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           backgroundColor: AppTheme.primaryBlue,
@@ -54,7 +64,9 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
     );
   }
 
+//cuadro de dialogo para crear nuevas rutinas
   void showCustomDialog(BuildContext context) {
+    final rutinaService = Provider.of<RutinaService>(context, listen: false);
     showDialog(
       barrierDismissible: false,
       context: context,
@@ -97,7 +109,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                       style: const TextStyle(color: Colors.white),
                       onChanged: (value) {
                         if (value.isEmpty) {
-                          observacionesRutina = '';
+                          observacionesRutina = 'Ninguna';
                         } else {
                           observacionesRutina = value;
                         }
@@ -113,14 +125,14 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                         onPressed: () {
                           //Provider.of(context, listen: false);
                           rutina =
-                              Rutina(nombreRutina, observacionesRutina, []);
+                              Rutina(nombreRutina, observacionesRutina, [], '');
                           nombreRutina = 'Rutina';
                           observacionesRutina = '';
-                          listas.addRutinaList(rutina);
+                          controller.addRutinaList(rutina);
                           if (mounted) {
                             setState(() {});
                           }
-                          print(listas.getRutinasList());
+                          rutinaService.saveOrCreateRutina(rutina);
                           Navigator.pop(cxt);
                         },
                         child: const Text('Crear Rutina'),

@@ -1,20 +1,27 @@
+import 'dart:convert';
+
+import 'package:my_gym_bro/models/models.dart';
+
+///Clase que contiene los ejercicios de cada rutina
 class EjercicioRutina {
   EjercicioRutina({
     required this.name,
     required this.tip,
     required this.muscle,
     required this.url,
-    required this.numRepes,
-    required this.volumenCarga,
+    required this.listSeries,
   });
 
-  final String name;
-  final String tip;
-  final List<String> muscle;
-  final String url;
-  int numRepes;
-  double volumenCarga;
-  
+  String name;
+  String tip;
+  List<String> muscle;
+  String url;
+  List<RowRepKg> listSeries;
+
+  get getListSeries => this.listSeries;
+
+  set setListSeries(listSeries) => this.listSeries = listSeries;
+
   get getName => name;
 
   get getTip => tip;
@@ -23,11 +30,40 @@ class EjercicioRutina {
 
   get getUrl => url;
 
-  get getNumRepes => numRepes;
+  factory EjercicioRutina.fromJson(String str) =>
+      EjercicioRutina.fromMap(json.decode(str));
 
-  set setNumRepes(numRepes) => numRepes = numRepes;
+  String toJson() => json.encode(toMap());
 
-  get getVolumenCarga => volumenCarga;
+  factory EjercicioRutina.fromMap(Map<String, dynamic> json) {
+    return EjercicioRutina(
+      muscle: List<String>.from(json["muscle"].map((x) => x)),
+      name: json["name"],
+      tip: json["tip"],
+      url: json["url"],
+      listSeries: List<RowRepKg>.from(
+          json["listSeries"].map((x) => RowRepKg.fromMap(x))),
+    );
+  }
 
-  set setVolumenCarga(volumenCarga) => volumenCarga = volumenCarga;
+  Map<String, dynamic> toMap() => {
+        "muscle": List<dynamic>.from(muscle.map((x) => x)),
+        "name": name,
+        "tip": tip,
+        "url": url,
+        "listSeries": List<dynamic>.from(listSeries.map((x) => x.toMap())),
+      };
+
+  @override
+  String toString() {
+    return name +
+        ' ' +
+        tip +
+        ' ' +
+        muscle.toString() +
+        ' ' +
+        url +
+        ' ' +
+        listSeries.toString();
+  }
 }
