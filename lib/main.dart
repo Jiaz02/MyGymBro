@@ -1,17 +1,12 @@
-import 'dart:convert';
 
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_gym_bro/models/models.dart';
 import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/service/service.dart';
-import 'package:my_gym_bro/service/peticiones_service.dart';
-import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
 import 'theme/app_theme.dart';
-
 void main() {
   //creamos la clase listas para que este disponible de forma global
   Get.put(Listas());
