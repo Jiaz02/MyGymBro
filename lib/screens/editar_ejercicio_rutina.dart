@@ -155,6 +155,12 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                           setState(() {});
                         }
                       }
+                    } else {
+                      var num = widget.ejercicio.listSeries.length;
+                      for (var i = numseries; i < num; i++) {
+                        widget.ejercicio.listSeries.removeLast();
+                        setState(() {});
+                      }
                     }
                   }
                 },
