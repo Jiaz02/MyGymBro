@@ -23,7 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-
 //pantalla home que contiene el navbar y redirige a las distintas pantallas principales
     return Scaffold(
         backgroundColor: AppTheme.primaryDarkBlue,

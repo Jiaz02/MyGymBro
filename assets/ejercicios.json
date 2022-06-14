@@ -75,6 +75,15 @@
             "url":"assets/crucespolea.gif"
         },
         {
+            "name": "Press Arnold",
+            "tip": ".",
+            "muscle": [
+                "Pectoral",
+                "Deltoides anterior"
+            ],
+            "url":"assets/arnold.gif"
+        },
+        {
             "name": "Fondos",
             "tip": "Intenta 'romper la paralela' al bajar. Segun la verticalidad del movimiento y apertura del agarre puedes hacer que intervenga mas el pectoral. Pruebalo con peso ;) ",
             "muscle": [
