@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_gym_bro/models/models.dart';
@@ -7,6 +6,7 @@ import 'package:my_gym_bro/service/service.dart';
 import 'package:provider/provider.dart';
 
 import 'theme/app_theme.dart';
+
 void main() {
   //creamos la clase listas para que este disponible de forma global
   Get.put(Listas());

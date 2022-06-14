@@ -37,8 +37,6 @@ class CheckAuthScreen extends StatelessWidget {
                   });
                 } else {
                   Future.microtask(() {
-                    rutinaService.loadRutinas();
-                    rutinaService.loadPr();
                     Navigator.pushReplacement(
                         context,
                         PageRouteBuilder(
