@@ -8,12 +8,13 @@ import '../models/models.dart';
 import '../service/service.dart';
 
 class CheckAuthScreen extends StatelessWidget {
-  const CheckAuthScreen({Key? key}) : super(key: key);
+  CheckAuthScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context, listen: false);
     final leerService = Provider.of<LeerJsonService>(context, listen: false);
+    final rutinaService = Provider.of<RutinaService>(context);
 
     final controller = Get.find<Listas>();
 
@@ -36,6 +37,8 @@ class CheckAuthScreen extends StatelessWidget {
                   });
                 } else {
                   Future.microtask(() {
+                    rutinaService.loadRutinas();
+                    rutinaService.loadPr();
                     Navigator.pushReplacement(
                         context,
                         PageRouteBuilder(
