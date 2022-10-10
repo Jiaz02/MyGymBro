@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:my_gym_bro/models/models.dart';
+import 'package:my_gym_bro/models/user.dart';
 
 class Listas extends GetxController {
   Listas();
@@ -15,6 +16,8 @@ class Listas extends GetxController {
 
   List<Rutina> rutinasList = [];
 
+  List<User> userList = [];
+
   List<Rutina> getRutinasList() {
     print('entra a get list $rutinasList');
     return rutinasList;
@@ -25,6 +28,7 @@ class Listas extends GetxController {
     musculoList.clear();
     prList.clear();
     rutinasList.clear();
+    userList.clear();
   }
 
   setRutinasList(List<Rutina> rutinasList) => this.rutinasList = rutinasList;
@@ -39,6 +43,14 @@ class Listas extends GetxController {
 
   void addPrList(Pr pr) {
     prList.add(pr);
+  }
+
+  get getUserList => userList;
+
+  setUserList(List<User> userList) => this.userList = userList;
+
+  void addUserList(User user) {
+    userList.add(user);
   }
 
   get getMusculoList => musculoList;
