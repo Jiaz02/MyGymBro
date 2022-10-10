@@ -1,0 +1,1480 @@
+{
+  "user": {
+    "nombre":"juan",
+    "email":"juanmsaavedra02@gmail.com",
+    "password":"password",
+    "rutinas": [
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 1,
+                "repes": 1
+              },
+              {
+                "kg": 11,
+                "repes": 1
+              },
+              {
+                "kg": 1,
+                "repes": 11
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              }
+            ],
+            "muscle": ["Gluteos", "Cuadriceps", "Isquiosurales", "Abdomen"],
+            "name": "Hip Thrust",
+            "tip": "Coloca las escapulas en el borde del banco, ni la cervical, ni el lumbar.",
+            "url": "assets/hipthrust.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 2,
+                "repes": 1
+              },
+              {
+                "kg": 5,
+                "repes": 2
+              }
+            ],
+            "muscle": [
+              "Dorsal",
+              "Trapecio",
+              "Biceps",
+              "Oblicuos",
+              "Triceps",
+              "Pectoral"
+            ],
+            "name": "Dominada",
+            "tip": "Cambiando el agarre entre prono, supino y neutro no varian los musculos que se usan pero si los cambia el movimiento, entre aduccion y extension varian los porcentajes de intervencion.",
+            "url": "assets/dominadas.gif"
+          }
+        ],
+        "name": "Rutinan't",
+        "note": "Ninguna",
+        "user": "H0NJgohlhTNGCXXprX4EhVDyIAB3"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 90,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Cuadriceps", "Gluteos", "Femoral"],
+            "name": "Sentadilla",
+            "tip": "Asegurate de 'romper la paralela' al bajar y baja todo lo que puedas. Si te duele la espalda, pueba a hacerla en un 'multi power'. No bajes mucho el pecho, a mayor verticalidad, menor peligro.",
+            "url": "assets/sentadilla.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 110,
+                "repes": 10
+              },
+              {
+                "kg": 105,
+                "repes": 10
+              },
+              {
+                "kg": 105,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Cuadriceps", "Isquiosurales"],
+            "name": "Prensa",
+            "tip": "En las diferentes versiones de la prensa, baja todo lo posible sin despegar los gluteos del asiento y sin curvar la espalda. Nunca extiendas por completo las rodillas al finalizar el movimiento.",
+            "url": "assets/prensa.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 60,
+                "repes": 10
+              },
+              {
+                "kg": 60,
+                "repes": 10
+              },
+              {
+                "kg": 60,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Gluteos", "Cuadriceps", "Isquiosurales", "Abdomen"],
+            "name": "Hip Thrust",
+            "tip": "Coloca las escapulas en el borde del banco, ni la cervical, ni el lumbar.",
+            "url": "assets/hipthrust.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 91,
+                "repes": 10
+              },
+              {
+                "kg": 91,
+                "repes": 10
+              },
+              {
+                "kg": 91,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Gemelos", "Soleo"],
+            "name": "Flexion de tobillo",
+            "tip": "Sube y baja lentamete y siempre con un recorrido completo.",
+            "url": "assets/gemelos.gif"
+          }
+        ],
+        "name": "ddj",
+        "note": "Ninguna",
+        "user": "fGw0t4F63nbRm0SYi4q3fdFXvyx1"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 57,
+                "repes": 8
+              },
+              {
+                "kg": 57,
+                "repes": 7
+              },
+              {
+                "kg": 57,
+                "repes": 5
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press Banca con Barra",
+            "tip": "Baja hasta rozar el pectoral. Abre más el agarre para que el triceps intervenga menos. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/pressbanca.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 15,
+                "repes": 10
+              },
+              {
+                "kg": 15,
+                "repes": 6
+              },
+              {
+                "kg": 15,
+                "repes": 9
+              }
+            ],
+            "muscle": ["Pectoral", "Deltoides anterior"],
+            "name": "Press Arnold",
+            "tip": ".",
+            "url": "assets/arnold.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 15,
+                "repes": 9
+              },
+              {
+                "kg": 15,
+                "repes": 6
+              },
+              {
+                "kg": 15,
+                "repes": 7
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press de Banca con Mancuernas",
+            "tip": "Al tener los brazos en paralelo sobre el suelo intenta manter los codos a 90 y no choques las mancuernas al finalizar el movimiento. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/press_horizontal_mancuerna.gif"
+          }
+        ],
+        "name": "pecho",
+        "note": "",
+        "user": "fGw0t4F63nbRm0SYi4q3fdFXvyx1"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 60,
+                "repes": 10
+              },
+              {
+                "kg": 60,
+                "repes": 8
+              },
+              {
+                "kg": 60,
+                "repes": 8
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press Banca con Barra",
+            "tip": "Baja hasta rozar el pectoral. Abre más el agarre para que el triceps intervenga menos. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/pressbanca.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 17,
+                "repes": 8
+              },
+              {
+                "kg": 17,
+                "repes": 8
+              },
+              {
+                "kg": 17,
+                "repes": 7
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press de Banca con Mancuernas",
+            "tip": "Al tener los brazos en paralelo sobre el suelo intenta manter los codos a 90 y no choques las mancuernas al finalizar el movimiento. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/press_horizontal_mancuerna.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 20,
+                "repes": 10
+              },
+              {
+                "kg": 20,
+                "repes": 9
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press de Banca con Mancuernas",
+            "tip": "Al tener los brazos en paralelo sobre el suelo intenta manter los codos a 90 y no choques las mancuernas al finalizar el movimiento. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/press_horizontal_mancuerna.gif"
+          }
+        ],
+        "name": "Dia pecho",
+        "note": "Ninguna",
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "name": "Rutina",
+        "note": "Ninguna",
+        "user": "H0NJgohlhTNGCXXprX4EhVDyIAB3"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 100,
+                "repes": 10
+              },
+              {
+                "kg": 90,
+                "repes": 10
+              },
+              {
+                "kg": 90,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Cuadriceps", "Gluteos", "Femoral"],
+            "name": "Sentadilla",
+            "tip": "Asegurate de 'romper la paralela' al bajar y baja todo lo que puedas. Si te duele la espalda, pueba a hacerla en un 'multi power'. No bajes mucho el pecho, a mayor verticalidad, menor peligro.",
+            "url": "assets/sentadilla.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 130,
+                "repes": 10
+              },
+              {
+                "kg": 130,
+                "repes": 10
+              },
+              {
+                "kg": 130,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Cuadriceps", "Isquiosurales"],
+            "name": "Prensa",
+            "tip": "En las diferentes versiones de la prensa, baja todo lo posible sin despegar los gluteos del asiento y sin curvar la espalda. Nunca extiendas por completo las rodillas al finalizar el movimiento.",
+            "url": "assets/prensa.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 60,
+                "repes": 10
+              },
+              {
+                "kg": 60,
+                "repes": 10
+              },
+              {
+                "kg": 60,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Gluteos", "Cuadriceps", "Isquiosurales", "Abdomen"],
+            "name": "Hip Thrust",
+            "tip": "Coloca las escapulas en el borde del banco, ni la cervical, ni el lumbar.",
+            "url": "assets/hipthrust.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 114,
+                "repes": 10
+              },
+              {
+                "kg": 114,
+                "repes": 10
+              },
+              {
+                "kg": 114,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Gemelos", "Soleo"],
+            "name": "Flexion de tobillo",
+            "tip": "Sube y baja lentamete y siempre con un recorrido completo.",
+            "url": "assets/gemelos.gif"
+          }
+        ],
+        "name": "Día de pata",
+        "note": "Duele",
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 12,
+                "repes": 10
+              },
+              {
+                "kg": 12,
+                "repes": 9
+              },
+              {
+                "kg": 10,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Biceps", "Demás flexores del codo"],
+            "name": "Curl de biceps",
+            "tip": "Con barra, en polea o con mancuernas asegurate de tener un agarre supino en todo momento y evita balanceos. Al flexionar completamente el codo puedes flexionar tambien un poco el deltoides para contraer del todo el biceps puesto que tambien es flexor del hombro.",
+            "url": "assets/curl.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 15,
+                "repes": 6
+              },
+              {
+                "kg": 12,
+                "repes": 10
+              },
+              {
+                "kg": 12,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press de Banca con Mancuernas",
+            "tip": "Al tener los brazos en paralelo sobre el suelo intenta manter los codos a 90 y no choques las mancuernas al finalizar el movimiento. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/press_horizontal_mancuerna.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 12,
+                "repes": 10
+              },
+              {
+                "kg": 12,
+                "repes": 10
+              },
+              {
+                "kg": 12,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Biceps", "Demás flexores del codo"],
+            "name": "Curl de biceps martillo",
+            "tip": "Al usar el agarre 'martillo' o neutro reducimos la intervencion del biceps lo que nos permite inferir mas en los demas flexores del codo.",
+            "url": "assets/martillo.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 10,
+                "repes": 10
+              },
+              {
+                "kg": 10,
+                "repes": 10
+              },
+              {
+                "kg": 10,
+                "repes": 8
+              }
+            ],
+            "muscle": ["Biceps", "Demás flexores del codo"],
+            "name": "Curl de biceps con banco inclinado",
+            "tip": "Al sentarnos en un banco nos será más facil evitar balanceos. Si incliamos 5 o 10 el banco el movimiento sera mas aislado en el biceps, el peso que puedas mover se va a ver reducido.",
+            "url": "assets/curlbanco.gif"
+          }
+        ],
+        "name": "Día de Bíceps/hombro",
+        "note": "Ninguna",
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 59,
+                "repes": 10
+              },
+              {
+                "kg": 54,
+                "repes": 10
+              }
+            ],
+            "muscle": [
+              "Dorsal",
+              "Triceps",
+              "Biceps",
+              "Trapecio",
+              "Deltoides posterior"
+            ],
+            "name": "Jalon",
+            "tip": "Segun la amplitud del agarre cambiaremos el porcentaje de intervencion de los diferentes musculos que participan. Evita mover la espalda hacia atras para reducir la intervencion del lumbar y asi no dañarte.",
+            "url": "assets/jalon.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 54,
+                "repes": 10
+              },
+              {
+                "kg": 54,
+                "repes": 10
+              },
+              {
+                "kg": 54,
+                "repes": 8
+              }
+            ],
+            "muscle": [
+              "Dorsal",
+              "Triceps",
+              "Biceps",
+              "Trapecio",
+              "Deltoides posterior"
+            ],
+            "name": "Remo",
+            "tip": "Segun la amplitud del agarre cambiaremos el porcentaje de intervencion de los diferentes musculos que participan. Asegurate de ejercer la fuerza con el dorsal y no el biceps al llevar la polea al pecho. Evita mover la espalda hacia atras para reducir la intervencion del lumbar y asi no dañarte.",
+            "url": "assets/remo.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 8,
+                "repes": 10
+              },
+              {
+                "kg": 8,
+                "repes": 10
+              },
+              {
+                "kg": 8,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press de Banca con Mancuernas",
+            "tip": "Al tener los brazos en paralelo sobre el suelo intenta manter los codos a 90 y no choques las mancuernas al finalizar el movimiento. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/press_horizontal_mancuerna.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 0,
+                "repes": 9
+              }
+            ],
+            "muscle": [
+              "Dorsal",
+              "Trapecio",
+              "Biceps",
+              "Oblicuos",
+              "Triceps",
+              "Pectoral"
+            ],
+            "name": "Dominada",
+            "tip": "Cambiando el agarre entre prono, supino y neutro no varian los musculos que se usan pero si los cambia el movimiento, entre aduccion y extension varian los porcentajes de intervencion.",
+            "url": "assets/dominadas.gif"
+          }
+        ],
+        "name": "Día espalda",
+        "note": "Ninguna",
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 5,
+                "repes": 1
+              },
+              {
+                "kg": 8,
+                "repes": 7
+              }
+            ],
+            "muscle": ["Biceps", "Demás flexores del codo"],
+            "name": "Curl de biceps",
+            "tip": "Con barra, en polea o con mancuernas asegurate de tener un agarre supino en todo momento y evita balanceos. Al flexionar completamente el codo puedes flexionar tambien un poco el deltoides para contraer del todo el biceps puesto que tambien es flexor del hombro.",
+            "url": "assets/curl.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 6,
+                "repes": 5
+              },
+              {
+                "kg": 9,
+                "repes": 2
+              }
+            ],
+            "muscle": ["Biceps", "Demás flexores del codo"],
+            "name": "Curl de biceps prono",
+            "tip": "Al usar el agarre prono reducimos la intervencion del biceps lo que nos permite inferir mas en los demas flexores del codo.",
+            "url": "assets/curl-prono.gif"
+          }
+        ],
+        "name": "Rutina",
+        "note": "",
+        "user": "CHyf867DYyd6bH5wO3h2NPeD9333"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 200,
+                "repes": 1
+              }
+            ],
+            "muscle": ["Cuadriceps", "Gluteos", "Femoral", "Dorsal"],
+            "name": "Peso Muerto",
+            "tip": "Solo si te mueve la pasion por levantar, es muy peligroso para un levantador no profesional",
+            "url": "assets/deadlift.gif"
+          }
+        ],
+        "name": "rutina 2",
+        "note": "dormi mal",
+        "user": "CHyf867DYyd6bH5wO3h2NPeD9333"
+      },
+      {
+        "name": "Rutina",
+        "note": "Ninguna",
+        "user": "86z5Gbd1diNjiCJiBnt7iWaazIM2"
+      },
+      {
+        "name": "Rutina",
+        "note": "Ninguna",
+        "user": "86z5Gbd1diNjiCJiBnt7iWaazIM2"
+      }
+    ],
+    "pr": [
+      {
+        "nameEjercicio": "Press Banca con Barra",
+        "peso": 65.0,
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "nameEjercicio": "Sentadilla",
+        "peso": 170.0,
+        "user": "86z5Gbd1diNjiCJiBnt7iWaazIM2"
+      },
+      {
+        "nameEjercicio": "Sentadilla",
+        "peso": 75.0,
+        "user": "0tqf8UPWrEftlcSDLGSR2Kj2ESR2"
+      },
+      {
+        "nameEjercicio": "Sentadilla",
+        "peso": 90.0,
+        "user": "fGw0t4F63nbRm0SYi4q3fdFXvyx1"
+      },
+      {
+        "nameEjercicio": "Prensa",
+        "peso": 110.0,
+        "user": "fGw0t4F63nbRm0SYi4q3fdFXvyx1"
+      },
+      {
+        "nameEjercicio": "Hip Thrust",
+        "peso": 60.0,
+        "user": "fGw0t4F63nbRm0SYi4q3fdFXvyx1"
+      },
+      {
+        "nameEjercicio": "Flexion de tobillo en banco",
+        "peso": 86.0,
+        "user": "fGw0t4F63nbRm0SYi4q3fdFXvyx1"
+      },
+      {
+        "nameEjercicio": "Peso Muerto",
+        "peso": 40.0,
+        "user": "0tqf8UPWrEftlcSDLGSR2Kj2ESR2"
+      },
+      {
+        "nameEjercicio": "Sentadilla",
+        "peso": 100.0,
+        "user": "CHyf867DYyd6bH5wO3h2NPeD9333"
+      },
+      {
+        "nameEjercicio": "Sentadilla",
+        "peso": 100.0,
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "nameEjercicio": "Prensa",
+        "peso": 160.0,
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "nameEjercicio": "Dominada",
+        "peso": 53.0,
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "nameEjercicio": "Fondos",
+        "peso": 50.0,
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "nameEjercicio": "Dominada",
+        "peso": 2.0,
+        "user": "2xh7Xla4shcfU9Ij7mvPwdj4bYD2"
+      }
+    ],
+    "retos": [
+      {
+        "completado": false,
+        "nombre": "Sacar 150 en sentadilla",
+        "fecha": "fechita"
+      },
+      {
+        "completado": true,
+        "nombre": "Sacar 100 en banca",
+        "fecha": "fechita"
+      }
+    ]
+},
+  "user2": {
+    "nombre":"juan",
+    "email":"juanmsaavedra02@gmail.com",
+    "password":"password",
+    "rutinas": [
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 1,
+                "repes": 1
+              },
+              {
+                "kg": 11,
+                "repes": 1
+              },
+              {
+                "kg": 1,
+                "repes": 11
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              },
+              {
+                "kg": 0,
+                "repes": 0
+              }
+            ],
+            "muscle": ["Gluteos", "Cuadriceps", "Isquiosurales", "Abdomen"],
+            "name": "Hip Thrust",
+            "tip": "Coloca las escapulas en el borde del banco, ni la cervical, ni el lumbar.",
+            "url": "assets/hipthrust.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 2,
+                "repes": 1
+              },
+              {
+                "kg": 5,
+                "repes": 2
+              }
+            ],
+            "muscle": [
+              "Dorsal",
+              "Trapecio",
+              "Biceps",
+              "Oblicuos",
+              "Triceps",
+              "Pectoral"
+            ],
+            "name": "Dominada",
+            "tip": "Cambiando el agarre entre prono, supino y neutro no varian los musculos que se usan pero si los cambia el movimiento, entre aduccion y extension varian los porcentajes de intervencion.",
+            "url": "assets/dominadas.gif"
+          }
+        ],
+        "name": "Rutinan't",
+        "note": "Ninguna",
+        "user": "H0NJgohlhTNGCXXprX4EhVDyIAB3"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 90,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Cuadriceps", "Gluteos", "Femoral"],
+            "name": "Sentadilla",
+            "tip": "Asegurate de 'romper la paralela' al bajar y baja todo lo que puedas. Si te duele la espalda, pueba a hacerla en un 'multi power'. No bajes mucho el pecho, a mayor verticalidad, menor peligro.",
+            "url": "assets/sentadilla.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 110,
+                "repes": 10
+              },
+              {
+                "kg": 105,
+                "repes": 10
+              },
+              {
+                "kg": 105,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Cuadriceps", "Isquiosurales"],
+            "name": "Prensa",
+            "tip": "En las diferentes versiones de la prensa, baja todo lo posible sin despegar los gluteos del asiento y sin curvar la espalda. Nunca extiendas por completo las rodillas al finalizar el movimiento.",
+            "url": "assets/prensa.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 60,
+                "repes": 10
+              },
+              {
+                "kg": 60,
+                "repes": 10
+              },
+              {
+                "kg": 60,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Gluteos", "Cuadriceps", "Isquiosurales", "Abdomen"],
+            "name": "Hip Thrust",
+            "tip": "Coloca las escapulas en el borde del banco, ni la cervical, ni el lumbar.",
+            "url": "assets/hipthrust.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 91,
+                "repes": 10
+              },
+              {
+                "kg": 91,
+                "repes": 10
+              },
+              {
+                "kg": 91,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Gemelos", "Soleo"],
+            "name": "Flexion de tobillo",
+            "tip": "Sube y baja lentamete y siempre con un recorrido completo.",
+            "url": "assets/gemelos.gif"
+          }
+        ],
+        "name": "ddj",
+        "note": "Ninguna",
+        "user": "fGw0t4F63nbRm0SYi4q3fdFXvyx1"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 57,
+                "repes": 8
+              },
+              {
+                "kg": 57,
+                "repes": 7
+              },
+              {
+                "kg": 57,
+                "repes": 5
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press Banca con Barra",
+            "tip": "Baja hasta rozar el pectoral. Abre más el agarre para que el triceps intervenga menos. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/pressbanca.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 15,
+                "repes": 10
+              },
+              {
+                "kg": 15,
+                "repes": 6
+              },
+              {
+                "kg": 15,
+                "repes": 9
+              }
+            ],
+            "muscle": ["Pectoral", "Deltoides anterior"],
+            "name": "Press Arnold",
+            "tip": ".",
+            "url": "assets/arnold.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 15,
+                "repes": 9
+              },
+              {
+                "kg": 15,
+                "repes": 6
+              },
+              {
+                "kg": 15,
+                "repes": 7
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press de Banca con Mancuernas",
+            "tip": "Al tener los brazos en paralelo sobre el suelo intenta manter los codos a 90 y no choques las mancuernas al finalizar el movimiento. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/press_horizontal_mancuerna.gif"
+          }
+        ],
+        "name": "pecho",
+        "note": "",
+        "user": "fGw0t4F63nbRm0SYi4q3fdFXvyx1"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 60,
+                "repes": 10
+              },
+              {
+                "kg": 60,
+                "repes": 8
+              },
+              {
+                "kg": 60,
+                "repes": 8
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press Banca con Barra",
+            "tip": "Baja hasta rozar el pectoral. Abre más el agarre para que el triceps intervenga menos. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/pressbanca.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 17,
+                "repes": 8
+              },
+              {
+                "kg": 17,
+                "repes": 8
+              },
+              {
+                "kg": 17,
+                "repes": 7
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press de Banca con Mancuernas",
+            "tip": "Al tener los brazos en paralelo sobre el suelo intenta manter los codos a 90 y no choques las mancuernas al finalizar el movimiento. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/press_horizontal_mancuerna.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 20,
+                "repes": 10
+              },
+              {
+                "kg": 20,
+                "repes": 9
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press de Banca con Mancuernas",
+            "tip": "Al tener los brazos en paralelo sobre el suelo intenta manter los codos a 90 y no choques las mancuernas al finalizar el movimiento. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/press_horizontal_mancuerna.gif"
+          }
+        ],
+        "name": "Dia pecho",
+        "note": "Ninguna",
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "name": "Rutina",
+        "note": "Ninguna",
+        "user": "H0NJgohlhTNGCXXprX4EhVDyIAB3"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 100,
+                "repes": 10
+              },
+              {
+                "kg": 90,
+                "repes": 10
+              },
+              {
+                "kg": 90,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Cuadriceps", "Gluteos", "Femoral"],
+            "name": "Sentadilla",
+            "tip": "Asegurate de 'romper la paralela' al bajar y baja todo lo que puedas. Si te duele la espalda, pueba a hacerla en un 'multi power'. No bajes mucho el pecho, a mayor verticalidad, menor peligro.",
+            "url": "assets/sentadilla.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 130,
+                "repes": 10
+              },
+              {
+                "kg": 130,
+                "repes": 10
+              },
+              {
+                "kg": 130,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Cuadriceps", "Isquiosurales"],
+            "name": "Prensa",
+            "tip": "En las diferentes versiones de la prensa, baja todo lo posible sin despegar los gluteos del asiento y sin curvar la espalda. Nunca extiendas por completo las rodillas al finalizar el movimiento.",
+            "url": "assets/prensa.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 60,
+                "repes": 10
+              },
+              {
+                "kg": 60,
+                "repes": 10
+              },
+              {
+                "kg": 60,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Gluteos", "Cuadriceps", "Isquiosurales", "Abdomen"],
+            "name": "Hip Thrust",
+            "tip": "Coloca las escapulas en el borde del banco, ni la cervical, ni el lumbar.",
+            "url": "assets/hipthrust.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 114,
+                "repes": 10
+              },
+              {
+                "kg": 114,
+                "repes": 10
+              },
+              {
+                "kg": 114,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Gemelos", "Soleo"],
+            "name": "Flexion de tobillo",
+            "tip": "Sube y baja lentamete y siempre con un recorrido completo.",
+            "url": "assets/gemelos.gif"
+          }
+        ],
+        "name": "Día de pata",
+        "note": "Duele",
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 12,
+                "repes": 10
+              },
+              {
+                "kg": 12,
+                "repes": 9
+              },
+              {
+                "kg": 10,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Biceps", "Demás flexores del codo"],
+            "name": "Curl de biceps",
+            "tip": "Con barra, en polea o con mancuernas asegurate de tener un agarre supino en todo momento y evita balanceos. Al flexionar completamente el codo puedes flexionar tambien un poco el deltoides para contraer del todo el biceps puesto que tambien es flexor del hombro.",
+            "url": "assets/curl.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 15,
+                "repes": 6
+              },
+              {
+                "kg": 12,
+                "repes": 10
+              },
+              {
+                "kg": 12,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press de Banca con Mancuernas",
+            "tip": "Al tener los brazos en paralelo sobre el suelo intenta manter los codos a 90 y no choques las mancuernas al finalizar el movimiento. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/press_horizontal_mancuerna.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 12,
+                "repes": 10
+              },
+              {
+                "kg": 12,
+                "repes": 10
+              },
+              {
+                "kg": 12,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Biceps", "Demás flexores del codo"],
+            "name": "Curl de biceps martillo",
+            "tip": "Al usar el agarre 'martillo' o neutro reducimos la intervencion del biceps lo que nos permite inferir mas en los demas flexores del codo.",
+            "url": "assets/martillo.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 10,
+                "repes": 10
+              },
+              {
+                "kg": 10,
+                "repes": 10
+              },
+              {
+                "kg": 10,
+                "repes": 8
+              }
+            ],
+            "muscle": ["Biceps", "Demás flexores del codo"],
+            "name": "Curl de biceps con banco inclinado",
+            "tip": "Al sentarnos en un banco nos será más facil evitar balanceos. Si incliamos 5 o 10 el banco el movimiento sera mas aislado en el biceps, el peso que puedas mover se va a ver reducido.",
+            "url": "assets/curlbanco.gif"
+          }
+        ],
+        "name": "Día de Bíceps/hombro",
+        "note": "Ninguna",
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 59,
+                "repes": 10
+              },
+              {
+                "kg": 54,
+                "repes": 10
+              }
+            ],
+            "muscle": [
+              "Dorsal",
+              "Triceps",
+              "Biceps",
+              "Trapecio",
+              "Deltoides posterior"
+            ],
+            "name": "Jalon",
+            "tip": "Segun la amplitud del agarre cambiaremos el porcentaje de intervencion de los diferentes musculos que participan. Evita mover la espalda hacia atras para reducir la intervencion del lumbar y asi no dañarte.",
+            "url": "assets/jalon.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 54,
+                "repes": 10
+              },
+              {
+                "kg": 54,
+                "repes": 10
+              },
+              {
+                "kg": 54,
+                "repes": 8
+              }
+            ],
+            "muscle": [
+              "Dorsal",
+              "Triceps",
+              "Biceps",
+              "Trapecio",
+              "Deltoides posterior"
+            ],
+            "name": "Remo",
+            "tip": "Segun la amplitud del agarre cambiaremos el porcentaje de intervencion de los diferentes musculos que participan. Asegurate de ejercer la fuerza con el dorsal y no el biceps al llevar la polea al pecho. Evita mover la espalda hacia atras para reducir la intervencion del lumbar y asi no dañarte.",
+            "url": "assets/remo.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 8,
+                "repes": 10
+              },
+              {
+                "kg": 8,
+                "repes": 10
+              },
+              {
+                "kg": 8,
+                "repes": 10
+              }
+            ],
+            "muscle": ["Pectoral", "Triceps", "Deltoides anterior"],
+            "name": "Press de Banca con Mancuernas",
+            "tip": "Al tener los brazos en paralelo sobre el suelo intenta manter los codos a 90 y no choques las mancuernas al finalizar el movimiento. Segun la inclinacion (15 a 30) o declinacion (-15 a -30) del banco se reclutan mas fibras superiores o inferiores respectivamente.",
+            "url": "assets/press_horizontal_mancuerna.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 0,
+                "repes": 9
+              }
+            ],
+            "muscle": [
+              "Dorsal",
+              "Trapecio",
+              "Biceps",
+              "Oblicuos",
+              "Triceps",
+              "Pectoral"
+            ],
+            "name": "Dominada",
+            "tip": "Cambiando el agarre entre prono, supino y neutro no varian los musculos que se usan pero si los cambia el movimiento, entre aduccion y extension varian los porcentajes de intervencion.",
+            "url": "assets/dominadas.gif"
+          }
+        ],
+        "name": "Día espalda",
+        "note": "Ninguna",
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 5,
+                "repes": 1
+              },
+              {
+                "kg": 8,
+                "repes": 7
+              }
+            ],
+            "muscle": ["Biceps", "Demás flexores del codo"],
+            "name": "Curl de biceps",
+            "tip": "Con barra, en polea o con mancuernas asegurate de tener un agarre supino en todo momento y evita balanceos. Al flexionar completamente el codo puedes flexionar tambien un poco el deltoides para contraer del todo el biceps puesto que tambien es flexor del hombro.",
+            "url": "assets/curl.gif"
+          },
+          {
+            "listSeries": [
+              {
+                "kg": 6,
+                "repes": 5
+              },
+              {
+                "kg": 9,
+                "repes": 2
+              }
+            ],
+            "muscle": ["Biceps", "Demás flexores del codo"],
+            "name": "Curl de biceps prono",
+            "tip": "Al usar el agarre prono reducimos la intervencion del biceps lo que nos permite inferir mas en los demas flexores del codo.",
+            "url": "assets/curl-prono.gif"
+          }
+        ],
+        "name": "Rutina",
+        "note": "",
+        "user": "CHyf867DYyd6bH5wO3h2NPeD9333"
+      },
+      {
+        "listEjerciciosRutina": [
+          {
+            "listSeries": [
+              {
+                "kg": 200,
+                "repes": 1
+              }
+            ],
+            "muscle": ["Cuadriceps", "Gluteos", "Femoral", "Dorsal"],
+            "name": "Peso Muerto",
+            "tip": "Solo si te mueve la pasion por levantar, es muy peligroso para un levantador no profesional",
+            "url": "assets/deadlift.gif"
+          }
+        ],
+        "name": "rutina 2",
+        "note": "dormi mal",
+        "user": "CHyf867DYyd6bH5wO3h2NPeD9333"
+      },
+      {
+        "name": "Rutina",
+        "note": "Ninguna",
+        "user": "86z5Gbd1diNjiCJiBnt7iWaazIM2"
+      },
+      {
+        "name": "Rutina",
+        "note": "Ninguna",
+        "user": "86z5Gbd1diNjiCJiBnt7iWaazIM2"
+      }
+    ],
+    "pr": [
+      {
+        "nameEjercicio": "Press Banca con Barra",
+        "peso": 65.0,
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "nameEjercicio": "Sentadilla",
+        "peso": 170.0,
+        "user": "86z5Gbd1diNjiCJiBnt7iWaazIM2"
+      },
+      {
+        "nameEjercicio": "Sentadilla",
+        "peso": 75.0,
+        "user": "0tqf8UPWrEftlcSDLGSR2Kj2ESR2"
+      },
+      {
+        "nameEjercicio": "Sentadilla",
+        "peso": 90.0,
+        "user": "fGw0t4F63nbRm0SYi4q3fdFXvyx1"
+      },
+      {
+        "nameEjercicio": "Prensa",
+        "peso": 110.0,
+        "user": "fGw0t4F63nbRm0SYi4q3fdFXvyx1"
+      },
+      {
+        "nameEjercicio": "Hip Thrust",
+        "peso": 60.0,
+        "user": "fGw0t4F63nbRm0SYi4q3fdFXvyx1"
+      },
+      {
+        "nameEjercicio": "Flexion de tobillo en banco",
+        "peso": 86.0,
+        "user": "fGw0t4F63nbRm0SYi4q3fdFXvyx1"
+      },
+      {
+        "nameEjercicio": "Peso Muerto",
+        "peso": 40.0,
+        "user": "0tqf8UPWrEftlcSDLGSR2Kj2ESR2"
+      },
+      {
+        "nameEjercicio": "Sentadilla",
+        "peso": 100.0,
+        "user": "CHyf867DYyd6bH5wO3h2NPeD9333"
+      },
+      {
+        "nameEjercicio": "Sentadilla",
+        "peso": 100.0,
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "nameEjercicio": "Prensa",
+        "peso": 160.0,
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "nameEjercicio": "Dominada",
+        "peso": 53.0,
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "nameEjercicio": "Fondos",
+        "peso": 50.0,
+        "user": "EFEUsgx4oXWuBdHe2hrhbzUEFt02"
+      },
+      {
+        "nameEjercicio": "Dominada",
+        "peso": 2.0,
+        "user": "2xh7Xla4shcfU9Ij7mvPwdj4bYD2"
+      }
+    ],
+    "retos": {
+      "ASDFW": {
+        "completado": false,
+        "nombre": "Sacar 150 en sentadilla",
+        "fecha": "fechita"
+      },
+      "QWER": {
+        "completado": true,
+        "nombre": "Sacar 100 en banca",
+        "fecha": "fechita"
+      }
+    }
+  }
+}

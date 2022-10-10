@@ -4,27 +4,30 @@
 
 import 'dart:convert';
 
-Map<String, Reto> retoFromJson(String str) => Map.from(json.decode(str)).map((k, v) => MapEntry<String, Reto>(k, Reto.fromJson(v)));
-
-String retoToJson(Map<String, Reto> data) => json.encode(Map.from(data).map((k, v) => MapEntry<String, dynamic>(k, v.toJson())));
-
-//Clase que lee los retos completaods de la base de datos y el json segun corresponda
 class Reto {
-    Reto({
-        required this.completado,
-        required this.nombre,
-    });
+  Reto({
+    required this.completado,
+    required this.nombre,
+    required this.fecha,
+  });
 
-    bool completado;
-    String nombre;
+  bool completado;
+  String nombre;
+  String fecha;
 
-    factory Reto.fromJson(Map<String, dynamic> json) => Reto(
+  factory Reto.fromJson(String str) => Reto.fromMap(json.decode(str));
+
+  String toJson() => json.encode(toMap());
+
+  factory Reto.fromMap(Map<String, dynamic> json) => Reto(
         completado: json["completado"],
         nombre: json["nombre"],
-    );
+        fecha: json["fecha"],
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toMap() => {
         "completado": completado,
         "nombre": nombre,
-    };
+        "fecha": fecha,
+      };
 }
