@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:my_gym_bro/models/models.dart';
 
 import 'package:http/http.dart' as http;
+import 'package:my_gym_bro/models/user.dart';
 
 class RutinaService extends ChangeNotifier {
   final String _baseUrl =
@@ -21,7 +22,8 @@ class RutinaService extends ChangeNotifier {
 
   RutinaService() {
     this.loadRutinas();
-    this.loadPr();
+    this.loadPrs();
+    this.loadUsers();
   }
 
 //cargamos las rutinas de la base de datos
@@ -43,7 +45,7 @@ class RutinaService extends ChangeNotifier {
   }
 
 //cargamos los pr
-  Future loadPr() async {
+  Future loadPrs() async {
     final url = Uri.https(_baseUrl, 'pr.json');
     final resp = await http.get(url);
     final String user = await storage.read(key: 'uid') ?? '';
@@ -55,6 +57,22 @@ class RutinaService extends ChangeNotifier {
       tempPr.id = key;
       if (tempPr.idUser == user) {
         controller.prList.add(tempPr);
+      }
+    });
+  }
+
+  Future loadUsers() async {
+    final url = Uri.https(_baseUrl, 'users.json');
+    final resp = await http.get(url);
+    final String user = await storage.read(key: 'uid') ?? '';
+
+    final Map<String, dynamic> userMap = json.decode(resp.body);
+
+    userMap.forEach((key, value) {
+      final tempUser = User.fromMap(value);
+      tempUser.id = key;
+      if (tempUser.id == user) {
+        controller.userList.add(tempUser);
       }
     });
   }
@@ -168,5 +186,17 @@ class RutinaService extends ChangeNotifier {
     print(decodedData);
 
     return pr.id!;
+  }
+
+//update User
+  Future<String> updateUser(User user) async {
+//HACEMOS LA PETICION
+
+    final url = Uri.https(_baseUrl, 'rutinas/${user.id}.json');
+    final resp = await http.put(url, body: user.toJson());
+    final decodedData = resp.body;
+    print(decodedData);
+
+    return user.id!;
   }
 }
