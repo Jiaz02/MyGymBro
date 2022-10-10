@@ -104,7 +104,8 @@ class _LoginForm extends StatelessWidget {
               elevation: 0,
               color: AppTheme.primaryBlue,
               child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                   child: Text(
                     loginForm.isLoading ? 'Espere' : 'Ingresar',
                     style: const TextStyle(color: Colors.white),
@@ -126,7 +127,8 @@ class _LoginForm extends StatelessWidget {
 
                       if (errorMessage == null) {
                         rutForm.loadRutinas();
-                        rutForm.loadPr();
+                        rutForm.loadPrs();
+                        rutForm.loadUsers();
 
                         Navigator.pushReplacement(
                             context,
