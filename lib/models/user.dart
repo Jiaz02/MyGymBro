@@ -10,11 +10,17 @@ class User {
     required this.rutinas,
     required this.pr,
     required this.retos,
+    required this.peso,
+    required this.altura,
+    required this.edad,
   });
 
   String nombre;
   String email;
   String password;
+  String peso;
+  String altura;
+  String edad;
   List<Rutina> rutinas;
   List<Pr> pr;
   List<Reto> retos;
@@ -28,6 +34,9 @@ class User {
         nombre: json["nombre"],
         email: json["email"],
         password: json["password"],
+        peso: json["peso"],
+        altura: json["altura"],
+        edad: json["edad"],
         rutinas:
             List<Rutina>.from(json["rutinas"].map((x) => Rutina.fromMap(x))),
         pr: List<Pr>.from(json["pr"].map((x) => Pr.fromMap(x))),
@@ -38,6 +47,9 @@ class User {
         "nombre": nombre,
         "email": email,
         "password": password,
+        "peso": peso,
+        "altura": altura,
+        "edad": edad,
         "rutinas": List<dynamic>.from(rutinas.map((x) => x.toMap())),
         "pr": List<dynamic>.from(pr.map((x) => x.toMap())),
         "retos": List<dynamic>.from(retos.map((x) => x.toMap())),
