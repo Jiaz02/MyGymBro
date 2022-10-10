@@ -126,8 +126,8 @@ class _LoginForm extends StatelessWidget {
                           loginForm.email, loginForm.password);
 
                       if (errorMessage == null) {
-                        rutForm.loadRutinas();
-                        rutForm.loadPrs();
+                        // rutForm.loadRutinas();
+                        // rutForm.loadPrs();
                         rutForm.loadUsers();
 
                         Navigator.pushReplacement(
