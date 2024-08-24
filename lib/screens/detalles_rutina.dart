@@ -86,7 +86,7 @@ class _DetallesRutinaState extends State<DetallesRutina> {
             padding: const EdgeInsets.all(16.0),
             child: Text(
               'Observaciones: ' + widget.rutina.note,
-              style: TextStyle(color: Colors.white, fontSize: 16),
+              style: const TextStyle(color: Colors.white, fontSize: 16),
             ),
           ),
           Padding(
@@ -101,28 +101,30 @@ class _DetallesRutinaState extends State<DetallesRutina> {
                       rutinaService: rutinaService,
                     ),
                   ),
-                );
+                ).then((_) => setState(() {}));
+                //con .then((_) => setState(() {}));  podemos refrescar la pagina actual
+                //cuando volvamos de la pagina pusheada
+                //https://stackoverflow.com/questions/49804891/force-flutter-navigator-to-reload-state-when-popping
+
               },
-              child: Text('Añadir Ejercicio'),
+              child: const Text('Añadir Ejercicio'),
               style: TextButton.styleFrom(
-                  backgroundColor: AppTheme.primaryBlue,
-                  primary: Colors.white,
+                  foregroundColor: Colors.white, backgroundColor: AppTheme.primaryBlue,
                   fixedSize: Size(MediaQuery.of(context).size.width, 16)),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: TextButton(
-              onPressed: () {
+              onPressed: () async {
                 controller.rutinasList.remove(widget.rutina);
                 //TODO: elimina la rutina pero no reprintea la lista
-                rutinaService.deleteRutina(widget.rutina);
+                await rutinaService.deleteRutina(widget.rutina);
                 Navigator.pop(context);
               },
-              child: Text('Eliminar Rutina'),
+              child: const Text('Eliminar Rutina'),
               style: TextButton.styleFrom(
-                  backgroundColor: Colors.red,
-                  primary: Colors.white,
+                  foregroundColor: Colors.white, backgroundColor: Colors.red,
                   fixedSize: Size(MediaQuery.of(context).size.width, 16)),
             ),
           )

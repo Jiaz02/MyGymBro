@@ -8,7 +8,7 @@ class AuthBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       // color: Colors.red,
       width: double.infinity,
       height: double.infinity,
@@ -16,7 +16,7 @@ class AuthBackground extends StatelessWidget {
         children: [
           _PurpleBox(),
           _HeaderIcon(),
-          this.child,
+          child,
         ],
       ),
     );
@@ -29,7 +29,7 @@ class _HeaderIcon extends StatelessWidget {
     return SafeArea(
       child: Container(
         width: double.infinity,
-        margin: EdgeInsets.only(top: 30),
+        margin: const EdgeInsets.only(top: 30),
         child: const Image(
           image: AssetImage('assets/logo.png'),
           width: 200,
@@ -76,7 +76,7 @@ class _Bubble extends StatelessWidget {
       height: 100,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
-          color: Color.fromRGBO(255, 255, 255, 0.05)),
+          color: const Color.fromRGBO(255, 255, 255, 0.05)),
     );
   }
 }

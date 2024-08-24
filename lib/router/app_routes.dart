@@ -10,31 +10,31 @@ class AppRoutes {
   static final menuOption = <MenuOption>[
     MenuOption(
         route: 'peso',
-        image: AssetImage('assets/crearpr.png'),
+        image: const AssetImage('assets/crearpr.png'),
         icon: Icons.tab,
         name: 'Pesos Screen',
-        screen: AddPrScreen()),
+        screen: const AddPrScreen()),
     MenuOption(
         route: 'graffic',
-        image: AssetImage('assets/graficos.png'),
+        image: const AssetImage('assets/graficos.png'),
         icon: Icons.tab,
         name: 'Grafico Screen',
         screen: const GrafficsScreen()),
     MenuOption(
         route: 'measure',
-        image: AssetImage('assets/medidas.png'),
+        image: const AssetImage('assets/medidas.png'),
         icon: Icons.tab,
         name: 'Medidas Screen',
         screen: const MeasureScreen()),
     MenuOption(
         route: 'splash',
-        image: AssetImage('assets/graficos.png'),
+        image: const AssetImage('assets/graficos.png'),
         icon: Icons.smart_display_sharp,
         name: 'Splash Screen',
-        screen: SplashScreen()),
+        screen: const SplashScreen()),
     MenuOption(
         route: 'reto',
-        image: AssetImage('assets/retos.png'),
+        image: const AssetImage('assets/retos.png'),
         icon: Icons.smart_display_sharp,
         name: 'Entrenos Screen',
         screen: const RetosScreen()),
@@ -43,34 +43,34 @@ class AppRoutes {
   static final bottomMenuOption = <MenuOption>[
     MenuOption(
         route: 'friends',
-        image: AssetImage('assets/graficos.png'),
+        image: const AssetImage('assets/graficos.png'),
         icon: Icons.tab,
         name: 'Amigos Screen',
         screen: const AmigosScreen()),
     MenuOption(
         route: 'entrenos',
-        image: AssetImage('assets/graficos.png'),
+        image: const AssetImage('assets/graficos.png'),
         icon: Icons.tab,
         name: 'Entrenos Screen',
         screen: const EntrenosScreen()),
     MenuOption(
         route: 'home',
-        image: AssetImage('assets/graficos.png'),
+        image: const AssetImage('assets/graficos.png'),
         icon: Icons.tab,
         name: 'Home Screen',
         screen: const InicioScreen()),
     MenuOption(
         route: 'ejercicios',
-        image: AssetImage('assets/graficos.png'),
+        image: const AssetImage('assets/graficos.png'),
         icon: Icons.tab,
         name: 'Ejercicios Screen',
         screen: EjerciciosScreen()),
     MenuOption(
         route: 'user',
-        image: AssetImage('assets/graficos.png'),
+        image: const AssetImage('assets/graficos.png'),
         icon: Icons.tab,
         name: 'User Screen',
-        screen: UserScreen()),
+        screen: const UserScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

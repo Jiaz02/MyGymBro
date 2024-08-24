@@ -185,7 +185,7 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextButton(
-                onPressed: () {
+                onPressed: () async {
                   if (list.isEmpty) {
                     list = widget.ejercicio.listSeries;
                   }
@@ -203,30 +203,30 @@ class _EditarEjercicioRutinaScreen extends State<EditarEjercicioRutinaScreen> {
                   widget.ejercicio.tip = ejer.tip;
                   widget.ejercicio.muscle = ejer.muscle;
                   widget.ejercicio.url = ejer.url;
-                  widget.rutinaService.saveOrCreateRutina(widget.rutina);
+                  await widget.rutinaService.saveOrCreateRutina(widget.rutina);
                   Navigator.pop(context);
                 },
                 child: const Text('Guardar ejercicio'),
                 // ignore: prefer_const_constructors
                 style: TextButton.styleFrom(
-                    backgroundColor: AppTheme.primaryBlue,
-                    primary: Colors.white,
+                  backgroundColor: AppTheme.primaryBlue,
+                    foregroundColor: Colors.white, 
                     fixedSize: Size(MediaQuery.of(context).size.width, 16)),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextButton(
-                onPressed: () {
+                onPressed: () async {
                   widget.rutina.listEjerciciosRutina?.remove(widget.ejercicio);
-                  widget.rutinaService.saveOrCreateRutina(widget.rutina);
+                  await widget.rutinaService.saveOrCreateRutina(widget.rutina);
                   Navigator.pop(context);
                 },
                 child: const Text('Eliminar ejercicio'),
                 // ignore: prefer_const_constructors
                 style: TextButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    primary: Colors.white,
+                  backgroundColor: Colors.red,
+                    foregroundColor: Colors.white, 
                     fixedSize: Size(MediaQuery.of(context).size.width, 16)),
               ),
             )

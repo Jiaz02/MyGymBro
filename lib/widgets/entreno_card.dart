@@ -12,20 +12,20 @@ class EntrenoCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Container(
-        margin: EdgeInsets.only(top: 30, bottom: 10),
+        margin: const EdgeInsets.only(top: 30, bottom: 10),
         width: double.infinity,
         height: 200,
         decoration: _cardBorders(),
         child: Stack(
           alignment: Alignment.bottomRight,
           children: [
-            _backgroundImage(),
+            const _backgroundImage(),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
                   rut.name,
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 _editButton(rut),
               ],
@@ -82,7 +82,7 @@ class _backgroundImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(25),
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
         height: 400,
         child: const Image(

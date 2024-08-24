@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_gym_bro/models/models.dart';
@@ -5,12 +6,15 @@ import 'package:my_gym_bro/router/app_routes.dart';
 import 'package:my_gym_bro/service/service.dart';
 import 'package:provider/provider.dart';
 
+import 'firebase_options.dart';
 import 'theme/app_theme.dart';
 
-void main() {
+Future<void> main() async {
   //creamos la clase listas para que este disponible de forma global
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
   Get.put(Listas());
-  runApp(AppState());
+  runApp(const AppState());
 }
 
 class AppState extends StatelessWidget {
@@ -25,7 +29,7 @@ class AppState extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => LeerJsonService()),
         ChangeNotifierProvider(create: (_) => RutinaService()),
       ],
-      child: MyApp(),
+      child: const MyApp(),
     );
   }
 }

@@ -4,7 +4,7 @@ import 'package:my_gym_bro/models/models.dart';
 
 ///Clase que contiene las rutinas y sus distintas sub clases
 class Rutina {
-  Rutina(this.name, this.note, this.listEjerciciosRutina, this.idUser);
+  Rutina(this.name, this.note, this.listEjerciciosRutina);
 
   String name;
   String note;
@@ -28,25 +28,24 @@ class Rutina {
   factory Rutina.fromJson(String str) => Rutina.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
+  
   factory Rutina.fromMap(Map<String, dynamic> json) => Rutina(
-        json["name"],
-        json["note"],
+        json["name"] ?? '',
+        json["note"] ?? '',
         List<EjercicioRutina>.from(json["listEjerciciosRutina"]
                 ?.map((x) => EjercicioRutina.fromMap(x)) ??
             []),
-        json["user"],
       );
 
   Map<String, dynamic> toMap() => {
         "name": name,
         "note": note,
         "listEjerciciosRutina": List<dynamic>.from(
-            listEjerciciosRutina?.map((x) => x.toMap()) ?? []),
-        "user": idUser,
+            listEjerciciosRutina?.map((x) => x.toMap()) ?? [])
       };
   @override
   String toString() {
     // TODO: implement toString
-    return (this.name + ' ' + this.note + this.listEjerciciosRutina.toString());
+    return (name + ' ' + note + listEjerciciosRutina.toString());
   }
 }

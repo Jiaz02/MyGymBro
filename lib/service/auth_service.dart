@@ -1,19 +1,25 @@
 import 'dart:convert';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
+
 class AuthService extends ChangeNotifier {
   final String _baseUrl = 'identitytoolkit.googleapis.com';
+  final String _baseUrlUser =
+      'mygymbro-f072a-default-rtdb.europe-west1.firebasedatabase.app';
   final String _firebaseToken = 'AIzaSyC7oi6d2C3_dDuAXLImUpBMxvOS2_Ympu0';
 
-  final storage = FlutterSecureStorage();
+  final database = FirebaseDatabase.instance.ref();
+
+  final storage = const FlutterSecureStorage();
 
 
   // Si retornamos algo, es un error, si no, todo bien!
-  Future<String?> createUser(String email, String password) async {
+  Future<String?> createUser(String email, String password, user) async {
     final Map<String, dynamic> authData = {
       'email': email,
       'password': password,
@@ -33,6 +39,17 @@ class AuthService extends ChangeNotifier {
       await storage.write(key: 'token', value: decodedResp['idToken']);
 
       await storage.write(key: 'uid', value: decodedResp['localId']);
+      await storage.write(key: 'nombre', value: user.email);
+      final userMap = user.toMap();
+      userMap.forEach((key, value) {
+      key = decodedResp['localId'];
+    });
+    await database.child("users").child(user.nombre).set(userMap);
+  //  final decodedData = json.decode(resp.body);
+  //  print(decodedData);
+
+  //  rutina.id = decodedData['name'];
+
       // decodedResp['idToken'];
       return null;
     } else {
@@ -59,6 +76,7 @@ class AuthService extends ChangeNotifier {
       await storage.write(key: 'token', value: decodedResp['idToken']);
 
       await storage.write(key: 'uid', value: decodedResp['localId']);
+      await storage.write(key: 'nombre', value: email);
       return null;
     } else {
       print('cagaste');

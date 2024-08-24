@@ -8,7 +8,7 @@ import '../models/models.dart';
 import '../service/service.dart';
 
 class CheckAuthScreen extends StatelessWidget {
-  CheckAuthScreen({Key? key}) : super(key: key);
+  const CheckAuthScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

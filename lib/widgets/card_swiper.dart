@@ -15,7 +15,7 @@ class CardSwiper extends StatelessWidget {
 //creamos un containes para introducir las tarjetas de opciones
     return Padding(
       padding: const EdgeInsets.only(top: 30.0, bottom: 10),
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
         height: size.height / 4,
         child: Swiper(

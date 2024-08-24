@@ -53,7 +53,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                 },
               );
             });
-      }),
+      }, future: null,),
       //boton añadir rutinas
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
@@ -125,7 +125,8 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                         onPressed: () {
                           //Provider.of(context, listen: false);
                           rutina =
-                              Rutina(nombreRutina, observacionesRutina, [], '');
+                              Rutina(nombreRutina, observacionesRutina, []);
+                              Rutina(nombreRutina, observacionesRutina, []);
                           nombreRutina = 'Rutina';
                           observacionesRutina = '';
                           controller.addRutinaList(rutina);
@@ -137,8 +138,7 @@ class _EntrenosScreenState extends State<EntrenosScreen> {
                         },
                         child: const Text('Crear Rutina'),
                         style: TextButton.styleFrom(
-                            backgroundColor: AppTheme.primaryBlue,
-                            primary: Colors.white,
+                            foregroundColor: Colors.white, backgroundColor: AppTheme.primaryBlue,
                             fixedSize: Size(MediaQuery.of(cxt).size.width, 16)),
                       ),
                     ),

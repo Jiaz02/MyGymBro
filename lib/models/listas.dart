@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:my_gym_bro/models/amigo.dart';
 import 'package:my_gym_bro/models/models.dart';
 import 'package:my_gym_bro/models/user.dart';
 
@@ -18,6 +19,10 @@ class Listas extends GetxController {
 
   List<User> userList = [];
 
+  List<Amigo> amigosList = [];
+
+  List<SolicitudAmistad> solicitudesAmistadList = [];
+
   List<Rutina> getRutinasList() {
     print('entra a get list $rutinasList');
     return rutinasList;
@@ -29,6 +34,8 @@ class Listas extends GetxController {
     prList.clear();
     rutinasList.clear();
     userList.clear();
+    amigosList.clear();
+    solicitudesAmistadList.clear();
   }
 
   setRutinasList(List<Rutina> rutinasList) => this.rutinasList = rutinasList;
@@ -51,6 +58,21 @@ class Listas extends GetxController {
 
   void addUserList(User user) {
     userList.add(user);
+  }
+
+  get getamigosList => amigosList;
+
+  setamigosList(List<Amigo> amigosList) => this.amigosList = amigosList;
+
+  void addamigosList(Amigo user) {
+    amigosList.add(user);
+  }
+  get getSolicitudAmistad => SolicitudAmistad;
+
+  setSolicitudAmistad(List<SolicitudAmistad> solicitudAmistad) => this.solicitudesAmistadList = solicitudAmistad;
+
+  void addSolicitudAmistad(SolicitudAmistad user) {
+    solicitudesAmistadList.add(user);
   }
 
   get getMusculoList => musculoList;
@@ -88,7 +110,6 @@ class Listas extends GetxController {
   void removeEjercicioRutinaList(EjercicioElement ejercicio) {
     ejerciciosRutinaList.remove(ejercicio);
   }
-
   // TODO: poner un future que lea la lista llamandolo en el main o en splash
 
 }

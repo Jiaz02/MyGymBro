@@ -1,10 +1,5 @@
-import 'package:card_swiper/card_swiper.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_gym_bro/models/ejercicio_rutina.dart';
 import 'package:my_gym_bro/models/row_rep_kg.dart';
-import 'package:my_gym_bro/models/rutina.dart';
-import 'package:my_gym_bro/router/app_routes.dart';
 
 class EditRowRepeKg extends StatelessWidget {
   EditRowRepeKg(

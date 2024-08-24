@@ -2,11 +2,11 @@ import 'dart:convert';
 
 ///Clase que lee los pr de la base de datos
 class Pr {
-  Pr({
-    required this.nameEjercicio,
-    required this.peso,
+  Pr(
+    this.nameEjercicio,
+    this.peso,
     this.idUser
-  });
+  );
 
   String nameEjercicio;
   double peso;
@@ -19,9 +19,9 @@ class Pr {
 
   factory Pr.fromMap(Map<String, dynamic> json) {
     return Pr(
-      nameEjercicio: json["nameEjercicio"],
-      idUser: json["user"],
-      peso: json["peso"].toDouble(),
+      json["nameEjercicio"] ?? '',
+      json["peso"].toDouble() ?? 0.0,
+      json["user"]?? '',
     );
   }
 

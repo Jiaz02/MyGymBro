@@ -149,7 +149,7 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextButton(
-                onPressed: () {
+                onPressed: () async {
                   //guardamos la rutina
                   widget.rutina.listEjerciciosRutina?.add(EjercicioRutina(
                     name: ejercicioElegido.name,
@@ -158,14 +158,16 @@ class _AddEntrenosScreenState extends State<AddEntrenosScreen> {
                     url: ejercicioElegido.url,
                     listSeries: list,
                   ));
-
-                  widget.rutinaService.saveOrCreateRutina(widget.rutina);
+                  if (mounted) {
+                    setState(() {});
+                  }
+                  await widget.rutinaService.saveOrCreateRutina(widget.rutina);
                   Navigator.pop(context);
                 },
                 child: const Text('Añadir ejercicio'),
                 style: TextButton.styleFrom(
-                    backgroundColor: AppTheme.primaryBlue,
-                    primary: Colors.white,
+                backgroundColor: AppTheme.primaryBlue,
+                    foregroundColor: Colors.white,
                     fixedSize: Size(MediaQuery.of(context).size.width, 16)),
               ),
             )

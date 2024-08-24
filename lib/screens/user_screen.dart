@@ -47,8 +47,8 @@ class UserScreen extends StatelessWidget {
             },
             child: const Text('Cerrar Sesion'),
             style: TextButton.styleFrom(
-                backgroundColor: Colors.red,
-                primary: Colors.white,
+              backgroundColor: Colors.red,
+                foregroundColor: Colors.white,
                 fixedSize: Size(MediaQuery.of(context).size.width, 16)),
           ),
         ],

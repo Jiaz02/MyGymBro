@@ -81,13 +81,13 @@ class _AddPrScreenState extends State<AddPrScreen> {
                   // ignore: prefer_const_constructors
                   style: TextButton.styleFrom(
                       backgroundColor: AppTheme.primaryBlue,
-                      primary: Colors.white,
+                      foregroundColor: Colors.white,
                       fixedSize: Size(MediaQuery.of(context).size.width, 16)),
-                  onPressed: () {
-                    pr = Pr(nameEjercicio: ejercicio, peso: kg);
+                  onPressed: () async {
+                    pr = Pr(ejercicio, kg,'');
 
                     if (!pr.isNull) {
-                      rutinaService.saveOrCreatePr(pr);
+                      await rutinaService.saveOrCreatePr(pr);
 
                       Navigator.pop(context);
                     }

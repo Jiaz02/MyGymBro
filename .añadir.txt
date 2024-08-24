@@ -14,3 +14,7 @@ Los principales actuarían como actuan ahora
 Y los secundarios aparecerían como dato al mirar el ejercicio. Pero no en el desplegable
 
 Mensajes si no rellenas algun campo, ta feo
+
+Crear rutinas y modificarlas y cargarlas funciona perfe, 
+repasar el eliminar rutinas
+duplicar para los pr

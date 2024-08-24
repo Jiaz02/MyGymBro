@@ -30,6 +30,13 @@
             {
               "client_id": "396383174257-dp6k6s119lua3uv0ubfn6spvpttjsr4u.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "396383174257-3lcsgmfgpq5rckradikhemteno61laou.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.myGymBro"
+              }
             }
           ]
         }

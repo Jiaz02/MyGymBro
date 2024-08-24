@@ -18,7 +18,7 @@ class EjercicioRutina {
   String url;
   List<RowRepKg> listSeries;
 
-  get getListSeries => this.listSeries;
+  get getListSeries => listSeries;
 
   set setListSeries(listSeries) => this.listSeries = listSeries;
 

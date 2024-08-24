@@ -2,7 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:get/get.dart';
+import 'package:my_gym_bro/models/amigo.dart';
 import 'package:my_gym_bro/models/models.dart';
 
 import 'package:http/http.dart' as http;
@@ -12,26 +14,28 @@ class RutinaService extends ChangeNotifier {
   final String _baseUrl =
       'mygymbro-f072a-default-rtdb.europe-west1.firebasedatabase.app';
 
+  final database = FirebaseDatabase.instance.ref();
+
   final controller = Get.find<Listas>();
 
-  final storage = FlutterSecureStorage();
+  final storage = const FlutterSecureStorage();
 
   bool isLoading = true;
 
   bool isSaving = false;
 
   RutinaService() {
-    this.loadRutinas();
-    this.loadPrs();
-    this.loadUsers();
+    //loadRutinas();
+    //loadPrs();
+    loadUsers();
   }
 
 //cargamos las rutinas de la base de datos
   Future loadRutinas() async {
-    final url = Uri.https(_baseUrl, 'rutinas.json');
+    final String user = await storage.read(key: 'nombre') ?? '';
+    final url = Uri.https(_baseUrl, 'users/$user/rutinas.json');
     final resp = await http.get(url);
 
-    final String user = await storage.read(key: 'uid') ?? '';
 
     final Map<String, dynamic> rutinasMap = json.decode(resp.body);
 
@@ -46,9 +50,9 @@ class RutinaService extends ChangeNotifier {
 
 //cargamos los pr
   Future loadPrs() async {
-    final url = Uri.https(_baseUrl, 'pr.json');
+    final String user = await storage.read(key: 'nombre') ?? '';
+    final url = Uri.https(_baseUrl, 'users/$user/prs.json');
     final resp = await http.get(url);
-    final String user = await storage.read(key: 'uid') ?? '';
 
     final Map<String, dynamic> prMap = json.decode(resp.body);
 
@@ -61,20 +65,48 @@ class RutinaService extends ChangeNotifier {
     });
   }
 
+  Future getSolicitudAmistad() async {
+    final String? usuario = await storage.read(key: 'nombre');
+    final usuarioDestinoSnapshot = await database.child("peticiones_amistad").orderByChild('para').equalTo(usuario).once();
+    if (usuarioDestinoSnapshot.snapshot.exists) {
+      final data = usuarioDestinoSnapshot.snapshot.value as Map<dynamic, dynamic>;
+      data.forEach((key, value) {
+        // Convierte cada valor del mapa en un objeto Rutina
+        controller.solicitudesAmistadList.add(SolicitudAmistad.fromMap(Map<String, dynamic>.from(value)));
+        print(controller.solicitudesAmistadList);
+      });
+    }
+  }
+
   Future loadUsers() async {
-    final url = Uri.https(_baseUrl, 'users.json');
+    final String? usuario = await storage.read(key: 'nombre');
+    final url = Uri.https(_baseUrl, 'users/$usuario.json');
     final resp = await http.get(url);
-    final String user = await storage.read(key: 'uid') ?? '';
 
     final Map<String, dynamic> userMap = json.decode(resp.body);
 
+/*
     userMap.forEach((key, value) {
-      final tempUser = User.fromMap(value);
-      tempUser.id = key;
-      if (tempUser.id == user) {
-        controller.userList.add(tempUser);
+      if(key == 'prs'){
+        controller.prList = value.values
+        .where((item) => item != null)
+        .map((item) => Pr.fromMap(item as Map<String, dynamic>))
+        .toList()
+        .cast<Pr>();
+      } else if(key == 'rutinas') {
+        controller.rutinasList = value.values
+        .where((item) => item != null)
+        .map((item) => Rutina.fromMap(item as Map<String, dynamic>))
+        .toList()
+        .cast<Rutina>();
       }
     });
+    */
+      final tempUser = User.fromMap(userMap);
+      controller.userList.add(tempUser);
+      controller.rutinasList = tempUser.rutinas ?? [];
+      controller.prList = tempUser.pr ?? [];
+      controller.amigosList = tempUser.amigos ?? [];
   }
 
 //guardamo a creamos una rutina
@@ -82,7 +114,7 @@ class RutinaService extends ChangeNotifier {
     isSaving = true;
     notifyListeners();
 
-    final String user = await storage.read(key: 'uid') ?? '';
+    final String user = await storage.read(key: 'nombre') ?? '';
     rutina.idUser = user;
 
     //si tenemos id estamos actualizando, sino estamos creando :D
@@ -102,10 +134,12 @@ class RutinaService extends ChangeNotifier {
   Future<String> updateRutina(Rutina rutina) async {
 //HACEMOS LA PETICION
 
-    final url = Uri.https(_baseUrl, 'rutinas/${rutina.id}.json');
-    final resp = await http.put(url, body: rutina.toJson());
-    final decodedData = resp.body;
-    print(decodedData);
+    final String user = await storage.read(key: 'nombre') ?? '';
+
+    await database.child("users").child(user).child('rutinas').child(rutina.id!).set(rutina.toMap());
+    final url = Uri.https(_baseUrl, 'users/$user/rutinas/${rutina.id}.json');
+    //final resp = await http.put(url, body: rutina.toJson());
+    //final decodedData = resp.body;
 
     return rutina.id!;
   }
@@ -114,7 +148,8 @@ class RutinaService extends ChangeNotifier {
   Future<String> createRutina(Rutina rutina) async {
 //HACEMOS LA PETICION
 
-    final url = Uri.https(_baseUrl, 'rutinas.json');
+    final String user = await storage.read(key: 'nombre') ?? '';
+    final url = Uri.https(_baseUrl, 'users/$user/rutinas.json');
     final resp = await http.post(url, body: rutina.toJson());
     final decodedData = json.decode(resp.body);
     print(decodedData);
@@ -126,8 +161,9 @@ class RutinaService extends ChangeNotifier {
 
 //eliminamos rutina
   Future deleteRutina(Rutina rutina) async {
-    final url = Uri.https(_baseUrl, 'rutinas/${rutina.id}.json');
-    http.delete(url, body: rutina.toJson());
+    final String user = await storage.read(key: 'nombre') ?? '';
+    final url = Uri.https(_baseUrl, 'users/$user/rutinas/${rutina.id}.json');
+    http.delete(url);
   }
 
 //creamos o modificamos pr
@@ -135,7 +171,7 @@ class RutinaService extends ChangeNotifier {
     isSaving = true;
     notifyListeners();
 
-    final String user = await storage.read(key: 'uid') ?? '';
+    final String user = await storage.read(key: 'nombre') ?? '';
     pr.idUser = user;
 
     List<String> lst = [];
@@ -165,7 +201,8 @@ class RutinaService extends ChangeNotifier {
   Future<String> createPr(Pr pr) async {
 //HACEMOS LA PETICION
 
-    final url = Uri.https(_baseUrl, 'pr.json');
+    final String user = await storage.read(key: 'nombre') ?? '';
+    final url = Uri.https(_baseUrl, 'users/$user/prs.json');
     final resp = await http.post(url, body: pr.toJson());
     final decodedData = json.decode(resp.body);
     print(decodedData);
@@ -179,8 +216,9 @@ class RutinaService extends ChangeNotifier {
   Future<String> updatePr(Pr pr) async {
 //HACEMOS LA PETICION
 
+    final String user = await storage.read(key: 'nombre') ?? '';
     print(pr.id);
-    final url = Uri.https(_baseUrl, 'pr/${pr.id}.json');
+    final url = Uri.https(_baseUrl, 'users/$user/prs/${pr.id}.json');
     final resp = await http.put(url, body: pr.toJson());
     final decodedData = resp.body;
     print(decodedData);
@@ -192,11 +230,39 @@ class RutinaService extends ChangeNotifier {
   Future<String> updateUser(User user) async {
 //HACEMOS LA PETICION
 
-    final url = Uri.https(_baseUrl, 'rutinas/${user.id}.json');
+    final url = Uri.https(_baseUrl, 'users/${user.id}.json');
     final resp = await http.put(url, body: user.toJson());
     final decodedData = resp.body;
     print(decodedData);
 
     return user.id!;
+  }
+
+  Future<void> sendPeticionAmistad(String nombreUsuario) async {
+    final String usuario = await storage.read(key: 'nombre') ?? '';
+    final database = FirebaseDatabase.instance.ref();
+    final usuarioDestinoSnapshot = await database.child("users").child(nombreUsuario).once();
+    if (usuarioDestinoSnapshot.snapshot.exists) {
+      // El usuario existe, puedes proceder
+      final peticionExistente = await database.child("peticiones_amistad")
+      .child("${usuario}_$nombreUsuario")
+      .once();
+  
+      if (peticionExistente.snapshot.exists) {
+        print('peticion existente');
+        // Verifica si la solicitud ya ha sido enviada
+      } else {
+        // Proceder a crear una nueva solicitud
+        await database.child("peticiones_amistad").child("${usuario}_$nombreUsuario")
+        .set({
+        "de": usuario,
+        "para": nombreUsuario,
+        "estado": "pendiente"
+});
+      }
+    } else {
+      // Mostrar mensaje de error: "El usuario no existe"
+      print('fuea');
+    }
   }
 }

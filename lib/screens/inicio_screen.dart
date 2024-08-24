@@ -38,7 +38,7 @@ class _InicioScreenState extends State<InicioScreen> {
                         ),
                       )),
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => RetosScreen()))),
+                      MaterialPageRoute(builder: (context) => const RetosScreen()))),
             ),
           ],
         )

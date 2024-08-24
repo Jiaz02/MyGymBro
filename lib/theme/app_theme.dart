@@ -21,6 +21,6 @@ class AppTheme {
       ),
       //textbutton
       textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(primary: primaryOrange),
+        style: TextButton.styleFrom(foregroundColor: primaryOrange),
       ));
 }

@@ -6,7 +6,7 @@ import 'package:my_gym_bro/screens/screens.dart';
 import '../models/models.dart';
 
 class EjerciciosScreen extends StatelessWidget {
-  EjerciciosScreen({Key? key}) : super(key: key);
+  const EjerciciosScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

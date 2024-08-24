@@ -57,7 +57,7 @@ class RevisarPr extends StatelessWidget {
             );
           },
         );
-      }),
+      }, future: null,),
     );
   }
 }
