@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_gym_bro/models/listas.dart';
+import 'package:my_gym_bro/screens/solicitud_amistad_enviadas.dart';
 import 'package:provider/provider.dart';
 import 'dart:math' as math;
 
@@ -65,7 +66,16 @@ class _EntrenosScreenState extends State<AmigosScreen> {
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: IconButton(
-                        onPressed: () async {},
+                        onPressed: () async {
+
+                          final rutinaService = Provider.of<RutinaService>(context, listen: false);
+                          await rutinaService.getSolicitudAmistadEnviadas();
+                          await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SolicitudAmistadEnviadas(),
+                      )).then((_) => setState(() {}));
+                        },
                         icon: Transform.rotate(angle: 225 * math.pi / 180,
                         child: const Icon(Icons.send_rounded)),
                         color: Colors.white,
@@ -89,11 +99,14 @@ class _EntrenosScreenState extends State<AmigosScreen> {
                       padding: const EdgeInsets.all(16.0),
                       child: IconButton(
                         onPressed: () async {
+
+                          final rutinaService = Provider.of<RutinaService>(context, listen: false);
+                          await rutinaService.getSolicitudAmistad();
                           await Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const SentSolicitudAmistadScreen(),
-                      ));
+                      )).then((_) => setState(() {}));
                         },
                         icon: const Icon(Icons.mail),
                         color: Colors.white,

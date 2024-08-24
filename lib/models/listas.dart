@@ -23,6 +23,8 @@ class Listas extends GetxController {
 
   List<SolicitudAmistad> solicitudesAmistadList = [];
 
+  List<SolicitudAmistad> solicitudesAmistadListEnviadas = [];
+
   List<Rutina> getRutinasList() {
     print('entra a get list $rutinasList');
     return rutinasList;
@@ -72,6 +74,13 @@ class Listas extends GetxController {
   setSolicitudAmistad(List<SolicitudAmistad> solicitudAmistad) => this.solicitudesAmistadList = solicitudAmistad;
 
   void addSolicitudAmistad(SolicitudAmistad user) {
+    solicitudesAmistadList.add(user);
+  }
+  get getsolicitudesAmistadListEnviadas => solicitudesAmistadListEnviadas;
+
+  setsolicitudesAmistadListEnviadas(List<SolicitudAmistad> solicitudesAmistadListEnviadas) => this.solicitudesAmistadList = solicitudesAmistadListEnviadas;
+
+  void addsolicitudesAmistadListEnviadas(SolicitudAmistad user) {
     solicitudesAmistadList.add(user);
   }
 

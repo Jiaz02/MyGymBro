@@ -72,10 +72,40 @@ class RutinaService extends ChangeNotifier {
       final data = usuarioDestinoSnapshot.snapshot.value as Map<dynamic, dynamic>;
       data.forEach((key, value) {
         // Convierte cada valor del mapa en un objeto Rutina
-        controller.solicitudesAmistadList.add(SolicitudAmistad.fromMap(Map<String, dynamic>.from(value)));
+        if (SolicitudAmistad.fromMap(Map<String, dynamic>.from(value)).estado == 'pendiente'){
+          controller.solicitudesAmistadList.add(SolicitudAmistad.fromMap(Map<String, dynamic>.from(value)));
+        }
         print(controller.solicitudesAmistadList);
       });
     }
+  }
+  Future getSolicitudAmistadEnviadas() async {
+    final String? usuario = await storage.read(key: 'nombre');
+    final usuarioDestinoSnapshot = await database.child("peticiones_amistad").orderByChild('de').equalTo(usuario).once();
+    if (usuarioDestinoSnapshot.snapshot.exists) {
+      final data = usuarioDestinoSnapshot.snapshot.value as Map<dynamic, dynamic>;
+      data.forEach((key, value) {
+        // Convierte cada valor del mapa en un objeto Rutina
+        if (SolicitudAmistad.fromMap(Map<String, dynamic>.from(value)).estado == 'pendiente'){
+          controller.solicitudesAmistadListEnviadas.add(SolicitudAmistad.fromMap(Map<String, dynamic>.from(value)));
+        }
+        print(controller.solicitudesAmistadListEnviadas);
+      });
+    }
+  }
+
+  Future respondPeticion(user, respuesta) async{
+    await database.child("peticiones_amistad").child('${user.de}_${user.para}').set( SolicitudAmistad(user.de, user.para, respuesta).toMap());
+    if (respuesta == 'aceptada'){
+      DateTime now = new DateTime.now();
+      await database.child("users").child(user.de).child('amigos').child(user.para).set(Amigo(user.para, '${now.day}-${now.month}-${now.year}').toMap());
+      await database.child("users").child(user.para).child('amigos').child(user.de).set(Amigo(user.de, '${now.day}-${now.month}-${now.year}').toMap());
+      controller.amigosList.add(Amigo(user.de, '${now.day}-${now.month}-${now.year}'));
+    }
+      controller.solicitudesAmistadList.remove(user);
+      print(controller.solicitudesAmistadList);
+    
+    return;
   }
 
   Future loadUsers() async {

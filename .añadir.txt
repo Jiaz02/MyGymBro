@@ -15,6 +15,4 @@ Y los secundarios aparecerían como dato al mirar el ejercicio. Pero no en el de
 
 Mensajes si no rellenas algun campo, ta feo
 
-Crear rutinas y modificarlas y cargarlas funciona perfe, 
-repasar el eliminar rutinas
-duplicar para los pr
+Eliminar la card de amigos una vez aceptada o rechada la peticion.

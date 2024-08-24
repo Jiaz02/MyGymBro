@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:my_gym_bro/models/user.dart';
 
 
 class AuthService extends ChangeNotifier {
@@ -39,7 +39,7 @@ class AuthService extends ChangeNotifier {
       await storage.write(key: 'token', value: decodedResp['idToken']);
 
       await storage.write(key: 'uid', value: decodedResp['localId']);
-      await storage.write(key: 'nombre', value: user.email);
+      await storage.write(key: 'nombre', value: user.nombre);
       final userMap = user.toMap();
       userMap.forEach((key, value) {
       key = decodedResp['localId'];
@@ -76,7 +76,22 @@ class AuthService extends ChangeNotifier {
       await storage.write(key: 'token', value: decodedResp['idToken']);
 
       await storage.write(key: 'uid', value: decodedResp['localId']);
-      await storage.write(key: 'nombre', value: email);
+
+      final snapshot = await database.child("users").orderByChild('email').equalTo(email).once();
+      if (snapshot.snapshot.exists && snapshot.snapshot.value is Map<dynamic, dynamic>) {
+
+        final usersMap = snapshot.snapshot.value as Map<dynamic, dynamic>;
+
+        // Extrae el primer (y único) elemento del Map
+        final firstUserKey = usersMap.keys.first;
+        final userMap = usersMap[firstUserKey];
+
+        // Convierte el Map a un objeto User
+        User user = User.fromMap(Map<String, dynamic>.from(userMap));
+        await storage.write(key: 'nombre', value: user.nombre);
+      } else {
+        print('pringao');
+      }
       return null;
     } else {
       print('cagaste');
